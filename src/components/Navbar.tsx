@@ -9,7 +9,7 @@ const Navbar = () => {
   const menuItems = [
     { label: "Carreras", href: "#carreras" },
     { label: "Admisión", href: "#admision" },
-    { label: "Becas y costos", href: "#becas" },
+    { label: "Becas y costos", href: "/becas-y-costos" },
     { label: "Contacto", href: "#contacto" },
   ];
 
