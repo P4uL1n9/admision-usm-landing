@@ -7,7 +7,8 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = [
-    { label: "Carreras", href: "#carreras" },
+    { label: "Inicio", href: "/" },
+    { label: "Carreras", href: "/carreras" },
     { label: "Admisión", href: "#admision" },
     { label: "Becas y costos", href: "/becas-y-costos" },
     { label: "Contacto", href: "#contacto" },
