@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CareerCard from "@/components/CareerCard";
@@ -65,10 +66,20 @@ const careers = [
 ];
 
 const Carreras = () => {
+  const [searchParams] = useSearchParams();
+
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedArea, setSelectedArea] = useState("todas");
   const [selectedSede, setSelectedSede] = useState("todas");
   const [selectedModalidad, setSelectedModalidad] = useState("todas");
+
+  useEffect(() => {
+    const area = searchParams.get("area");
+    const sede = searchParams.get("sede");
+
+    if (area) setSelectedArea(area);
+    if (sede) setSelectedSede(sede);
+  }, [searchParams]);
 
   const filteredCareers = careers.filter(career => {
     const matchesSearch = career.name.toLowerCase().includes(searchTerm.toLowerCase());

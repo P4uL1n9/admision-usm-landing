@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -5,66 +7,60 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import heroImage from "@/assets/hero-students.jpg";
 
 const HeroSection = () => {
+  const [area, setArea] = useState("all");
+  const [sede, setSede] = useState("all");
+  const navigate = useNavigate();
+
+  const handleSearch = () => {
+    // Construir query params
+    const params = new URLSearchParams();
+    if (area !== "all") params.set("area", area);
+    if (sede !== "all") params.set("sede", sede);
+
+    navigate(`/carreras?${params.toString()}`);
+  };
+
   return (
     <section className="relative min-h-[600px] md:min-h-[700px] flex items-center justify-center pt-24 md:pt-28">
-      {/* Background Image with Overlay */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      >
-        <div className="absolute inset-0 bg-gradient-hero"></div>
+      {/* Fondo */}
+      <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${heroImage})` }}>
+        <div className="absolute inset-0 bg-gradient-hero" />
       </div>
 
-      {/* Content */}
+      {/* Contenido */}
       <div className="relative z-10 container mx-auto px-4 py-16 md:py-24">
-        <div className="max-w-4xl mx-auto text-center mb-8 md:mb-12">
-          <h1 className="text-[clamp(2rem,5vw,3.75rem)] leading-[1.15] font-bold text-white mb-4 md:mb-6 animate-fade-in text-balance">
-            Tu futuro comienza en la USM
-          </h1>
-          <p className="text-[clamp(1.25rem,2.2vw,1.5rem)] text-white/90 animate-slide-up text-balance">
-            Descubre la carrera que transformará tu vida
-          </p>
-        </div>
+        <div className="max-w-5xl mx-auto bg-white rounded-xl shadow-usm-lg p-6 md:p-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-primary mb-6 text-center">Busca tu carrera</h2>
 
-        {/* Search Box */}
-        <div className="max-w-5xl mx-auto bg-white rounded-xl shadow-usm-lg p-6 md:p-8 animate-slide-up">
-          <h2 className="text-2xl md:text-3xl font-bold text-primary mb-6 text-center">
-            Busca tu carrera
-          </h2>
-          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
             <div>
-              <label className="block text-sm font-medium text-foreground mb-2">
-                Área de estudio
-              </label>
-              <Select>
+              <label className="block text-sm font-medium text-foreground mb-2">Área de estudio</label>
+              <Select value={area} onValueChange={setArea}>
                 <SelectTrigger className="w-full">
                   <SelectValue placeholder="Selecciona un área" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="ingenieria">Todas las áreas</SelectItem>
-                  <SelectItem value="ingenieria">Ingeniería</SelectItem>
-                  <SelectItem value="ciencias">Ciencias</SelectItem>
-                  <SelectItem value="arquitectura">Arquitectura</SelectItem>
-                  <SelectItem value="tecnologia">Tecnología</SelectItem>
+                  <SelectItem value="all">Todas las áreas</SelectItem>
+                  <SelectItem value="Ingeniería">Ingeniería</SelectItem>
+                  <SelectItem value="Ciencias">Ciencias</SelectItem>
+                  <SelectItem value="Arquitectura y Diseño">Arquitectura y Diseño</SelectItem>
+                  <SelectItem value="Negocios">Negocios</SelectItem>
                 </SelectContent>
               </Select>
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-foreground mb-2">
-                Sede
-              </label>
-              <Select>
+              <label className="block text-sm font-medium text-foreground mb-2">Sede</label>
+              <Select value={sede} onValueChange={setSede}>
                 <SelectTrigger className="w-full">
                   <SelectValue placeholder="Selecciona una sede" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="valparaiso">Todas las sedes</SelectItem>
-                  <SelectItem value="valparaiso">Valparaíso</SelectItem>
-                  <SelectItem value="sanjoaquin">San Joaquín</SelectItem>
-                  <SelectItem value="viña">Viña del Mar</SelectItem>
-                  <SelectItem value="concepcion">Concepción</SelectItem>
+                  <SelectItem value="all">Todas las sedes</SelectItem>
+                  <SelectItem value="Valparaíso">Casa Central Valparaíso</SelectItem>
+                  <SelectItem value="Santiago">Santiago San Joaquín</SelectItem>
+                  <SelectItem value="Viña del Mar">Viña del Mar</SelectItem>
+                  <SelectItem value="Concepción">Campus Concepción</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -73,6 +69,7 @@ const HeroSection = () => {
           <Button 
             size="lg" 
             className="w-full bg-accent text-accent-foreground hover:bg-accent/90 font-bold text-lg h-14"
+            onClick={handleSearch}
           >
             <Search className="mr-2 h-5 w-5" />
             Buscar Carreras
