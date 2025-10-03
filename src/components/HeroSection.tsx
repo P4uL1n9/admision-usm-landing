@@ -6,7 +6,7 @@ import heroImage from "@/assets/hero-students.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-[600px] md:min-h-[700px] flex items-center justify-center pt-16 md:pt-20">
+    <section className="relative min-h-[600px] md:min-h-[700px] flex items-center justify-center pt-24 md:pt-28">
       {/* Background Image with Overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center"
@@ -18,10 +18,10 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 py-16 md:py-24">
         <div className="max-w-4xl mx-auto text-center mb-8 md:mb-12">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 md:mb-6 animate-fade-in">
+          <h1 className="text-[clamp(2rem,5vw,3.75rem)] leading-[1.15] font-bold text-white mb-4 md:mb-6 animate-fade-in text-balance">
             Tu futuro comienza en la USM
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 animate-slide-up">
+          <p className="text-[clamp(1.25rem,2.2vw,1.5rem)] text-white/90 animate-slide-up text-balance">
             Descubre la carrera que transformará tu vida
           </p>
         </div>

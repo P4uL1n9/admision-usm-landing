@@ -163,8 +163,8 @@ const CareerDetail = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="bg-gradient-hero pt-24 pb-12">
-        <div className="container mx-auto px-4">
+      <section className="bg-gradient-hero pt-24 md:pt-28 pb-12 md:pb-16">
+        <div className="container mx-auto px-4 max-w-6xl">
           <Link to="/carreras" className="inline-flex items-center gap-2 text-white hover:text-accent mb-6 transition-colors">
             <ArrowLeft className="h-4 w-4" />
             Volver a Carreras

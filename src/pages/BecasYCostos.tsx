@@ -59,12 +59,12 @@ const BecasYCostos = () => {
       
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="bg-gradient-primary text-primary-foreground py-16 px-4">
+        <section className="bg-gradient-primary text-primary-foreground pt-24 md:pt-28 pb-12 md:pb-16 px-4">
           <div className="container mx-auto max-w-6xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">
+            <h1 className="text-[clamp(2rem,5vw,3.5rem)] leading-[1.15] font-bold mb-4 animate-fade-in text-balance">
               Becas, beneficios y aranceles
             </h1>
-            <p className="text-lg md:text-xl opacity-90 max-w-3xl animate-slide-up">
+            <p className="text-[clamp(1rem,2.2vw,1.25rem)] opacity-90 max-w-3xl animate-slide-up text-balance">
               La USM está comprometida con la equidad y el acceso a educación de calidad. 
               Conoce todas las opciones de financiamiento disponibles para ti.
             </p>

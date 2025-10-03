@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const CareerComparator = () => {
   const [career1, setCareer1] = useState("");
@@ -151,6 +153,16 @@ const CareerComparator = () => {
               </Card>
             </div>
           )}
+
+          {/* CTA to Full Comparison */}
+          <div className="text-center mt-8">
+            <Link to="/comparar-carreras">
+              <Button variant="outline" size="lg">
+                <ArrowRight className="mr-2 h-5 w-5" />
+                Ir a comparación completa
+              </Button>
+            </Link>
+          </div>
         </div>
       </div>
     </section>

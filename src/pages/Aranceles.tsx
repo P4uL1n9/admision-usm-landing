@@ -85,12 +85,12 @@ const Aranceles = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       
-      <main className="flex-1 pt-20">
+      <main className="flex-1">
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-primary to-primary/90 text-primary-foreground py-16">
-          <div className="container mx-auto px-4">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Aranceles y Matrículas</h1>
-            <p className="text-lg md:text-xl opacity-90">
+        <section className="bg-gradient-to-r from-primary to-primary/90 text-primary-foreground pt-24 md:pt-28 pb-12 md:pb-16">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <h1 className="text-[clamp(2rem,5vw,3.5rem)] leading-[1.15] font-bold mb-4 text-balance">Aranceles y Matrículas</h1>
+            <p className="text-[clamp(1rem,2.2vw,1.25rem)] opacity-90 text-balance">
               Consulta el valor anual y la matrícula de cada carrera
             </p>
           </div>

@@ -84,12 +84,12 @@ const Carreras = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="bg-gradient-hero pt-24 pb-16">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-white text-center mb-4">
+      <section className="bg-gradient-hero pt-24 md:pt-28 pb-16 md:pb-20">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h1 className="text-[clamp(2rem,5vw,3.5rem)] leading-[1.15] font-bold text-white text-center mb-4 text-balance">
             Carreras USM
           </h1>
-          <p className="text-white/90 text-center text-lg max-w-2xl mx-auto">
+          <p className="text-[clamp(1rem,2.2vw,1.25rem)] text-white/90 text-center max-w-2xl mx-auto text-balance">
             Explora nuestra oferta académica y encuentra la carrera que transformará tu futuro
           </p>
         </div>

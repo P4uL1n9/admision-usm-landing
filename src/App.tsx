@@ -8,6 +8,7 @@ import BecasYCostos from "./pages/BecasYCostos";
 import BecasBeneficiosEstatales from "./pages/BecasBeneficiosEstatales";
 import Carreras from "./pages/Carreras";
 import CareerDetail from "./pages/CareerDetail";
+import ComparadorCarreras from "./pages/ComparadorCarreras";
 import Aranceles from "./pages/Aranceles";
 import NotFound from "./pages/NotFound";
 
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/carreras" element={<Carreras />} />
           <Route path="/carreras/:id" element={<CareerDetail />} />
+          <Route path="/comparar-carreras" element={<ComparadorCarreras />} />
           <Route path="/becas-y-costos" element={<BecasYCostos />} />
           <Route path="/becas-beneficios-estatales" element={<BecasBeneficiosEstatales />} />
           <Route path="/aranceles" element={<Aranceles />} />
