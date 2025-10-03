@@ -23,7 +23,7 @@ const Navbar = () => {
             <img 
               src={usmLogo} 
               alt="USM Logo" 
-              className="h-12 md:h-16 w-auto object-contain brightness-0 invert"
+              className="h-12 md:h-16 w-auto object-contain"
             />
           </div>
 

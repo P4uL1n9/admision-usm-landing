@@ -32,7 +32,7 @@ const HeroSection = () => {
             Busca tu carrera
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
             <div>
               <label className="block text-sm font-medium text-foreground mb-2">
                 Área de estudio
@@ -42,6 +42,7 @@ const HeroSection = () => {
                   <SelectValue placeholder="Selecciona un área" />
                 </SelectTrigger>
                 <SelectContent>
+                  <SelectItem value="ingenieria">Todas las áreas</SelectItem>
                   <SelectItem value="ingenieria">Ingeniería</SelectItem>
                   <SelectItem value="ciencias">Ciencias</SelectItem>
                   <SelectItem value="arquitectura">Arquitectura</SelectItem>
@@ -59,23 +60,13 @@ const HeroSection = () => {
                   <SelectValue placeholder="Selecciona una sede" />
                 </SelectTrigger>
                 <SelectContent>
+                  <SelectItem value="valparaiso">Todas las sedes</SelectItem>
                   <SelectItem value="valparaiso">Valparaíso</SelectItem>
                   <SelectItem value="sanjoaquin">San Joaquín</SelectItem>
                   <SelectItem value="viña">Viña del Mar</SelectItem>
                   <SelectItem value="concepcion">Concepción</SelectItem>
                 </SelectContent>
               </Select>
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-foreground mb-2">
-                Puntaje mínimo
-              </label>
-              <Input 
-                type="number" 
-                placeholder="Ej: 600"
-                className="w-full"
-              />
             </div>
           </div>
 
