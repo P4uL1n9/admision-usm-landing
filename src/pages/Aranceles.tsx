@@ -1,0 +1,227 @@
+import { useState, useMemo } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Search, ArrowUpDown } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+
+interface Career {
+  id: string;
+  name: string;
+  arancel: number;
+  matricula: number;
+  slug: string;
+}
+
+const careersData: Career[] = [
+  {
+    id: "1",
+    name: "Ingeniería Civil Informática",
+    arancel: 6500000,
+    matricula: 180000,
+    slug: "ingenieria-civil-informatica"
+  },
+  {
+    id: "2",
+    name: "Ingeniería en Telemática",
+    arancel: 6200000,
+    matricula: 180000,
+    slug: "ingenieria-telematica"
+  },
+  {
+    id: "3",
+    name: "Ingeniería Civil Industrial",
+    arancel: 6800000,
+    matricula: 180000,
+    slug: "ingenieria-civil-industrial"
+  },
+  {
+    id: "4",
+    name: "Arquitectura",
+    arancel: 7200000,
+    matricula: 180000,
+    slug: "arquitectura"
+  }
+];
+
+const Aranceles = () => {
+  const navigate = useNavigate();
+  const [searchTerm, setSearchTerm] = useState("");
+  const [sortBy, setSortBy] = useState<"name" | "arancel-asc" | "arancel-desc">("name");
+
+  const filteredAndSortedCareers = useMemo(() => {
+    let filtered = careersData.filter(career =>
+      career.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    switch (sortBy) {
+      case "name":
+        filtered.sort((a, b) => a.name.localeCompare(b.name));
+        break;
+      case "arancel-asc":
+        filtered.sort((a, b) => a.arancel - b.arancel);
+        break;
+      case "arancel-desc":
+        filtered.sort((a, b) => b.arancel - a.arancel);
+        break;
+    }
+
+    return filtered;
+  }, [searchTerm, sortBy]);
+
+  const formatCurrency = (amount: number) => {
+    return new Intl.NumberFormat('es-CL', {
+      style: 'currency',
+      currency: 'CLP',
+      minimumFractionDigits: 0
+    }).format(amount);
+  };
+
+  return (
+    <div className="min-h-screen flex flex-col">
+      <Navbar />
+      
+      <main className="flex-1 pt-20">
+        {/* Hero Section */}
+        <section className="bg-gradient-to-r from-primary to-primary/90 text-primary-foreground py-16">
+          <div className="container mx-auto px-4">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">Aranceles y Matrículas</h1>
+            <p className="text-lg md:text-xl opacity-90">
+              Consulta el valor anual y la matrícula de cada carrera
+            </p>
+          </div>
+        </section>
+
+        {/* Filters Section */}
+        <section className="py-8 bg-muted/30">
+          <div className="container mx-auto px-4">
+            <div className="flex flex-col md:flex-row gap-4 items-end">
+              <div className="flex-1 w-full">
+                <label className="text-sm font-medium mb-2 block">Buscar carrera</label>
+                <div className="relative">
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
+                  <Input
+                    placeholder="Ej: Ingeniería Civil Informática"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="pl-10"
+                  />
+                </div>
+              </div>
+              <div className="w-full md:w-64">
+                <label className="text-sm font-medium mb-2 block">Ordenar por</label>
+                <Select value={sortBy} onValueChange={(value: any) => setSortBy(value)}>
+                  <SelectTrigger>
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="name">Nombre (A-Z)</SelectItem>
+                    <SelectItem value="arancel-asc">Arancel (menor a mayor)</SelectItem>
+                    <SelectItem value="arancel-desc">Arancel (mayor a menor)</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Desktop Table View */}
+        <section className="py-12 hidden md:block">
+          <div className="container mx-auto px-4">
+            <div className="rounded-lg border overflow-hidden">
+              <Table>
+                <TableHeader>
+                  <TableRow className="bg-primary/10 hover:bg-primary/10">
+                    <TableHead className="font-semibold text-foreground">Carrera</TableHead>
+                    <TableHead className="font-semibold text-foreground text-right">Arancel Anual</TableHead>
+                    <TableHead className="font-semibold text-foreground text-right">Matrícula</TableHead>
+                    <TableHead className="font-semibold text-foreground text-center">Acciones</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {filteredAndSortedCareers.map((career) => (
+                    <TableRow 
+                      key={career.id}
+                      className="hover:bg-muted/50 transition-colors"
+                    >
+                      <TableCell className="font-medium">{career.name}</TableCell>
+                      <TableCell className="text-right">{formatCurrency(career.arancel)}</TableCell>
+                      <TableCell className="text-right">{formatCurrency(career.matricula)}</TableCell>
+                      <TableCell className="text-center">
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          onClick={() => navigate(`/carreras/${career.slug}`)}
+                        >
+                          Ver detalles
+                        </Button>
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </div>
+            
+            <div className="mt-6 p-4 bg-muted/30 rounded-lg">
+              <p className="text-sm text-muted-foreground">
+                <strong>Nota:</strong> Aranceles de referencia. Valores sujetos a cambios según políticas institucionales. 
+                Consulta con la oficina de admisión para información actualizada.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Mobile Card View */}
+        <section className="py-12 md:hidden">
+          <div className="container mx-auto px-4">
+            <div className="space-y-4">
+              {filteredAndSortedCareers.map((career) => (
+                <Card 
+                  key={career.id} 
+                  className="hover:shadow-md transition-shadow"
+                >
+                  <CardHeader>
+                    <CardTitle className="text-lg">{career.name}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <p className="text-sm text-muted-foreground mb-1">Arancel Anual</p>
+                        <p className="font-semibold text-primary">{formatCurrency(career.arancel)}</p>
+                      </div>
+                      <div>
+                        <p className="text-sm text-muted-foreground mb-1">Matrícula</p>
+                        <p className="font-semibold text-primary">{formatCurrency(career.matricula)}</p>
+                      </div>
+                    </div>
+                    <Button
+                      variant="outline"
+                      className="w-full"
+                      onClick={() => navigate(`/carreras/${career.slug}`)}
+                    >
+                      Ver detalles
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+            
+            <div className="mt-6 p-4 bg-muted/30 rounded-lg">
+              <p className="text-sm text-muted-foreground">
+                <strong>Nota:</strong> Aranceles de referencia. Valores sujetos a cambios según políticas institucionales.
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <Footer />
+    </div>
+  );
+};
+
+export default Aranceles;
