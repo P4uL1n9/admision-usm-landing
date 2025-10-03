@@ -9,20 +9,14 @@ import Footer from "@/components/Footer";
 const BecasYCostos = () => {
   const mainCards = [
     {
-      title: "Becas disponibles",
-      description: "Conoce las becas internas y convenios que ofrece la USM",
+      title: "Becas y beneficios estatales",
+      description: "Conoce cobertura, requisitos y postulación vía FUAS, JUNAEB y créditos",
       icon: GraduationCap,
-      link: "/becas-disponibles"
+      link: "/becas-beneficios-estatales"
     },
     {
-      title: "Beneficios estatales",
-      description: "Información sobre CAE, Gratuidad y Becas MINEDUC",
-      icon: Building2,
-      link: "/beneficios-estatales"
-    },
-    {
-      title: "Aranceles y matrículas",
-      description: "Costos de programas de pregrado por carrera y sede",
+      title: "Costos y aranceles",
+      description: "Consulta valores de arancel y matrícula por carrera y sede",
       icon: Wallet,
       link: "/aranceles"
     }
@@ -80,27 +74,30 @@ const BecasYCostos = () => {
         {/* Main Cards Section */}
         <section className="py-16 px-4 bg-background">
           <div className="container mx-auto max-w-6xl">
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               {mainCards.map((card, index) => (
-                <Card 
-                  key={index} 
-                  className="hover:shadow-usm-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer group"
+                <a 
+                  key={index}
+                  href={card.link}
+                  className="block"
                 >
-                  <CardHeader>
-                    <div className="w-16 h-16 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                      <card.icon className="w-8 h-8 text-primary" />
-                    </div>
-                    <CardTitle className="text-xl">{card.title}</CardTitle>
-                    <CardDescription className="text-base">
-                      {card.description}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                      Ver más información
-                    </Button>
-                  </CardContent>
-                </Card>
+                  <Card className="hover:shadow-usm-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer group h-full">
+                    <CardHeader>
+                      <div className="w-16 h-16 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                        <card.icon className="w-8 h-8 text-primary" />
+                      </div>
+                      <CardTitle className="text-xl">{card.title}</CardTitle>
+                      <CardDescription className="text-base">
+                        {card.description}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                        Ver más información
+                      </Button>
+                    </CardContent>
+                  </Card>
+                </a>
               ))}
             </div>
           </div>
