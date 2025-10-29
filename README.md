@@ -1,56 +1,37 @@
-# Welcome to your Lovable project
+# Intrucciones de ejecución local
 
-## Project info
+## Información de proyecto
 
-**URL**: https://lovable.dev/projects/287a2afd-4e7d-453d-936b-74bb5f9be93c
+**URL del proyecto desplegado**: https://dulcet-choux-87ee10.netlify.app/
 
-## How can I edit this code?
+## Como editar el código
 
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/287a2afd-4e7d-453d-936b-74bb5f9be93c) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+Seguir los siguientes pasos:
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Paso 1: clona el repositorio
+git clone https://github.com/P4uL1n9/admision-usm-landing.git
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Paso 2: ingresa a la carpeta del repositorio
+cd admision-usm-landing
 
-# Step 3: Install the necessary dependencies.
+# Paso 3: abrir el visual studio code
+code .
+
+# Paso 4: instala dependencias
 npm i
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Paso 5: ejecuta localmente para revisar cambios.
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Informaciones adicionales
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+* Todas los datos se la carrera se encuentran en el archivo carreras_usm.json dentro de la carpeta **assets**.
+* Las imágenes de las mallas correspondientes se encuentran en la mallas dentro de la carpeta **assets**.
+* Las mallas deben llevar los nombre que se encuentran dentro del archivo .json en el campo "mallaImage".
 
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
+## Que tecnologías se usan
 
 This project is built with:
 
@@ -59,12 +40,6 @@ This project is built with:
 - React
 - shadcn-ui
 - Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/287a2afd-4e7d-453d-936b-74bb5f9be93c) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
 
 Yes, you can!
 
