@@ -42,7 +42,6 @@ const HeroSection = () => {
                 <SelectContent>
                   <SelectItem value="all">Todas las áreas</SelectItem>
                   <SelectItem value="Ingeniería">Ingeniería</SelectItem>
-                  <SelectItem value="Ciencias">Ciencias</SelectItem>
                   <SelectItem value="Arquitectura y Diseño">Arquitectura y Diseño</SelectItem>
                   <SelectItem value="Negocios">Negocios</SelectItem>
                 </SelectContent>
@@ -59,8 +58,8 @@ const HeroSection = () => {
                   <SelectItem value="all">Todas las sedes</SelectItem>
                   <SelectItem value="Valparaíso">Casa Central Valparaíso</SelectItem>
                   <SelectItem value="Santiago">Santiago San Joaquín</SelectItem>
-                  <SelectItem value="Viña del Mar">Viña del Mar</SelectItem>
-                  <SelectItem value="Concepción">Campus Concepción</SelectItem>
+                  <SelectItem value="Vitacura">Santiago Vitacura</SelectItem>
+                  {/* <SelectItem value="Concepción">Campus Concepción</SelectItem> */}
                 </SelectContent>
               </Select>
             </div>

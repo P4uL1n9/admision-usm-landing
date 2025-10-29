@@ -8,6 +8,7 @@ import { Search, ArrowUpDown } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import carrerasRaw from "@/assets/carreras_usm.json";
 
 interface Career {
   id: string;
@@ -16,6 +17,28 @@ interface Career {
   matricula: number;
   slug: string;
 }
+
+const careers = Object.values(carrerasRaw).map(c => {
+    // tomar todos los campus (Casa Central Valparaíso / San Joaquín / Vitacura...)
+    const campusList = c.campus.map(sede => sede.campus).join(" / ");
+
+    // tomar el arancel anual (si hay varios campus con distinto arancel, por ahora usamos el primero)
+    const firstArancel = c.campus[0]?.arancelCLP ?? 0;
+
+    const tuitionCLP = firstArancel.toLocaleString("es-CL", {
+      style: "currency",
+      currency: "CLP",
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    });
+
+    return {
+      id: c.id,
+      name: c.name,
+      campus: campusList,
+      arancel: tuitionCLP
+    };
+});
 
 const careersData: Career[] = [
   {
@@ -54,7 +77,7 @@ const Aranceles = () => {
   const [sortBy, setSortBy] = useState<"name" | "arancel-asc" | "arancel-desc">("name");
 
   const filteredAndSortedCareers = useMemo(() => {
-    let filtered = careersData.filter(career =>
+    let filtered = careers.filter(career =>
       career.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
@@ -63,10 +86,18 @@ const Aranceles = () => {
         filtered.sort((a, b) => a.name.localeCompare(b.name));
         break;
       case "arancel-asc":
-        filtered.sort((a, b) => a.arancel - b.arancel);
+        filtered.sort((a, b) => {
+          const aValue = parseInt(a.arancel.replace(/[^0-9]/g, ""));
+          const bValue = parseInt(b.arancel.replace(/[^0-9]/g, ""));
+          return aValue - bValue;
+        });
         break;
       case "arancel-desc":
-        filtered.sort((a, b) => b.arancel - a.arancel);
+        filtered.sort((a, b) => {
+          const aValue = parseInt(a.arancel.replace(/[^0-9]/g, ""));
+          const bValue = parseInt(b.arancel.replace(/[^0-9]/g, ""));
+          return bValue - aValue;
+        });
         break;
     }
 
@@ -87,10 +118,12 @@ const Aranceles = () => {
       
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-primary to-primary/90 text-primary-foreground pt-24 md:pt-28 pb-12 md:pb-16">
+        <section className="bg-gradient-hero pt-24 md:pt-28 pb-16 md:pb-20">
           <div className="container mx-auto px-4 max-w-6xl">
-            <h1 className="text-[clamp(2rem,5vw,3.5rem)] leading-[1.15] font-bold mb-4 text-balance">Aranceles y Matrículas</h1>
-            <p className="text-[clamp(1rem,2.2vw,1.25rem)] opacity-90 text-balance">
+            <h1 className="text-[clamp(2rem,5vw,3.5rem)] leading-[1.15] font-bold text-white text-center mb-4 text-balanc">
+              Aranceles y Matrículas
+            </h1>
+            <p className="text-[clamp(1rem,2.2vw,1.25rem)] text-white/90 text-center max-w-2xl mx-auto text-balance">
               Consulta el valor anual y la matrícula de cada carrera
             </p>
           </div>
@@ -138,7 +171,7 @@ const Aranceles = () => {
                   <TableRow className="bg-primary/10 hover:bg-primary/10">
                     <TableHead className="font-semibold text-foreground">Carrera</TableHead>
                     <TableHead className="font-semibold text-foreground text-right">Arancel Anual</TableHead>
-                    <TableHead className="font-semibold text-foreground text-right">Matrícula</TableHead>
+                    <TableHead className="font-semibold text-foreground text-right">Campus</TableHead>
                     <TableHead className="font-semibold text-foreground text-center">Acciones</TableHead>
                   </TableRow>
                 </TableHeader>
@@ -149,13 +182,13 @@ const Aranceles = () => {
                       className="hover:bg-muted/50 transition-colors"
                     >
                       <TableCell className="font-medium">{career.name}</TableCell>
-                      <TableCell className="text-right">{formatCurrency(career.arancel)}</TableCell>
-                      <TableCell className="text-right">{formatCurrency(career.matricula)}</TableCell>
+                      <TableCell className="text-right">{career.arancel}</TableCell>
+                      <TableCell className="text-right">{career.campus}</TableCell>
                       <TableCell className="text-center">
                         <Button
                           variant="outline"
                           size="sm"
-                          onClick={() => navigate(`/carreras/${career.slug}`)}
+                          onClick={() => navigate(`/carreras/${career.id}`)}
                         >
                           Ver detalles
                         </Button>
@@ -188,20 +221,20 @@ const Aranceles = () => {
                     <CardTitle className="text-lg">{career.name}</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="space-y-4">
                       <div>
                         <p className="text-sm text-muted-foreground mb-1">Arancel Anual</p>
-                        <p className="font-semibold text-primary">{formatCurrency(career.arancel)}</p>
+                        <p className="font-semibold text-primary">{career.arancel}</p>
                       </div>
                       <div>
-                        <p className="text-sm text-muted-foreground mb-1">Matrícula</p>
-                        <p className="font-semibold text-primary">{formatCurrency(career.matricula)}</p>
+                        <p className="text-sm text-muted-foreground mb-1">Campus</p>
+                        <p className="font-semibold text-primary">{career.campus}</p>
                       </div>
                     </div>
                     <Button
                       variant="outline"
                       className="w-full"
-                      onClick={() => navigate(`/carreras/${career.slug}`)}
+                      onClick={() => navigate(`/carreras/${career.id}`)}
                     >
                       Ver detalles
                     </Button>

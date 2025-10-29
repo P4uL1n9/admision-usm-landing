@@ -1,8 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { GraduationCap, Building2, Wallet, Mail } from "lucide-react";
+import { GraduationCap, Wallet, Mail } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -20,14 +19,6 @@ const BecasYCostos = () => {
       icon: Wallet,
       link: "/aranceles"
     }
-  ];
-
-  const arancelesData = [
-    { carrera: "Ingeniería Civil", sede: "Casa Central Valparaíso", arancel: "$4.286.000", matricula: "$186.000" },
-    { carrera: "Ingeniería Comercial", sede: "Casa Central Valparaíso", arancel: "$3.950.000", matricula: "$186.000" },
-    { carrera: "Arquitectura", sede: "Casa Central Valparaíso", arancel: "$4.100.000", matricula: "$186.000" },
-    { carrera: "Ingeniería Civil Informática", sede: "Campus Santiago San Joaquín", arancel: "$4.286.000", matricula: "$186.000" },
-    { carrera: "Técnico Universitario", sede: "Campus Santiago Vitacura", arancel: "$2.800.000", matricula: "$186.000" },
   ];
 
   const faqs = [
@@ -59,12 +50,12 @@ const BecasYCostos = () => {
       
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="bg-gradient-primary text-primary-foreground pt-24 md:pt-28 pb-12 md:pb-16 px-4">
+        <section className="bg-gradient-hero pt-24 md:pt-28 pb-16 md:pb-20">
           <div className="container mx-auto max-w-6xl">
-            <h1 className="text-[clamp(2rem,5vw,3.5rem)] leading-[1.15] font-bold mb-4 animate-fade-in text-balance">
+            <h1 className="text-[clamp(2rem,5vw,3.5rem)] leading-[1.15] font-bold mb-4 text-white animate-fade-in text-center">
               Becas, beneficios y aranceles
             </h1>
-            <p className="text-[clamp(1rem,2.2vw,1.25rem)] opacity-90 max-w-3xl animate-slide-up text-balance">
+            <p className="text-[clamp(1rem,2.2vw,1.25rem)] opacity-90 max-w-3xl text-white animate-slide-up text-center mx-auto">
               La USM está comprometida con la equidad y el acceso a educación de calidad. 
               Conoce todas las opciones de financiamiento disponibles para ti.
             </p>
@@ -103,44 +94,6 @@ const BecasYCostos = () => {
           </div>
         </section>
 
-        {/* Aranceles Table Section */}
-        <section className="py-16 px-4 bg-muted/30">
-          <div className="container mx-auto max-w-6xl">
-            <h2 className="text-3xl font-bold mb-2 text-foreground">
-              Aranceles de referencia
-            </h2>
-            <p className="text-muted-foreground mb-8">
-              Valores referenciales para el año académico 2025
-            </p>
-            
-            <div className="bg-card rounded-lg shadow-usm-md overflow-hidden">
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead className="font-semibold">Carrera</TableHead>
-                    <TableHead className="font-semibold">Sede</TableHead>
-                    <TableHead className="font-semibold text-right">Arancel Anual</TableHead>
-                    <TableHead className="font-semibold text-right">Matrícula</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {arancelesData.map((item, index) => (
-                    <TableRow key={index}>
-                      <TableCell className="font-medium">{item.carrera}</TableCell>
-                      <TableCell>{item.sede}</TableCell>
-                      <TableCell className="text-right font-semibold text-primary">{item.arancel}</TableCell>
-                      <TableCell className="text-right">{item.matricula}</TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </div>
-            
-            <p className="text-sm text-muted-foreground mt-4">
-              * Los valores pueden variar según la carrera y sede. Consulta el arancel específico en la ficha de cada programa.
-            </p>
-          </div>
-        </section>
 
         {/* FAQ Section */}
         <section className="py-16 px-4 bg-background">
@@ -179,7 +132,7 @@ const BecasYCostos = () => {
                 Nuestro equipo de ayuda financiera está disponible para resolver todas tus consultas
                 sobre becas, beneficios y financiamiento.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              {/* <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" variant="secondary" className="text-base">
                   <Mail className="mr-2 h-5 w-5" />
                   Enviar consulta
@@ -187,7 +140,7 @@ const BecasYCostos = () => {
                 <Button size="lg" variant="outline" className="text-base bg-white/10 border-white/20 hover:bg-white/20 text-white">
                   Ver horarios de atención
                 </Button>
-              </div>
+              </div> */}
             </div>
           </div>
         </section>

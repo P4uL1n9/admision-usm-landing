@@ -4,45 +4,36 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import carrerasRaw from "@/assets/carreras_usm.json";
+
 
 const CareerComparator = () => {
   const [career1, setCareer1] = useState("");
   const [career2, setCareer2] = useState("");
 
-  const careers = [
-    {
-      id: "ing-civil-informatica",
-      name: "Ingeniería Civil Informática",
-      duration: "5.5 años",
-      campus: "San Joaquín",
-      score: "720",
-      tuition: "$4.200.000",
-    },
-    {
-      id: "ing-civil-industrial",
-      name: "Ingeniería Civil Industrial",
-      duration: "5.5 años",
-      campus: "Valparaíso",
-      score: "700",
-      tuition: "$4.100.000",
-    },
-    {
-      id: "arquitectura",
-      name: "Arquitectura",
-      duration: "6 años",
-      campus: "Viña del Mar",
-      score: "650",
-      tuition: "$3.800.000",
-    },
-    {
-      id: "ing-comercial",
-      name: "Ingeniería Comercial",
-      duration: "5 años",
-      campus: "San Joaquín",
-      score: "680",
-      tuition: "$3.900.000",
-    },
-  ];
+  const careers = Object.values(carrerasRaw).map(c => {
+    // tomar todos los campus (Casa Central Valparaíso / San Joaquín / Vitacura...)
+    const campusList = c.campus.map(sede => sede.campus).join(" / ");
+
+    // tomar el arancel anual (si hay varios campus con distinto arancel, por ahora usamos el primero)
+    const firstArancel = c.campus[0]?.arancelCLP ?? 0;
+
+    const tuitionCLP = firstArancel.toLocaleString("es-CL", {
+      style: "currency",
+      currency: "CLP",
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    });
+
+    return {
+      id: c.id,
+      name: c.name,
+      duration: c.duration,
+      campus: campusList,
+      score: c.minScore,
+      tuition: tuitionCLP
+    };
+  });
 
   const selectedCareer1 = careers.find(c => c.id === career1);
   const selectedCareer2 = careers.find(c => c.id === career2);

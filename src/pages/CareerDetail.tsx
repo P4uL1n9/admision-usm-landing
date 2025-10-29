@@ -1,147 +1,49 @@
 import { useParams, Link } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, MapPin, TrendingUp, Clock, BookOpen, FileText } from "lucide-react";
-import mallaEjemplo from "@/assets/malla-ejemplo.png";
+import carrerasRaw from "@/assets/carreras_usm.json";
 
-// Mock data - replace with actual data
-const careersData: Record<string, any> = {
-  "ing-civil-informatica": {
-    name: "Ingeniería Civil Informática",
-    description: "La carrera de Ingeniería Civil Informática de la USM forma profesionales altamente capacitados en el desarrollo de soluciones tecnológicas innovadoras. Nuestros egresados lideran la transformación digital en empresas nacionales e internacionales.",
-    area: "Ingeniería",
-    campus: "Casa Central Valparaíso",
-    duration: "5 años (10 semestres)",
-    minScore: 650,
-    pondNEM: "20%",
-    pondRanking: "20%",
-    pondMatematica: "30%",
-    pondLenguaje: "20%",
-    pondCiencias: "10%",
-    perfil: "Profesional capaz de diseñar, desarrollar, implementar y mantener sistemas de información complejos utilizando tecnologías de vanguardia.",
-    campoLaboral: "Empresas de tecnología, consultoras, startups, instituciones financieras, sector público, emprendimiento tecnológico.",
-    requirements: [
-      "PSU/PAES: Puntaje mínimo 650 puntos",
-      "Ranking de notas: Mínimo percentil 60",
-      "Matemática obligatoria",
-      "Ciencias (Física recomendada)"
-    ]
-  },
-  "ing-civil-industrial": {
-    name: "Ingeniería Civil Industrial",
-    description: "Forma ingenieros con una sólida base científica y habilidades de gestión para optimizar procesos productivos y liderar organizaciones en un entorno globalizado.",
-    area: "Ingeniería",
-    campus: "Casa Central Valparaíso",
-    duration: "5 años (10 semestres)",
-    minScore: 640,
-    pondNEM: "20%",
-    pondRanking: "20%",
-    pondMatematica: "30%",
-    pondLenguaje: "20%",
-    pondCiencias: "10%",
-    perfil: "Profesional con visión estratégica capaz de diseñar, implementar y mejorar sistemas de producción y gestión empresarial.",
-    campoLaboral: "Industrias manufactureras, servicios, consultoría, sector financiero, gestión de proyectos.",
-    requirements: [
-      "PSU/PAES: Puntaje mínimo 640 puntos",
-      "Ranking de notas: Mínimo percentil 55",
-      "Matemática obligatoria",
-      "Ciencias (Física o Química)"
-    ]
-  },
-  "ing-civil-electronica": {
-    name: "Ingeniería Civil Electrónica",
-    description: "Especialistas en sistemas electrónicos, telecomunicaciones, automatización y control, con sólidos conocimientos en tecnologías de vanguardia.",
-    area: "Ingeniería",
-    campus: "Casa Central Valparaíso",
-    duration: "5 años (10 semestres)",
-    minScore: 630,
-    pondNEM: "20%",
-    pondRanking: "20%",
-    pondMatematica: "30%",
-    pondLenguaje: "20%",
-    pondCiencias: "10%",
-    perfil: "Ingeniero capaz de diseñar e implementar sistemas electrónicos complejos y soluciones de automatización industrial.",
-    campoLaboral: "Telecomunicaciones, automatización industrial, electrónica de consumo, energías renovables.",
-    requirements: [
-      "PSU/PAES: Puntaje mínimo 630 puntos",
-      "Ranking de notas: Mínimo percentil 55",
-      "Matemática obligatoria",
-      "Física obligatoria"
-    ]
-  },
-  "arquitectura": {
-    name: "Arquitectura",
-    description: "Forma arquitectos creativos y técnicamente competentes, capaces de diseñar espacios habitables que integren funcionalidad, estética y sostenibilidad.",
-    area: "Arquitectura y Diseño",
-    campus: "Casa Central Valparaíso",
-    duration: "6 años (12 semestres)",
-    minScore: 620,
-    pondNEM: "25%",
-    pondRanking: "20%",
-    pondMatematica: "25%",
-    pondLenguaje: "25%",
-    pondCiencias: "5%",
-    perfil: "Profesional capaz de concebir, diseñar y coordinar proyectos arquitectónicos sustentables e innovadores.",
-    campoLaboral: "Oficinas de arquitectura, construcción, urbanismo, diseño de interiores, patrimonio.",
-    requirements: [
-      "PSU/PAES: Puntaje mínimo 620 puntos",
-      "Ranking de notas: Mínimo percentil 50",
-      "Matemática obligatoria",
-      "Portafolio creativo (evaluación complementaria)"
-    ]
-  },
-  "ing-civil-mecanica": {
-    name: "Ingeniería Civil Mecánica",
-    description: "Profesionales expertos en diseño, análisis, fabricación y mantenimiento de sistemas mecánicos, térmicos y energéticos.",
-    area: "Ingeniería",
-    campus: "Casa Central Valparaíso",
-    duration: "5 años (10 semestres)",
-    minScore: 625,
-    pondNEM: "20%",
-    pondRanking: "20%",
-    pondMatematica: "30%",
-    pondLenguaje: "20%",
-    pondCiencias: "10%",
-    perfil: "Ingeniero con sólidos conocimientos en mecánica, termodinámica y diseño de sistemas energéticos.",
-    campoLaboral: "Industria manufacturera, energía, minería, consultoría, desarrollo de productos.",
-    requirements: [
-      "PSU/PAES: Puntaje mínimo 625 puntos",
-      "Ranking de notas: Mínimo percentil 55",
-      "Matemática obligatoria",
-      "Física obligatoria"
-    ]
-  },
-  "ing-comercial": {
-    name: "Ingeniería Comercial",
-    description: "Prepara profesionales con competencias en gestión de negocios, finanzas, marketing y toma de decisiones estratégicas para el mundo empresarial.",
-    area: "Negocios",
-    campus: "Santiago San Joaquín",
-    duration: "5 años (10 semestres)",
-    minScore: 610,
-    pondNEM: "25%",
-    pondRanking: "20%",
-    pondMatematica: "25%",
-    pondLenguaje: "25%",
-    pondCiencias: "5%",
-    perfil: "Profesional con visión de negocios y habilidades de liderazgo para gestionar organizaciones y proyectos.",
-    campoLaboral: "Empresas multinacionales, banca, consultoría, marketing, emprendimiento.",
-    requirements: [
-      "PSU/PAES: Puntaje mínimo 610 puntos",
-      "Ranking de notas: Mínimo percentil 50",
-      "Matemática obligatoria",
-      "Lenguaje obligatorio"
-    ]
-  }
+const mallasImportadas = import.meta.glob("@/assets/mallas/*", {
+  eager: true,
+  query: "?url",
+  import: "default",
+});
+
+type CarreraDetalle = {
+  id: string;
+  name: string;
+  description: string;
+  area: string;
+  campus: string;
+  duration: string;
+  minScore: number;
+  pondNEM: string;
+  pondRanking: string;
+  pondMatematica: string;
+  pondLenguaje: string;
+  pondCiencias: string;
+  perfil: string;
+  campoLaboral: string;
+  requirements: string[];
+  mallaImage: string;
+  mallaPDF: string;
 };
 
 const CareerDetail = () => {
   const { id } = useParams<{ id: string }>();
-  const career = id ? careersData[id] : null;
 
-  if (!career) {
+  // 1. Buscar la carrera cruda en el JSON por id
+  const rawCareer = id
+    ? (Object.values(carrerasRaw) as any[]).find((c) => c.id === id)
+    : null;
+
+  // 2. Si no existe, mostramos “Carrera no encontrada”
+  if (!rawCareer) {
     return (
       <div className="min-h-screen flex flex-col">
         <Navbar />
@@ -157,6 +59,53 @@ const CareerDetail = () => {
       </div>
     );
   }
+
+  // 3. Transformar los datos crudos en el shape que usa la vista
+  //    - campus: unimos las sedes con salto de línea
+  const campusList = rawCareer.campus
+    .map((sede: any) => sede.campus)
+    .join(" / ");
+
+  //    - ponderaciones: del objeto -> campos sueltos
+  const pond = rawCareer.ponderaciones || {};
+  const pondNEM = pond.NEM || "-";
+  const pondRanking = pond.Ranking || "-";
+  const pondMatematica = pond.M1 || "-"; // M1 es matemática obligatoria
+  const pondLenguaje = pond.Lectora || "-"; // 'Lectora' = comprensión lectora / lenguaje
+  const pondCiencias = pond.Ciencias_o_Historia || "-";
+
+  const findMallaImageUrl = (fileName: string | undefined): string | undefined => {
+    if (!fileName) return undefined;
+    // buscamos una key que termine en ese nombre
+    const entry = Object.entries(mallasImportadas).find(([fullPath]) =>
+      fullPath.endsWith(fileName)
+    );
+    return entry ? entry[1] as string : undefined;
+  };
+
+  //    - usar los campos nuevos del JSON (campoLaboral, requirements, malla...)
+  const career: CarreraDetalle = {
+    id: rawCareer.id,
+    name: rawCareer.name,
+    description: rawCareer.description,
+    area: rawCareer.area,
+    campus: campusList,
+    duration: rawCareer.duration,
+    minScore: rawCareer.minScore,
+    pondNEM,
+    pondRanking,
+    pondMatematica,
+    pondLenguaje,
+    pondCiencias,
+    perfil: rawCareer.perfil || "Profesional con formación científica y tecnológica orientada a la resolución de problemas reales.",
+    campoLaboral: rawCareer.campoLaboral || "Desarrollo profesional en sectores públicos y privados relacionados con el área de la carrera.",
+    requirements: rawCareer.requirements || [
+      "Puntaje mínimo de postulación según admisión vigente",
+      "Cumplir requisitos establecidos por el proceso de admisión",
+    ],
+    mallaImage: findMallaImageUrl(rawCareer.mallaImage) ?? "/fallback-malla.png",
+    mallaPDF: rawCareer.mallaPDF || "/mallas/placeholder.pdf",
+  };
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -236,13 +185,13 @@ const CareerDetail = () => {
                     Consulta el plan de estudios completo de la carrera:
                   </p>
                   <img 
-                    src={mallaEjemplo} 
-                    alt="Malla curricular ejemplo" 
+                    src={career.mallaImage} 
+                    alt="Malla curricular" 
                     className="w-full rounded-lg border shadow-sm mb-4"
                   />
-                  <Button variant="outline" className="w-full">
+                  {/* <Button variant="outline" className="w-full">
                     Descargar Malla Curricular (PDF)
-                  </Button>
+                  </Button> */}
                 </CardContent>
               </Card>
             </div>
@@ -306,12 +255,23 @@ const CareerDetail = () => {
               </Card>
 
               {/* CTA */}
-              <Button 
-                size="lg" 
-                className="w-full bg-accent text-accent-foreground hover:bg-accent/90 font-bold shadow-usm-md"
-              >
-                Postula Aquí
-              </Button>
+              <Link to="/aranceles">
+                <Button 
+                  size="lg" 
+                  className="w-full bg-accent text-accent-foreground hover:bg-accent/90 font-bold shadow-usm-md mt-4"
+                >
+                  Aranceles
+                </Button>
+              </Link>
+
+              <Link to="/becas-beneficios-estatales">
+                <Button 
+                  size="lg" 
+                  className="w-full bg-accent text-accent-foreground hover:bg-accent/90 font-bold shadow-usm-md mt-4"
+                >
+                  Becas y Beneficios
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

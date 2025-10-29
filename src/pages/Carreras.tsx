@@ -6,64 +6,17 @@ import CareerCard from "@/components/CareerCard";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Search } from "lucide-react";
+import carrerasRaw from "@/assets/carreras_usm.json";
 
-// Mock data - replace with actual data
-const careers = [
-  {
-    id: "ing-civil-informatica",
-    name: "Ingeniería Civil Informática",
-    description: "Forma profesionales capaces de diseñar, desarrollar e implementar soluciones tecnológicas innovadoras para empresas y organizaciones.",
-    minScore: 650,
-    campus: "Casa Central Valparaíso",
-    area: "Ingeniería",
-    modalidad: "Presencial"
-  },
-  {
-    id: "ing-civil-industrial",
-    name: "Ingeniería Civil Industrial",
-    description: "Prepara ingenieros con visión estratégica para optimizar procesos, gestionar recursos y liderar proyectos en diversas industrias.",
-    minScore: 640,
-    campus: "Casa Central Valparaíso",
-    area: "Ingeniería",
-    modalidad: "Presencial"
-  },
-  {
-    id: "ing-civil-electronica",
-    name: "Ingeniería Civil Electrónica",
-    description: "Forma especialistas en sistemas electrónicos, telecomunicaciones y automatización industrial con sólida base científica.",
-    minScore: 630,
-    campus: "Casa Central Valparaíso",
-    area: "Ingeniería",
-    modalidad: "Presencial"
-  },
-  {
-    id: "arquitectura",
-    name: "Arquitectura",
-    description: "Desarrolla profesionales creativos capaces de diseñar espacios habitables que integren funcionalidad, estética y sostenibilidad.",
-    minScore: 620,
-    campus: "Casa Central Valparaíso",
-    area: "Arquitectura y Diseño",
-    modalidad: "Presencial"
-  },
-  {
-    id: "ing-civil-mecanica",
-    name: "Ingeniería Civil Mecánica",
-    description: "Forma ingenieros expertos en diseño, fabricación y mantenimiento de sistemas mecánicos y energéticos.",
-    minScore: 625,
-    campus: "Casa Central Valparaíso",
-    area: "Ingeniería",
-    modalidad: "Presencial"
-  },
-  {
-    id: "ing-comercial",
-    name: "Ingeniería Comercial",
-    description: "Prepara profesionales con competencias en gestión de negocios, finanzas y toma de decisiones estratégicas.",
-    minScore: 610,
-    campus: "Santiago San Joaquín",
-    area: "Negocios",
-    modalidad: "Presencial"
-  }
-];
+const careers = Object.values(carrerasRaw).map(c => ({
+  id: c.id,
+  name: c.name,
+  description: c.description,
+  minScore: c.minScore,
+  campus: c.campus.map(s => s.campus).join(" / "),
+  area: c.area,
+  tipo: c.regimen
+}));
 
 const Carreras = () => {
   const [searchParams] = useSearchParams();
@@ -71,23 +24,25 @@ const Carreras = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedArea, setSelectedArea] = useState("todas");
   const [selectedSede, setSelectedSede] = useState("todas");
-  const [selectedModalidad, setSelectedModalidad] = useState("todas");
+  const [selectedRegimen, setSelectedRegimen] = useState("todas");
 
   useEffect(() => {
     const area = searchParams.get("area");
     const sede = searchParams.get("sede");
+    const regimen = searchParams.get("regimen");
 
     if (area) setSelectedArea(area);
     if (sede) setSelectedSede(sede);
+    if (regimen) setSelectedSede(regimen);
   }, [searchParams]);
 
   const filteredCareers = careers.filter(career => {
     const matchesSearch = career.name.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesArea = selectedArea === "todas" || career.area === selectedArea;
     const matchesSede = selectedSede === "todas" || career.campus.includes(selectedSede);
-    const matchesModalidad = selectedModalidad === "todas" || career.modalidad === selectedModalidad;
+    const matchesRegimen = selectedRegimen === "todas" || career.tipo === selectedRegimen;
     
-    return matchesSearch && matchesArea && matchesSede && matchesModalidad;
+    return matchesSearch && matchesArea && matchesSede && matchesRegimen;
   });
 
   return (
@@ -130,7 +85,6 @@ const Carreras = () => {
                 <SelectItem value="Ingeniería">Ingeniería</SelectItem>
                 <SelectItem value="Arquitectura y Diseño">Arquitectura y Diseño</SelectItem>
                 <SelectItem value="Negocios">Negocios</SelectItem>
-                <SelectItem value="Ciencias">Ciencias</SelectItem>
               </SelectContent>
             </Select>
 
@@ -142,20 +96,19 @@ const Carreras = () => {
                 <SelectItem value="todas">Todas las sedes</SelectItem>
                 <SelectItem value="Valparaíso">Casa Central Valparaíso</SelectItem>
                 <SelectItem value="Santiago">Santiago San Joaquín</SelectItem>
-                <SelectItem value="Viña del Mar">Viña del Mar</SelectItem>
-                <SelectItem value="Concepción">Campus Concepción</SelectItem>
+                <SelectItem value="Vitacura">Santiago Vitacura</SelectItem>
+                {/* <SelectItem value="Concepción">Campus Concepción</SelectItem> */}
               </SelectContent>
             </Select>
 
-            <Select value={selectedModalidad} onValueChange={setSelectedModalidad}>
+            <Select value={selectedRegimen} onValueChange={setSelectedRegimen}>
               <SelectTrigger>
-                <SelectValue placeholder="Modalidad" />
+                <SelectValue placeholder="Regimen" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="todas">Todas las modalidades</SelectItem>
-                <SelectItem value="Presencial">Presencial</SelectItem>
-                <SelectItem value="Online">Online</SelectItem>
-                <SelectItem value="Híbrida">Híbrida</SelectItem>
+                <SelectItem value="todas">Todos los horarios</SelectItem>
+                <SelectItem value="Diurno">Diurno</SelectItem>
+                <SelectItem value="Vespertino">Vespertino</SelectItem>
               </SelectContent>
             </Select>
           </div>

@@ -160,12 +160,12 @@ const BecasBeneficiosEstatales = () => {
       
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="bg-gradient-primary text-primary-foreground pt-24 md:pt-28 pb-12 md:pb-16 px-4">
+        <section className="bg-gradient-hero pt-24 md:pt-28 pb-16 md:pb-20">
           <div className="container mx-auto max-w-7xl">
-            <h1 className="text-[clamp(2rem,5vw,3.5rem)] leading-[1.15] font-bold mb-4 animate-fade-in text-balance">
+            <h1 className="text-[clamp(2rem,5vw,3.5rem)] leading-[1.15] text-white font-bold mb-4 animate-fade-in text-center">
               Becas y Beneficios Estatales
             </h1>
-            <p className="text-[clamp(1rem,2.2vw,1.25rem)] opacity-90 max-w-3xl animate-slide-up text-balance">
+            <p className="text-[clamp(1rem,2.2vw,1.25rem)] opacity-90 max-w-3xl text-white animate-slide-up text-center mx-auto">
               Conoce cobertura, requisitos y postulación vía FUAS, JUNAEB y créditos.
             </p>
           </div>
@@ -318,12 +318,16 @@ const BecasBeneficiosEstatales = () => {
                 visita los portales oficiales.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" variant="secondary" className="text-base">
-                  Portal FUAS
-                </Button>
-                <Button size="lg" variant="outline" className="text-base bg-white/10 border-white/20 hover:bg-white/20 text-primary-foreground">
-                  Portal JUNAEB
-                </Button>
+                <a href="https://fuas.cl/" target="_blank" rel="noopener noreferrer">
+                  <Button size="lg" variant="secondary" className="text-base w-full">
+                    Portal FUAS
+                  </Button>
+                </a>
+                <a href="https://www.junaeb.cl/" target="_blank" rel="noopener noreferrer">
+                  <Button size="lg" variant="outline" className="text-base bg-white/10 border-white/20 hover:bg-white/20 text-primary-foreground w-full">
+                    Portal JUNAEB
+                  </Button>
+                </a>
               </div>
             </div>
           </div>

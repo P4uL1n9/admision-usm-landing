@@ -6,80 +6,40 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { ArrowRight, MapPin, Clock, TrendingUp, DollarSign } from "lucide-react";
 import { Link } from "react-router-dom";
+import carrerasRaw from "@/assets/carreras_usm.json";
 
-// Mock data - same as Carreras page
-const careers = [
-  {
-    id: "ing-civil-informatica",
-    name: "Ingeniería Civil Informática",
-    campus: "Casa Central Valparaíso",
-    duration: "5 años (10 semestres)",
-    minScore: 650,
-    arancel: "$4.286.000",
-    matricula: "$186.000",
-    ponderaciones: "NEM 20% • Ranking 20% • Matemática 30% • Lenguaje 20% • Ciencias 10%"
-  },
-  {
-    id: "ing-civil-industrial",
-    name: "Ingeniería Civil Industrial",
-    campus: "Casa Central Valparaíso",
-    duration: "5 años (10 semestres)",
-    minScore: 640,
-    arancel: "$4.286.000",
-    matricula: "$186.000",
-    ponderaciones: "NEM 20% • Ranking 20% • Matemática 30% • Lenguaje 20% • Ciencias 10%"
-  },
-  {
-    id: "ing-civil-electronica",
-    name: "Ingeniería Civil Electrónica",
-    campus: "Casa Central Valparaíso",
-    duration: "5 años (10 semestres)",
-    minScore: 630,
-    arancel: "$4.286.000",
-    matricula: "$186.000",
-    ponderaciones: "NEM 20% • Ranking 20% • Matemática 30% • Lenguaje 20% • Ciencias 10%"
-  },
-  {
-    id: "arquitectura",
-    name: "Arquitectura",
-    campus: "Casa Central Valparaíso",
-    duration: "6 años (12 semestres)",
-    minScore: 620,
-    arancel: "$4.100.000",
-    matricula: "$186.000",
-    ponderaciones: "NEM 25% • Ranking 20% • Matemática 25% • Lenguaje 25% • Ciencias 5%"
-  },
-  {
-    id: "ing-civil-mecanica",
-    name: "Ingeniería Civil Mecánica",
-    campus: "Casa Central Valparaíso",
-    duration: "5 años (10 semestres)",
-    minScore: 625,
-    arancel: "$4.286.000",
-    matricula: "$186.000",
-    ponderaciones: "NEM 20% • Ranking 20% • Matemática 30% • Lenguaje 20% • Ciencias 10%"
-  },
-  {
-    id: "ing-comercial",
-    name: "Ingeniería Comercial",
-    campus: "Santiago San Joaquín",
-    duration: "5 años (10 semestres)",
-    minScore: 610,
-    arancel: "$3.950.000",
-    matricula: "$186.000",
-    ponderaciones: "NEM 25% • Ranking 20% • Matemática 25% • Lenguaje 25% • Ciencias 5%"
-  },
-  {
-    id: "ing-telematica",
-    name: "Ingeniería en Telemática",
-    campus: "Casa Central Valparaíso",
-    duration: "5 años (10 semestres)",
-    minScore: 620,
-    arancel: "$4.286.000",
-    matricula: "$186.000",
-    ponderaciones: "NEM 20% • Ranking 20% • Matemática 30% • Lenguaje 20% • Ciencias 10%"
-  }
-];
+const careers = Object.values(carrerasRaw).map(c => {
+  const campusList = c.campus.map(sede => sede.campus).join(" / ");
+
+  const firstArancel = c.campus[0]?.arancelCLP ?? 0;
+  const arancelCLP = firstArancel.toLocaleString("es-CL", {
+    style: "currency",
+    currency: "CLP",
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+  });
+
+  const ponderacionesStr = [
+    c.ponderaciones.NEM ? `NEM ${c.ponderaciones.NEM}` : null,
+    c.ponderaciones.Ranking ? `Ranking ${c.ponderaciones.Ranking}` : null,
+    c.ponderaciones.M1 ? `M1 ${c.ponderaciones.M1}` : null,
+    c.ponderaciones.M2 ? `M2 ${c.ponderaciones.M2}` : null,
+    c.ponderaciones.Lectora ? `Lectora ${c.ponderaciones.Lectora}` : null,
+    (c.ponderaciones.Ciencias_o_Historia ? `Ciencias/Historia ${c.ponderaciones.Ciencias_o_Historia}` : null),
+  ]
+    .filter(Boolean)
+    .join("; ");
+
+  return {
+    id: c.id,
+    name: c.name,
+    campus: campusList,
+    duration: c.duration,
+    minScore: c.minScore,
+    arancel: arancelCLP,
+    ponderaciones: ponderacionesStr,
+  };
+});
 
 const ComparadorCarreras = () => {
   const [career1Id, setCareer1Id] = useState<string>("");
@@ -102,10 +62,10 @@ const ComparadorCarreras = () => {
       {/* Hero Section */}
       <section className="bg-gradient-hero pt-24 md:pt-28 pb-16 md:pb-20">
         <div className="container mx-auto px-4 max-w-4xl">
-          <h1 className="text-[clamp(2rem,5vw,3.5rem)] leading-[1.15] font-bold text-white mb-4 text-balance">
+          <h1 className="text-[clamp(2rem,5vw,3.5rem)] leading-[1.15] font-bold text-white mb-4 text-center">
             Compara carreras
           </h1>
-          <p className="text-[clamp(1rem,2.2vw,1.25rem)] text-white/90 max-w-2xl text-balance">
+          <p className="text-[clamp(1rem,2.2vw,1.25rem)] text-white/90 max-w-2xl text-center mx-auto">
             Encuentra la mejor opción comparando características, puntajes y costos de las carreras que te interesan
           </p>
         </div>
@@ -269,17 +229,6 @@ const ComparadorCarreras = () => {
                     </tr>
                     <tr className="hover:bg-muted/50 transition-colors">
                       <td className="px-6 py-4 text-sm font-medium text-foreground">
-                        Matrícula
-                      </td>
-                      <td className="px-6 py-4 text-sm text-muted-foreground">
-                        {selectedCareer1.matricula}
-                      </td>
-                      <td className="px-6 py-4 text-sm text-muted-foreground">
-                        {selectedCareer2.matricula}
-                      </td>
-                    </tr>
-                    <tr className="hover:bg-muted/50 transition-colors">
-                      <td className="px-6 py-4 text-sm font-medium text-foreground">
                         Acciones
                       </td>
                       <td className="px-6 py-4">
@@ -342,9 +291,6 @@ const ComparadorCarreras = () => {
                       <p className="text-sm text-muted-foreground">
                         Arancel: <span className="font-semibold">{selectedCareer1.arancel}</span>
                       </p>
-                      <p className="text-sm text-muted-foreground">
-                        Matrícula: {selectedCareer1.matricula}
-                      </p>
                     </div>
                   </div>
                   <Link to={`/carreras/${selectedCareer1.id}`} className="block">
@@ -392,9 +338,6 @@ const ComparadorCarreras = () => {
                       <p className="text-sm font-medium text-foreground">Costos</p>
                       <p className="text-sm text-muted-foreground">
                         Arancel: <span className="font-semibold">{selectedCareer2.arancel}</span>
-                      </p>
-                      <p className="text-sm text-muted-foreground">
-                        Matrícula: {selectedCareer2.matricula}
                       </p>
                     </div>
                   </div>

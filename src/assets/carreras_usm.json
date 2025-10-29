@@ -1,0 +1,692 @@
+{
+  "arquitectura": {
+    "id": "arquitectura",
+    "name": "Arquitectura",
+    "description": "Forma profesionales capaces de diseñar y proyectar espacios habitables funcionales, sostenibles y estéticamente coherentes, integrando criterios sociales, tecnológicos y culturales en el desarrollo urbano y arquitectónico.",
+    "perfil": "Arquitecto o Arquitecta",
+    "duration": "5 años (10 semestres académicos)",
+    "regimen": "Diurno",
+    "modalidad": "Presencial",
+    "area": "Arquitectura y Diseño",
+    "minScore": 550,
+    "campus": [
+      {
+        "campus": "Casa Central Valparaíso",
+        "codigoDemre": "15180",
+        "arancelCLP": 6520000
+      },
+      {
+        "campus": "Santiago San Joaquín",
+        "codigoDemre": "15380",
+        "arancelCLP": 6520000
+      }
+    ],
+    "ponderaciones": {
+      "NEM": "15%",
+      "Ranking": "20%",
+      "M1": "35%",
+      "M2": "10%",
+      "Lectora": "10%",
+      "Ciencias_o_Historia": "10%"
+    },
+    "campoLaboral": "Oficinas de arquitectura, estudios de diseño urbano, inmobiliarias, gestión patrimonial, consultoría en sustentabilidad, ejercicio independiente y proyectos públicos.",
+    "requirements": [
+      "Puntaje mínimo de postulación según admisión vigente",
+      "Evaluación de antecedentes y/o portafolio creativo",
+      "Matemática M1 considerada en la ponderación",
+      "Ranking de notas incluido en la postulación"
+    ],
+    "mallaImage": "arquitectura.png",
+    "mallaPDF": "arquitectura.pdf"
+  },
+  "construccion-civil": {
+    "id": "construccion-civil",
+    "name": "Construcción Civil",
+    "description": "Forma profesionales que gestionan, planifican y controlan proyectos de construcción, asegurando la calidad técnica, eficiencia económica y sustentabilidad de obras civiles y edificaciones.",
+    "perfil": "Constructor Civil o Constructora Civil",
+    "duration": "5 años (10 semestres académicos)",
+    "regimen": "Diurno",
+    "modalidad": "Presencial",
+    "area": "Ingeniería",
+    "minScore": 550,
+    "campus": [
+      {
+        "campus": "Casa Central Valparaíso",
+        "codigoDemre": "15110",
+        "arancelCLP": 6000000
+      }
+    ],
+    "ponderaciones": {
+      "NEM": "15%",
+      "Ranking": "20%",
+      "M1": "35%",
+      "M2": "10%",
+      "Lectora": "10%",
+      "Ciencias_o_Historia": "10%"
+    },
+    "campoLaboral": "Empresas constructoras, inspección técnica de obras, gestión de proyectos inmobiliarios, empresas de infraestructura pública y privada, y consultoría en construcción sustentable.",
+    "requirements": [
+      "Puntaje mínimo de postulación según admisión vigente",
+      "Matemática M1 obligatoria en la ponderación",
+      "Prueba de Ciencias o Historia considerada",
+      "Ranking de notas considerado"
+    ],
+    "mallaImage": "construccion-civil.png",
+    "mallaPDF": "construccion-civil.pdf"
+  },
+  "ingenieria-civil": {
+    "id": "ingenieria-civil",
+    "name": "Ingeniería Civil",
+    "description": "Prepara profesionales con sólidos conocimientos científicos y tecnológicos para diseñar, construir y gestionar obras de infraestructura que contribuyan al desarrollo sostenible del país.",
+    "perfil": "Ingeniera Civil o Ingeniero Civil",
+    "duration": "5 años (10 semestres académicos)",
+    "regimen": "Diurno",
+    "modalidad": "Presencial",
+    "area": "Ingeniería",
+    "minScore": 600,
+    "campus": [
+      {
+        "campus": "Casa Central Valparaíso",
+        "codigoDemre": "15111",
+        "arancelCLP": 7110000
+      },
+      {
+        "campus": "Santiago San Joaquín",
+        "codigoDemre": "15311",
+        "arancelCLP": 7110000
+      }
+    ],
+    "ponderaciones": {
+      "NEM": "15%",
+      "Ranking": "20%",
+      "M1": "35%",
+      "M2": "10%",
+      "Lectora": "10%",
+      "Ciencias_o_Historia": "10%"
+    },
+    "campoLaboral": "Construcción e infraestructura, hidráulica y obras sanitarias, transporte, geotecnia, planificación urbana, consultoría estructural y gestión de proyectos públicos y privados.",
+    "requirements": [
+      "Puntaje mínimo de postulación según admisión vigente",
+      "Matemática M1 obligatoria",
+      "Prueba de Ciencias recomendada (Física/Química)",
+      "Ranking de notas considerado"
+    ],
+    "mallaImage": "ingenieria-civil.png",
+    "mallaPDF": "ingenieria-civil.pdf"
+  },
+  "ingenieria-civil-ambiental": {
+    "id": "ingenieria-civil-ambiental",
+    "name": "Ingeniería Civil Ambiental",
+    "description": "Forma profesionales capaces de diseñar soluciones tecnológicas sostenibles para la gestión del agua, aire y suelo, integrando criterios ambientales en proyectos de infraestructura y desarrollo industrial.",
+    "perfil": "Ingeniero Civil Ambiental o Ingeniera Civil Ambiental",
+    "duration": "5 años (10 semestres académicos)",
+    "regimen": "Diurno",
+    "modalidad": "Presencial",
+    "area": "Ingeniería",
+    "minScore": 600,
+    "campus": [
+      {
+        "campus": "Casa Central Valparaíso",
+        "codigoDemre": "15151",
+        "arancelCLP": 7110000
+      }
+    ],
+    "ponderaciones": {
+      "NEM": "15%",
+      "Ranking": "20%",
+      "M1": "35%",
+      "M2": "10%",
+      "Lectora": "10%",
+      "Ciencias_o_Historia": "10%"
+    },
+    "campoLaboral": "Consultoría ambiental, gestión de residuos, tratamiento de aguas, evaluación de impacto ambiental, cumplimiento normativo y sustentabilidad en industria y sector público.",
+    "requirements": [
+      "Puntaje mínimo de postulación según admisión vigente",
+      "Matemática M1 obligatoria",
+      "Ciencias obligatoria (Biología, Física o Química)",
+      "Ranking de notas considerado"
+    ],
+    "mallaImage": "ingenieria-civil-ambiental.png",
+    "mallaPDF": "ingenieria-civil-ambiental.pdf"
+  },
+  "ingenieria-civil-de-minas": {
+    "id": "ingenieria-civil-de-minas",
+    "name": "Ingeniería Civil de Minas",
+    "description": "Prepara profesionales para planificar, diseñar y gestionar operaciones mineras, optimizando recursos, seguridad y sostenibilidad en la extracción y procesamiento de minerales.",
+    "perfil": "Ingeniero Civil de Minas o Ingeniera Civil de Minas",
+    "duration": "5 años (10 semestres académicos)",
+    "regimen": "Diurno",
+    "modalidad": "Presencial",
+    "area": "Ingeniería",
+    "minScore": 600,
+    "campus": [
+      {
+        "campus": "Santiago San Joaquín",
+        "codigoDemre": "15312",
+        "arancelCLP": 7110000
+      }
+    ],
+    "ponderaciones": {
+      "NEM": "15%",
+      "Ranking": "20%",
+      "M1": "35%",
+      "M2": "10%",
+      "Lectora": "10%",
+      "Ciencias_o_Historia": "10%"
+    },
+    "campoLaboral": "Grandes compañías mineras, consultoras en recursos minerales, planificación de faenas, seguridad operacional, gestión ambiental minera y optimización de procesos extractivos.",
+    "requirements": [
+      "Puntaje mínimo de postulación según admisión vigente",
+      "Matemática M1 obligatoria",
+      "Ciencias obligatoria (Física recomendada)",
+      "Ranking de notas considerado"
+    ],
+    "mallaImage": "ingenieria-civil-de-minas.png",
+    "mallaPDF": "ingenieria-civil-de-minas.pdf"
+  },
+  "ingenieria-civil-electrica": {
+    "id": "ingenieria-civil-electrica",
+    "name": "Ingeniería Civil Eléctrica",
+    "description": "Entrega formación en generación, transmisión y uso eficiente de la energía eléctrica, preparando ingenieros para desarrollar sistemas eléctricos sustentables y automatizados.",
+    "perfil": "Ingeniero Civil Electricista o Ingeniera Civil Electricista",
+    "duration": "5 años (10 semestres académicos)",
+    "regimen": "Diurno",
+    "modalidad": "Presencial",
+    "area": "Ingeniería",
+    "minScore": 600,
+    "campus": [
+      {
+        "campus": "Casa Central Valparaíso",
+        "codigoDemre": "15130",
+        "arancelCLP": 7110000
+      },
+      {
+        "campus": "Santiago San Joaquín",
+        "codigoDemre": "15330",
+        "arancelCLP": 7110000
+      }
+    ],
+    "ponderaciones": {
+      "NEM": "15%",
+      "Ranking": "20%",
+      "M1": "35%",
+      "M2": "10%",
+      "Lectora": "10%",
+      "Ciencias_o_Historia": "10%"
+    },
+    "campoLaboral": "Sistemas eléctricos de potencia, energías renovables, automatización industrial, empresas distribuidoras de energía, transmisión y reguladores del sector eléctrico.",
+    "requirements": [
+      "Puntaje mínimo de postulación según admisión vigente",
+      "Matemática M1 obligatoria",
+      "Física obligatoria",
+      "Ranking de notas considerado"
+    ],
+    "mallaImage": "ingenieria-civil-electrica.png",
+    "mallaPDF": "ingenieria-civil-electrica.pdf"
+  },
+  "ingenieria-civil-electronica": {
+    "id": "ingenieria-civil-electronica",
+    "name": "Ingeniería Civil Electrónica",
+    "description": "Forma profesionales en el diseño y desarrollo de sistemas electrónicos, comunicaciones y automatización, integrando hardware y software para aplicaciones industriales y tecnológicas.",
+    "perfil": "Ingeniero Civil Electrónico o Ingeniera Civil Electrónica",
+    "duration": "5 años (10 semestres académicos)",
+    "regimen": "Diurno",
+    "modalidad": "Presencial",
+    "area": "Ingeniería",
+    "minScore": 600,
+    "campus": [
+      {
+        "campus": "Casa Central Valparaíso",
+        "codigoDemre": "15131",
+        "arancelCLP": 7110000
+      }
+    ],
+    "ponderaciones": {
+      "NEM": "15%",
+      "Ranking": "20%",
+      "M1": "35%",
+      "M2": "10%",
+      "Lectora": "10%",
+      "Ciencias_o_Historia": "10%"
+    },
+    "campoLaboral": "Telecomunicaciones, automatización y control industrial, instrumentación, robótica, electrónica de consumo, domótica y desarrollo de hardware especializado.",
+    "requirements": [
+      "Puntaje mínimo de postulación según admisión vigente",
+      "Matemática M1 obligatoria",
+      "Física obligatoria",
+      "Ranking de notas considerado"
+    ],
+    "mallaImage": "ingenieria-civil-electronica.png",
+    "mallaPDF": "ingenieria-civil-electronica.pdf"
+  },
+  "ingenieria-civil-en-biotecnologia": {
+    "id": "ingenieria-civil-en-biotecnologia",
+    "name": "Ingeniería Civil en Biotecnología",
+    "description": "Combina ciencias biológicas e ingeniería para desarrollar soluciones innovadoras en salud, medio ambiente, alimentos y energía, aplicando bioprocesos y tecnologías sustentables.",
+    "perfil": "Ingeniero Civil en Biotecnología o Ingeniera Civil en Biotecnología",
+    "duration": "5 años (10 semestres académicos)",
+    "regimen": "Diurno",
+    "modalidad": "Presencial",
+    "area": "Ingeniería",
+    "minScore": 600,
+    "campus": [
+      {
+        "campus": "Casa Central Valparaíso",
+        "codigoDemre": "15186",
+        "arancelCLP": 7110000
+      }
+    ],
+    "ponderaciones": {
+      "NEM": "15%",
+      "Ranking": "20%",
+      "M1": "35%",
+      "M2": "10%",
+      "Lectora": "10%",
+      "Ciencias_o_Historia": "10%"
+    },
+    "campoLaboral": "Biotecnología ambiental e industrial, bioenergía, alimentos funcionales, salud y farmacéutica, investigación aplicada y desarrollo de I+D biotecnológico.",
+    "requirements": [
+      "Puntaje mínimo de postulación según admisión vigente",
+      "Matemática M1 obligatoria",
+      "Ciencias obligatoria (Biología recomendada)",
+      "Ranking de notas considerado"
+    ],
+    "mallaImage": "ingenieria-civil-en-biotecnologia.png",
+    "mallaPDF": "ingenieria-civil-en-biotecnologia.pdf"
+  },
+  "ingenieria-civil-fisica": {
+    "id": "ingenieria-civil-fisica",
+    "name": "Ingeniería Civil Física",
+    "description": "Integra física aplicada e ingeniería para resolver problemas complejos en energía, materiales, telecomunicaciones y sistemas computacionales avanzados.",
+    "perfil": "Ingeniero Civil Físico o Ingeniera Civil Física",
+    "duration": "5 años (10 semestres académicos)",
+    "regimen": "Diurno",
+    "modalidad": "Presencial",
+    "area": "Ingeniería",
+    "minScore": 600,
+    "campus": [
+      {
+        "campus": "Casa Central Valparaíso",
+        "codigoDemre": "15184",
+        "arancelCLP": 7110000
+      },
+      {
+        "campus": "Santiago San Joaquín",
+        "codigoDemre": "15384",
+        "arancelCLP": 7110000
+      }
+    ],
+    "ponderaciones": {
+      "NEM": "15%",
+      "Ranking": "20%",
+      "M1": "35%",
+      "M2": "10%",
+      "Lectora": "10%",
+      "Ciencias_o_Historia": "10%"
+    },
+    "campoLaboral": "Energías renovables, modelación y simulación física, telecomunicaciones, desarrollo de materiales avanzados, instrumentación científica y data science aplicada.",
+    "requirements": [
+      "Puntaje mínimo de postulación según admisión vigente",
+      "Matemática M1 obligatoria",
+      "Física obligatoria",
+      "Ranking de notas considerado"
+    ],
+    "mallaImage": "ingenieria-civil-fisica.png",
+    "mallaPDF": "ingenieria-civil-fisica.pdf"
+  },
+  "ingenieria-civil-industrial": {
+    "id": "ingenieria-civil-industrial",
+    "name": "Ingeniería Civil Industrial",
+    "description": "Forma profesionales capaces de optimizar procesos organizacionales, liderar equipos multidisciplinarios y tomar decisiones estratégicas con enfoque en eficiencia, innovación y sostenibilidad.",
+    "perfil": "Ingeniero Civil Industrial o Ingeniera Civil Industrial",
+    "duration": "5 años (10 semestres académicos)",
+    "regimen": "Diurno",
+    "modalidad": "Presencial",
+    "area": "Ingeniería",
+    "minScore": 600,
+    "campus": [
+      {
+        "campus": "Casa Central Valparaíso",
+        "codigoDemre": "15170",
+        "arancelCLP": 7110000
+      },
+      {
+        "campus": "Santiago Vitacura",
+        "codigoDemre": "15270",
+        "arancelCLP": 7110000
+      }
+    ],
+    "ponderaciones": {
+      "NEM": "15%",
+      "Ranking": "20%",
+      "M1": "35%",
+      "M2": "10%",
+      "Lectora": "10%",
+      "Ciencias_o_Historia": "10%"
+    },
+    "campoLaboral": "Gestión de operaciones, optimización de procesos, logística, finanzas corporativas, consultoría estratégica, emprendimiento e innovación organizacional.",
+    "requirements": [
+      "Puntaje mínimo de postulación según admisión vigente",
+      "Matemática M1 obligatoria",
+      "Prueba de Ciencias o Historia considerada",
+      "Ranking de notas considerado"
+    ],
+    "mallaImage": "ingenieria-civil-industrial.png",
+    "mallaPDF": "ingenieria-civil-industrial.pdf"
+  },
+  "ingenieria-civil-informatica": {
+    "id": "ingenieria-civil-informatica",
+    "name": "Ingeniería Civil Informática",
+    "description": "Prepara profesionales capaces de diseñar, desarrollar e implementar soluciones tecnológicas innovadoras mediante software, inteligencia artificial y sistemas de información seguros y eficientes.",
+    "perfil": "Ingeniero Civil Informático o Ingeniera Civil Informática",
+    "duration": "5 años (10 semestres académicos)",
+    "regimen": "Diurno",
+    "modalidad": "Presencial",
+    "area": "Ingeniería",
+    "minScore": 600,
+    "campus": [
+      {
+        "campus": "Casa Central Valparaíso",
+        "codigoDemre": "15160",
+        "arancelCLP": 7110000
+      },
+      {
+        "campus": "Santiago San Joaquín",
+        "codigoDemre": "15360",
+        "arancelCLP": 7110000
+      }
+    ],
+    "ponderaciones": {
+      "NEM": "15%",
+      "Ranking": "20%",
+      "M1": "35%",
+      "M2": "10%",
+      "Lectora": "10%",
+      "Ciencias_o_Historia": "10%"
+    },
+    "campoLaboral": "Desarrollo de software, ciberseguridad, análisis de datos, inteligencia artificial, arquitectura de sistemas, consultoría tecnológica y emprendimiento digital.",
+    "requirements": [
+      "Puntaje mínimo de postulación según admisión vigente",
+      "Matemática M1 obligatoria",
+      "Ciencias obligatoria (Física recomendada)",
+      "Ranking de notas considerado"
+    ],
+    "mallaImage": "ingenieria-civil-informatica.png",
+    "mallaPDF": "ingenieria-civil-informatica.pdf"
+  },
+  "ingenieria-civil-matematica": {
+    "id": "ingenieria-civil-matematica",
+    "name": "Ingeniería Civil Matemática",
+    "description": "Combina matemáticas avanzadas e ingeniería para modelar, analizar y optimizar sistemas complejos en áreas como energía, transporte, economía y tecnología.",
+    "perfil": "Ingeniero Civil Matemático o Ingeniera Civil Matemática",
+    "duration": "5 años (10 semestres académicos)",
+    "regimen": "Diurno",
+    "modalidad": "Presencial",
+    "area": "Ingeniería",
+    "minScore": 600,
+    "campus": [
+      {
+        "campus": "Casa Central Valparaíso",
+        "codigoDemre": "15101",
+        "arancelCLP": 7110000
+      },
+      {
+        "campus": "Santiago San Joaquín",
+        "codigoDemre": "15301",
+        "arancelCLP": 7110000
+      }
+    ],
+    "ponderaciones": {
+      "NEM": "15%",
+      "Ranking": "20%",
+      "M1": "35%",
+      "M2": "10%",
+      "Lectora": "10%",
+      "Ciencias_o_Historia": "10%"
+    },
+    "campoLaboral": "Modelación matemática, análisis de riesgos, optimización industrial, finanzas cuantitativas, ciencia de datos, investigación aplicada y consultoría técnica.",
+    "requirements": [
+      "Puntaje mínimo de postulación según admisión vigente",
+      "Matemática M1 obligatoria",
+      "Ciencias obligatoria (Física o Química)",
+      "Ranking de notas considerado"
+    ],
+    "mallaImage": "ingenieria-civil-matematica.png",
+    "mallaPDF": "ingenieria-civil-matematica.pdf"
+  },
+  "ingenieria-civil-mecanica": {
+    "id": "ingenieria-civil-mecanica",
+    "name": "Ingeniería Civil Mecánica",
+    "description": "Prepara ingenieros especializados en el diseño, análisis y mantenimiento de sistemas mecánicos, energéticos e industriales, aplicando innovación y sostenibilidad tecnológica.",
+    "perfil": "Ingeniero Civil Mecánico o Ingeniera Civil Mecánica",
+    "duration": "5 años (10 semestres académicos)",
+    "regimen": "Diurno",
+    "modalidad": "Presencial",
+    "area": "Ingeniería",
+    "minScore": 600,
+    "campus": [
+      {
+        "campus": "Casa Central Valparaíso",
+        "codigoDemre": "15140",
+        "arancelCLP": 7110000
+      },
+      {
+        "campus": "Santiago San Joaquín",
+        "codigoDemre": "15340",
+        "arancelCLP": 7110000
+      }
+    ],
+    "ponderaciones": {
+      "NEM": "15%",
+      "Ranking": "20%",
+      "M1": "35%",
+      "M2": "10%",
+      "Lectora": "10%",
+      "Ciencias_o_Historia": "10%"
+    },
+    "campoLaboral": "Industria manufacturera, automotriz, energética, minería, mantenimiento industrial, robótica aplicada y diseño de equipos y maquinaria.",
+    "requirements": [
+      "Puntaje mínimo de postulación según admisión vigente",
+      "Matemática M1 obligatoria",
+      "Física obligatoria",
+      "Ranking de notas considerado"
+    ],
+    "mallaImage": "ingenieria-civil-mecanica.png",
+    "mallaPDF": "ingenieria-civil-mecanica.pdf"
+  },
+  "ingenieria-civil-metalurgica": {
+    "id": "ingenieria-civil-metalurgica",
+    "name": "Ingeniería Civil Metalúrgica",
+    "description": "Entrega formación en procesamiento de minerales y desarrollo de materiales, preparando ingenieros para innovar en la industria metalúrgica y minera con enfoque sustentable.",
+    "perfil": "Ingeniero Civil Metalúrgico o Ingeniera Civil Metalúrgica",
+    "duration": "5 años (10 semestres académicos)",
+    "regimen": "Diurno",
+    "modalidad": "Presencial",
+    "area": "Ingeniería",
+    "minScore": 600,
+    "campus": [
+      {
+        "campus": "Casa Central Valparaíso",
+        "codigoDemre": "15141",
+        "arancelCLP": 7110000
+      }
+    ],
+    "ponderaciones": {
+      "NEM": "15%",
+      "Ranking": "20%",
+      "M1": "35%",
+      "M2": "10%",
+      "Lectora": "10%",
+      "Ciencias_o_Historia": "10%"
+    },
+    "campoLaboral": "Minería metálica y no metálica, procesamiento de minerales, desarrollo de nuevos materiales, control de calidad metalúrgica, gestión de procesos y consultoría técnica.",
+    "requirements": [
+      "Puntaje mínimo de postulación según admisión vigente",
+      "Matemática M1 obligatoria",
+      "Química o Física recomendada",
+      "Ranking de notas considerado"
+    ],
+    "mallaImage": "ingenieria-civil-metalurgica.png",
+    "mallaPDF": "ingenieria-civil-metalurgica.pdf"
+  },
+  "ingenieria-civil-plan-comun": {
+    "id": "ingenieria-civil-plan-comun",
+    "name": "Ingeniería Civil Plan Común",
+    "description": "Entrega una formación inicial común a las especialidades de ingeniería civil, centrada en ciencias básicas, programación y fundamentos de ingeniería, para elegir posteriormente una mención específica.",
+    "perfil": "",
+    "duration": "2 años (4 semestres académicos)",
+    "regimen": "Diurno",
+    "modalidad": "Presencial",
+    "area": "Ingeniería",
+    "minScore": 600,
+    "campus": [
+      {
+        "campus": "Casa Central Valparaíso",
+        "codigoDemre": "15100",
+        "arancelCLP": 7110000
+      },
+      {
+        "campus": "Santiago San Joaquín",
+        "codigoDemre": "15300",
+        "arancelCLP": 7110000
+      }
+    ],
+    "ponderaciones": {
+      "NEM": "15%",
+      "Ranking": "20%",
+      "M1": "35%",
+      "M2": "10%",
+      "Lectora": "10%",
+      "Ciencias_o_Historia": "10%"
+    },
+    "campoLaboral": "Tras completar el plan común y escoger una especialidad, el campo laboral corresponde al de la disciplina de destino (eléctrica, mecánica, industrial, etc.).",
+    "requirements": [
+      "Puntaje mínimo de postulación según admisión vigente",
+      "Matemática M1 obligatoria",
+      "Ciencias obligatoria",
+      "Ranking de notas considerado"
+    ],
+    "mallaImage": "ingenieria-civil-plan-comun.png",
+    "mallaPDF": "ingenieria-civil-plan-comun.pdf"
+  },
+  "ingenieria-civil-quimica": {
+    "id": "ingenieria-civil-quimica",
+    "name": "Ingeniería Civil Química",
+    "description": "Forma ingenieros capaces de diseñar y optimizar procesos químicos e industriales, desarrollando tecnologías limpias y eficientes para la producción sostenible de bienes y energía.",
+    "perfil": "Ingeniero Civil Químico o Ingeniera Civil Química",
+    "duration": "5 años (10 semestres académicos)",
+    "regimen": "Diurno",
+    "modalidad": "Presencial",
+    "area": "Ingeniería",
+    "minScore": 600,
+    "campus": [
+      {
+        "campus": "Casa Central Valparaíso",
+        "codigoDemre": "15150",
+        "arancelCLP": 7110000
+      },
+      {
+        "campus": "Santiago San Joaquín",
+        "codigoDemre": "15350",
+        "arancelCLP": 7110000
+      }
+    ],
+    "ponderaciones": {
+      "NEM": "15%",
+      "Ranking": "20%",
+      "M1": "35%",
+      "M2": "10%",
+      "Lectora": "10%",
+      "Ciencias_o_Historia": "10%"
+    },
+    "campoLaboral": "Industria química y de procesos, alimentos y bebidas, combustibles y energía, control ambiental, investigación y desarrollo de nuevos materiales y bioprocesos.",
+    "requirements": [
+      "Puntaje mínimo de postulación según admisión vigente",
+      "Matemática M1 obligatoria",
+      "Química o Física obligatoria/recomendada",
+      "Ranking de notas considerado"
+    ],
+    "mallaImage": "ingenieria-civil-quimica.png",
+    "mallaPDF": "ingenieria-civil-quimica.pdf"
+  },
+  "ingenieria-civil-telematica": {
+    "id": "ingenieria-civil-telematica",
+    "name": "Ingeniería Civil Telemática",
+    "description": "Combina informática y telecomunicaciones para desarrollar soluciones en redes, ciberseguridad, IoT y sistemas inteligentes de comunicación.",
+    "perfil": "Ingeniero Civil Telemático o Ingeniera Civil Telemática",
+    "duration": "5 años (10 semestres académicos)",
+    "regimen": "Diurno",
+    "modalidad": "Presencial",
+    "area": "Ingeniería",
+    "minScore": 600,
+    "campus": [
+      {
+        "campus": "Casa Central Valparaíso",
+        "codigoDemre": "15161",
+        "arancelCLP": 7110000
+      },
+      {
+        "campus": "Santiago San Joaquín",
+        "codigoDemre": "15361",
+        "arancelCLP": 7110000
+      }
+    ],
+    "ponderaciones": {
+      "NEM": "15%",
+      "Ranking": "20%",
+      "M1": "35%",
+      "M2": "10%",
+      "Lectora": "10%",
+      "Ciencias_o_Historia": "10%"
+    },
+    "campoLaboral": "Empresas de telecomunicaciones, proveedores de internet, ciberseguridad, infraestructura de redes, centros de datos, automatización industrial, IoT y smart cities.",
+    "requirements": [
+      "Puntaje mínimo de postulación según admisión vigente",
+      "Matemática M1 obligatoria",
+      "Física obligatoria",
+      "Ranking de notas considerado"
+    ],
+    "mallaImage": "ingenieria-civil-telematica.png",
+    "mallaPDF": "ingenieria-civil-telematica.pdf"
+  },
+  "ingenieria-comercial": {
+    "id": "ingenieria-comercial",
+    "name": "Ingeniería Comercial",
+    "description": "Prepara profesionales con visión estratégica y analítica para liderar organizaciones, gestionar recursos y desarrollar proyectos en los ámbitos económico, financiero y de marketing.",
+    "perfil": "Ingeniero Comercial o Ingeniera Comercial",
+    "duration": "5 años (10 semestres académicos)",
+    "regimen": "Diurno",
+    "modalidad": "Presencial",
+    "area": "Negocios",
+    "minScore": 550,
+    "campus": [
+      {
+        "campus": "Casa Central Valparaíso",
+        "codigoDemre": "15171",
+        "arancelCLP": 7110000
+      },
+      {
+        "campus": "Santiago Vitacura",
+        "codigoDemre": "15271",
+        "arancelCLP": 7110000
+      }
+    ],
+    "ponderaciones": {
+      "NEM": "15%",
+      "Ranking": "20%",
+      "M1": "35%",
+      "M2": "10%",
+      "Lectora": "10%",
+      "Ciencias_o_Historia": "10%"
+    },
+    "campoLaboral": "Empresas nacionales e internacionales, banca e inversiones, marketing, análisis financiero, consultoría estratégica, startups y emprendimiento propio.",
+    "requirements": [
+      "Puntaje mínimo de postulación según admisión vigente",
+      "Matemática M1 obligatoria",
+      "Lenguaje / Comprensión Lectora obligatoria",
+      "Ranking de notas considerado"
+    ],
+    "mallaImage": "ingenieria-comercial.png",
+    "mallaPDF": "ingenieria-comercial.pdf"
+  }
+}

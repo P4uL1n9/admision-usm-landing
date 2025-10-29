@@ -15,7 +15,6 @@ const Navbar = () => {
     { label: "Carreras", href: "/carreras" },
     { label: "Comparar carreras", href: "/comparar-carreras" },
     { label: "Becas y costos", href: "/becas-y-costos" },
-    { label: "Contacto", href: "#" }, // 👈 visualmente igual, pero interceptamos click
   ];
 
   const handleNoAction = (e: React.MouseEvent) => {
@@ -60,15 +59,20 @@ const Navbar = () => {
               )
             )}
 
-            {/* Botón Postula Aquí, parece igual pero no hace nada */}
-            <Button
-              variant="default"
-              size="lg"
-              className="bg-accent text-accent-foreground hover:bg-accent/90 font-bold shadow-usm-md"
-              onClick={handleNoAction}
+            {/* Botón Ver Resultados */}
+            <a
+              href="https://resultadospaes.demre.cl/"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Postula Aquí
-            </Button>
+              <Button
+                variant="default"
+                size="lg"
+                className="bg-accent text-accent-foreground hover:bg-accent/90 font-bold shadow-usm-md"
+              >
+                Ver Resultados
+              </Button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -108,14 +112,20 @@ const Navbar = () => {
                 )
               )}
 
-              <Button
-                variant="default"
-                size="lg"
-                className="bg-accent text-accent-foreground hover:bg-accent/90 font-bold w-full"
-                onClick={handleNoAction}
+              <a
+                href="https://resultadospaes.demre.cl/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full"
               >
-                Postula Aquí
-              </Button>
+                <Button
+                  variant="default"
+                  size="lg"
+                  className="bg-accent text-accent-foreground hover:bg-accent/90 font-bold w-full"
+                >
+                  Ver Resultados
+                </Button>
+              </a>
             </div>
           </div>
         )}
