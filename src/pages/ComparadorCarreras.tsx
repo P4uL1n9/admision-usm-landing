@@ -8,6 +8,7 @@ import { ArrowRight, MapPin, Clock, TrendingUp, DollarSign } from "lucide-react"
 import { Link } from "react-router-dom";
 import carrerasRaw from "@/assets/carreras_usm.json";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import imagenHero from "@/assets/fotos/admision3.jpeg";
 
 const careers = Object.values(carrerasRaw).map((c: any) => {
   const campusList = c.campus.map((sede: any) => sede.campus).join(" / ");
@@ -63,7 +64,7 @@ const ComparadorCarreras = () => {
       {/* Hero Section */}
       <section className="relative h-[320px] md:h-[360px] lg:h-[380px] overflow-hidden">
          <img
-            src="@/assets/fotos/admision3.jpeg"
+            src={imagenHero}
             alt="Fondo Carreras USM"
             className="absolute inset-0 w-full h-full object-cover object-[center_40%]"
           />

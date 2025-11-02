@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import carrerasRaw from "@/assets/carreras_usm.json";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import imagenHero from "@/assets/fotos/admision1.webp";
 
 const careers = Object.values(carrerasRaw).map((c: any) => ({
   id: c.id,
@@ -76,7 +77,7 @@ const Carreras = () => {
       {/* Hero Section */}
       <section className="relative h-[320px] md:h-[360px] lg:h-[380px] overflow-hidden">
          <img
-            src="@/assets/fotos/admision1.webp"
+            src={imagenHero}
             alt="Fondo Carreras USM"
             className="absolute inset-0 w-full h-full object-cover object-[center_70%]"
           />

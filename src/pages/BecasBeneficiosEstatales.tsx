@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { GraduationCap, Building2, CreditCard, Users, FileText, CheckCircle2 } from "lucide-react";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import ImagenHero from "@/assets/fotos/admision2.jpeg";
 
 interface Benefit {
   id: string;
@@ -96,7 +97,7 @@ const BecasBeneficiosEstatales = () => {
         {/* HERO – título abajo a la izquierda con línea amarilla y sin descripción */}
         <section className="relative h-[320px] md:h-[360px] lg:h-[380px] overflow-hidden">
          <img
-            src="@/assets/fotos/admision2.jpeg"
+            src={ImagenHero}
             alt="Fondo Carreras USM"
             className="absolute inset-0 w-full h-full object-cover object-[center_70%]"
           />
