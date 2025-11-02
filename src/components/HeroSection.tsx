@@ -2,13 +2,13 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import heroImage from "@/assets/hero-students.jpg";
 
 const HeroSection = () => {
   const [area, setArea] = useState("all");
   const [sede, setSede] = useState("all");
+  const [regimen, setRegimen] = useState("all");
   const navigate = useNavigate();
 
   const handleSearch = () => {
@@ -16,12 +16,13 @@ const HeroSection = () => {
     const params = new URLSearchParams();
     if (area !== "all") params.set("area", area);
     if (sede !== "all") params.set("sede", sede);
+    if (regimen !== "all") params.set("regimen", regimen);
 
     navigate(`/carreras?${params.toString()}`);
   };
 
   return (
-    <section className="relative min-h-[500px] md:min-h-[550px] flex items-center justify-center pt-24 md:pt-28 pb-12">
+    <section className="relative min-h-[500px] md:min-h-[550px] flex items-center justify-center pt-24 md:pt-12 pb-16 md:pb-20">
       {/* Fondo */}
       <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${heroImage})` }}>
         <div className="absolute inset-0 bg-gradient-hero" />
@@ -32,15 +33,15 @@ const HeroSection = () => {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8">
             <h1 className="text-[clamp(2.5rem,6vw,4rem)] leading-[1.1] font-bold text-white mb-4">
-              Encuentra tu carrera en la USM
+              Encuentra tu carrera ideal en la USM
             </h1>
             <p className="text-[clamp(1.1rem,2.5vw,1.4rem)] text-white/90 max-w-2xl mx-auto">
-              Explora nuestra oferta académica y toma la mejor decisión para tu futuro
+              Comienza y explora las diversas opciones de carreras de pregrado disponibles en nuestra universidad
             </p>
           </div>
 
           <div className="bg-white rounded-xl shadow-usm-lg p-5 md:p-7">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
               <div>
                 <label className="block text-sm font-semibold text-foreground mb-2">Área de estudio</label>
                 <Select value={area} onValueChange={setArea}>
@@ -50,6 +51,7 @@ const HeroSection = () => {
                   <SelectContent>
                     <SelectItem value="all">Todas las áreas</SelectItem>
                     <SelectItem value="Ingeniería">Ingeniería</SelectItem>
+                    <SelectItem value="Ingeniería y Diseño">Ingeniería y Diseño</SelectItem>
                     <SelectItem value="Arquitectura y Diseño">Arquitectura y Diseño</SelectItem>
                     <SelectItem value="Negocios">Negocios</SelectItem>
                   </SelectContent>
@@ -65,8 +67,24 @@ const HeroSection = () => {
                   <SelectContent>
                     <SelectItem value="all">Todas las sedes</SelectItem>
                     <SelectItem value="Valparaíso">Casa Central Valparaíso</SelectItem>
-                    <SelectItem value="Santiago">Santiago San Joaquín</SelectItem>
-                    <SelectItem value="Vitacura">Santiago Vitacura</SelectItem>
+                    <SelectItem value="Santiago">Campus Santiago San Joaquín</SelectItem>
+                    <SelectItem value="Vitacura">Campus Santiago Vitacura</SelectItem>
+                    <SelectItem value="Viña">Campus Viña del Mar</SelectItem>
+                    <SelectItem value="Concepción">Campus Concepción</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
+            <div>
+                <label className="block text-sm font-semibold text-foreground mb-2">Régimen</label>
+                <Select value={regimen} onValueChange={setRegimen}>
+                  <SelectTrigger className="w-full h-11">
+                    <SelectValue placeholder="Selecciona un régimen" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="all">Todas los regímenes</SelectItem>
+                    <SelectItem value="Diurno">Diurno</SelectItem>
+                    <SelectItem value="Vespertino">Vespertino</SelectItem>
                   </SelectContent>
                 </Select>
               </div>

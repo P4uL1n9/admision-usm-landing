@@ -7,6 +7,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { ArrowRight, MapPin, Clock, TrendingUp, DollarSign } from "lucide-react";
 import { Link } from "react-router-dom";
 import carrerasRaw from "@/assets/carreras_usm.json";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 const careers = Object.values(carrerasRaw).map((c: any) => {
   const campusList = c.campus.map((sede: any) => sede.campus).join(" / ");
@@ -60,20 +61,31 @@ const ComparadorCarreras = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="bg-gradient-hero pt-24 md:pt-28 pb-12 md:pb-16">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h1 className="text-[clamp(2rem,5vw,3.5rem)] leading-[1.15] font-bold text-white mb-4 text-center">
-            Compara carreras
-          </h1>
-          <p className="text-[clamp(1rem,2.2vw,1.25rem)] text-white/90 max-w-2xl text-center mx-auto">
-            Compara lado a lado características, puntajes y aranceles
-          </p>
-        </div>
-      </section>
+      <section className="relative h-[320px] md:h-[360px] lg:h-[380px] overflow-hidden">
+         <img
+            src="/src/assets/heroimg/admision3.jpeg"
+            alt="Fondo Carreras USM"
+            className="absolute inset-0 w-full h-full object-cover object-[center_40%]"
+          />
+          <div className="absolute inset-0 bg-black/60" />
 
+          <div className="relative z-10 container mx-auto px-6 h-full flex items-end max-w-6xl">
+            <div className="mb-10 animate-fade-in">
+              <div className="flex items-center gap-3">
+                {/* Línea amarilla */}
+                <span className="inline-block h-8 md:h-9 w-1.5 rounded-full bg-accent" />
+                <h1 className="text-white font-bold text-[clamp(2rem,5vw,3.5rem)] leading-[1.1] drop-shadow-[0_3px_10px_rgba(0,0,0,0.55)]">
+                  Comparar carreras
+                </h1>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      <Breadcrumbs />
       {/* Comparison Controls */}
-      <section className="py-10 bg-background">
-        <div className="container mx-auto px-4 max-w-4xl">
+      <section className="py-6 bg-background">
+        <div className="container mx-auto px-4 max-w-6xl">
           <div className="bg-card rounded-xl shadow-usm-md p-5 md:p-7 border">
             <h2 className="text-xl font-bold mb-5 text-foreground">
               Selecciona dos carreras

@@ -4,18 +4,20 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Search, MapPin, TrendingUp } from "lucide-react";
+import { Search, MapPin, TrendingUp, ChevronDown, ChevronUp } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import carrerasRaw from "@/assets/carreras_usm.json";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 const careers = Object.values(carrerasRaw).map((c: any) => ({
   id: c.id,
   name: c.name,
   description: c.description,
   minScore: c.minScore ?? null,
-  campus: c.campus.map((s: any) => s.campus).join(" / "),
+  campus: c.campus.map((s: any) => s.campus),
   area: c.area,
   tipo: c.regimen || (c.regimenes ? c.regimenes.join(", ") : "")
 }));
@@ -24,24 +26,44 @@ const Carreras = () => {
   const [searchParams] = useSearchParams();
 
   const [searchTerm, setSearchTerm] = useState("");
+  const [tempArea, setTempArea] = useState("todas");
+  const [tempSede, setTempSede] = useState("todas");
+  const [tempRegimen, setTempRegimen] = useState("todas");
   const [selectedArea, setSelectedArea] = useState("todas");
   const [selectedSede, setSelectedSede] = useState("todas");
   const [selectedRegimen, setSelectedRegimen] = useState("todas");
+  const [currentSearchTerm, setCurrentSearchTerm] = useState("");
 
   useEffect(() => {
     const area = searchParams.get("area");
     const sede = searchParams.get("sede");
     const regimen = searchParams.get("regimen");
 
-    if (area) setSelectedArea(area);
-    if (sede) setSelectedSede(sede);
-    if (regimen) setSelectedSede(regimen);
+    if (area) {
+      setSelectedArea(area);
+      setTempArea(area);
+    }
+    if (sede) {
+      setSelectedSede(sede);
+      setTempSede(sede);
+    }
+    if (regimen) {
+      setSelectedRegimen(regimen);
+      setTempRegimen(regimen);
+    }
   }, [searchParams]);
 
+  const handleSearch = () => {
+    setCurrentSearchTerm(searchTerm);
+    setSelectedArea(tempArea);
+    setSelectedSede(tempSede);
+    setSelectedRegimen(tempRegimen);
+  };
+
   const filteredCareers = careers.filter(career => {
-    const matchesSearch = career.name.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesSearch = career.name.toLowerCase().includes(currentSearchTerm.toLowerCase());
     const matchesArea = selectedArea === "todas" || career.area === selectedArea;
-    const matchesSede = selectedSede === "todas" || career.campus.includes(selectedSede);
+    const matchesSede = selectedSede === "todas" || career.campus.some(campus => campus === selectedSede);
     const matchesRegimen = selectedRegimen === "todas" || career.tipo === selectedRegimen;
     
     return matchesSearch && matchesArea && matchesSede && matchesRegimen;
@@ -52,78 +74,107 @@ const Carreras = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="bg-gradient-hero pt-24 md:pt-28 pb-16 md:pb-20">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h1 className="text-[clamp(2rem,5vw,3.5rem)] leading-[1.15] font-bold text-white text-center mb-4 text-balance">
-            Carreras USM
-          </h1>
-          <p className="text-[clamp(1rem,2.2vw,1.25rem)] text-white/90 text-center max-w-2xl mx-auto text-balance">
-            Explora nuestra oferta académica y encuentra la carrera que transformará tu futuro
-          </p>
+      <section className="relative h-[320px] md:h-[360px] lg:h-[380px] overflow-hidden">
+         <img
+            src="/src/assets/heroimg/admision1.webp"
+            alt="Fondo Carreras USM"
+            className="absolute inset-0 w-full h-full object-cover object-[center_70%]"
+          />
+        <div className="absolute inset-0 bg-black/60" />
+
+        <div className="relative z-10 container mx-auto px-6 h-full flex items-end max-w-6xl">
+          <div className="mb-10 animate-fade-in">
+            <div className="flex items-center gap-3">
+              {/* Línea amarilla */}
+              <span className="inline-block h-8 md:h-9 w-1.5 rounded-full bg-accent" />
+              <h1 className="text-white font-bold text-[clamp(2rem,5vw,3.5rem)] leading-[1.1] drop-shadow-[0_3px_10px_rgba(0,0,0,0.55)]">
+                Carreras de pregrado
+              </h1>
+            </div>
+          </div>
         </div>
       </section>
 
+      <Breadcrumbs />
       {/* Search and Filters */}
-      <section className="bg-background py-8 border-b">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
-              <Input
-                type="text"
-                placeholder="Buscar carrera..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-10"
-              />
+      <section className="bg-background py-6 border-b">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="flex flex-col gap-4">
+            <div className="flex gap-2">
+              <div className="relative flex-1">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
+                <Input
+                  type="text"
+                  placeholder="Buscar carrera..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
+                  className="pl-10"
+                />
+              </div>
+              <Button 
+                variant="default" 
+                className="bg-primary hover:bg-primary/90 text-white"
+                onClick={handleSearch}
+              >
+                Buscar
+              </Button>
             </div>
-            
-            <Select value={selectedArea} onValueChange={setSelectedArea}>
-              <SelectTrigger>
-                <SelectValue placeholder="Área" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="todas">Todas las áreas</SelectItem>
-                <SelectItem value="Ingeniería">Ingeniería</SelectItem>
-                <SelectItem value="Arquitectura y Diseño">Arquitectura y Diseño</SelectItem>
-                <SelectItem value="Negocios">Negocios</SelectItem>
-              </SelectContent>
-            </Select>
 
-            <Select value={selectedSede} onValueChange={setSelectedSede}>
-              <SelectTrigger>
-                <SelectValue placeholder="Sede" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="todas">Todas las sedes</SelectItem>
-                <SelectItem value="Valparaíso">Casa Central Valparaíso</SelectItem>
-                <SelectItem value="Santiago">Santiago San Joaquín</SelectItem>
-                <SelectItem value="Vitacura">Santiago Vitacura</SelectItem>
-                {/* <SelectItem value="Concepción">Campus Concepción</SelectItem> */}
-              </SelectContent>
-            </Select>
+            <Collapsible className="w-full">
+              <CollapsibleTrigger className="group flex items-center gap-2 text-primary hover:text-primary/90 font-medium cursor-pointer">
+                Filtros avanzados
+                <ChevronDown className="h-4 w-4 transition-transform group-data-[state=open]:rotate-180" />
+              </CollapsibleTrigger>
+              <CollapsibleContent className="pt-4">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-3 w-full">
+                  <Select value={tempArea} onValueChange={setTempArea}>
+                    <SelectTrigger className="w-full text-primary">
+                      <SelectValue placeholder="Área" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="todas" className="text-primary">Todas las áreas</SelectItem>
+                      <SelectItem value="Ingeniería" className="text-primary">Ingeniería</SelectItem>
+                      <SelectItem value="Ingeniería y Diseño" className="text-primary">Ingeniería y Diseño</SelectItem>
+                      <SelectItem value="Arquitectura y Diseño" className="text-primary">Arquitectura y Diseño</SelectItem>
+                      <SelectItem value="Negocios" className="text-primary">Negocios</SelectItem>
+                    </SelectContent>
+                  </Select>
 
-            <Select value={selectedRegimen} onValueChange={setSelectedRegimen}>
-              <SelectTrigger>
-                <SelectValue placeholder="Regimen" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="todas">Todos los horarios</SelectItem>
-                <SelectItem value="Diurno">Diurno</SelectItem>
-                <SelectItem value="Vespertino">Vespertino</SelectItem>
-              </SelectContent>
-            </Select>
+                  <Select value={tempSede} onValueChange={setTempSede}>
+                    <SelectTrigger className="w-full text-primary">
+                      <SelectValue placeholder="Sede" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="todas" className="text-primary">Todas las sedes</SelectItem>
+                      <SelectItem value="Valparaíso" className="text-primary">Casa Central Valparaíso</SelectItem>
+                      <SelectItem value="Santiago" className="text-primary">Campus Santiago San Joaquín</SelectItem>
+                      <SelectItem value="Vitacura" className="text-primary">Campus Santiago Vitacura</SelectItem>
+                      <SelectItem value="Viña">Campus Viña del Mar</SelectItem>
+                      <SelectItem value="Concepción">Campus Concepción</SelectItem>
+                    </SelectContent>
+                  </Select>
+
+                  <Select value={tempRegimen} onValueChange={setTempRegimen}>
+                    <SelectTrigger className="w-full text-primary">
+                      <SelectValue placeholder="Regimen" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="todas" className="text-primary">Todos los regímenes</SelectItem>
+                      <SelectItem value="Diurno" className="text-primary">Diurno</SelectItem>
+                      <SelectItem value="Vespertino" className="text-primary">Vespertino</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+              </CollapsibleContent>
+            </Collapsible>
           </div>
-          
-          <p className="text-sm text-muted-foreground mt-4">
-            Mostrando {filteredCareers.length} {filteredCareers.length === 1 ? 'carrera' : 'carreras'}
-          </p>
         </div>
       </section>
 
       {/* Career List */}
-      <section className="flex-grow py-16 bg-muted/30">
-        <div className="container mx-auto px-4">
+      <section className="flex-grow py-16 bg-muted/30 border-t">
+        <div className="container mx-auto px-4 max-w-6xl">
           {filteredCareers.length === 0 ? (
             <div className="text-center py-12">
               <p className="text-muted-foreground text-lg">
@@ -136,11 +187,10 @@ const Carreras = () => {
                 <table className="w-full">
                   <thead className="bg-muted/50">
                     <tr className="border-b">
-                      <th className="text-left p-4 font-semibold">Carrera</th>
-                      <th className="text-left p-4 font-semibold hidden md:table-cell">Área</th>
-                      <th className="text-left p-4 font-semibold hidden lg:table-cell">Sede</th>
-                      <th className="text-center p-4 font-semibold hidden sm:table-cell">Puntaje</th>
-                      <th className="text-right p-4 font-semibold">Acción</th>
+                      <th className="text-left p-4 font-semibold w-[35%]">Carrera</th>
+                      <th className="text-left p-4 font-semibold hidden md:table-cell w-[20%]">Área</th>
+                      <th className="text-left p-4 font-semibold hidden lg:table-cell w-[30%]">Sede</th>
+                      <th className="text-right p-4 font-semibold w-[15%]">Acción</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -148,26 +198,19 @@ const Carreras = () => {
                       <tr key={career.id} className="border-b hover:bg-muted/30 transition-colors">
                         <td className="p-4">
                           <div className="font-semibold text-foreground">{career.name}</div>
-                          <p className="text-sm text-muted-foreground line-clamp-2 mt-1">{career.description}</p>
                         </td>
                         <td className="p-4 hidden md:table-cell">
                           <Badge className="bg-primary/10 text-primary border-primary/20">{career.area}</Badge>
                         </td>
                         <td className="p-4 hidden lg:table-cell">
-                          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                            <MapPin className="h-4 w-4 flex-shrink-0" />
-                            <span className="line-clamp-2">{career.campus}</span>
+                          <div className="flex flex-col gap-1">
+                            {career.campus.map((campus: string, index: number) => (
+                              <div key={index} className="flex items-center gap-2 text-sm text-muted-foreground">
+                                <MapPin className="h-4 w-4 flex-shrink-0" />
+                                <span>{campus}</span>
+                              </div>
+                            ))}
                           </div>
-                        </td>
-                        <td className="p-4 text-center hidden sm:table-cell">
-                          {career.minScore ? (
-                            <div className="flex items-center justify-center gap-1 text-sm font-semibold text-primary">
-                              <TrendingUp className="h-4 w-4" />
-                              <span>{career.minScore}</span>
-                            </div>
-                          ) : (
-                            <span className="text-sm text-muted-foreground">-</span>
-                          )}
                         </td>
                         <td className="p-4 text-right">
                           <Link to={`/carreras/${career.id}`}>

@@ -3,8 +3,9 @@
     "id": "arquitectura",
     "name": "Arquitectura",
     "description": "Forma profesionales capaces de diseñar y proyectar espacios habitables funcionales, sostenibles y estéticamente coherentes, integrando criterios sociales, tecnológicos y culturales en el desarrollo urbano y arquitectónico.",
-    "perfil": "Arquitecto o Arquitecta",
-    "duration": "5 años (10 semestres académicos)",
+    "tituloProfesional": "Arquitecto o Arquitecta",
+    "gradoAcademico": "Licenciado/a en Arquitectura",
+    "duration": "10 semestres",
     "regimen": "Diurno",
     "regimenes": [
       "Diurno"
@@ -46,8 +47,9 @@
     "id": "construccion-civil",
     "name": "Construcción Civil",
     "description": "Forma profesionales que gestionan, planifican y controlan proyectos de construcción, asegurando la calidad técnica, eficiencia económica y sustentabilidad de obras civiles y edificaciones.",
-    "perfil": "Constructor Civil o Constructora Civil",
-    "duration": "5 años (10 semestres académicos)",
+    "tituloProfesional": "Constructor Civil o Constructora Civil",
+    "gradoAcademico": "Licenciado/a en Construcción Civil",
+    "duration": "10 semestres",
     "regimen": "Diurno",
     "modalidad": "Presencial",
     "area": "Ingeniería",
@@ -81,8 +83,9 @@
     "id": "ingenieria-civil",
     "name": "Ingeniería Civil",
     "description": "Prepara profesionales con sólidos conocimientos científicos y tecnológicos para diseñar, construir y gestionar obras de infraestructura que contribuyan al desarrollo sostenible del país.",
-    "perfil": "Ingeniera Civil o Ingeniero Civil",
-    "duration": "5 años (10 semestres académicos)",
+    "tituloProfesional": "Ingeniera Civil o Ingeniero Civil",
+    "gradoAcademico": "Licenciado/a en Ciencias de la Ingeniería Civil",
+    "duration": "10 semestres",
     "regimen": "Diurno",
     "modalidad": "Presencial",
     "area": "Ingeniería",
@@ -121,8 +124,9 @@
     "id": "ingenieria-civil-ambiental",
     "name": "Ingeniería Civil Ambiental",
     "description": "Forma profesionales capaces de diseñar soluciones tecnológicas sostenibles para la gestión del agua, aire y suelo, integrando criterios ambientales en proyectos de infraestructura y desarrollo industrial.",
-    "perfil": "Ingeniero Civil Ambiental o Ingeniera Civil Ambiental",
-    "duration": "5 años (10 semestres académicos)",
+    "tituloProfesional": "Ingeniero Civil Ambiental o Ingeniera Civil Ambiental",
+    "gradoAcademico": "Licenciado/a en Ciencias de la Ingeniería Ambiental",
+    "duration": "10 semestres",
     "regimen": "Diurno",
     "modalidad": "Presencial",
     "area": "Ingeniería",
@@ -156,8 +160,9 @@
     "id": "ingenieria-civil-de-minas",
     "name": "Ingeniería Civil de Minas",
     "description": "Prepara profesionales para planificar, diseñar y gestionar operaciones mineras, optimizando recursos, seguridad y sostenibilidad en la extracción y procesamiento de minerales.",
-    "perfil": "Ingeniero Civil de Minas o Ingeniera Civil de Minas",
-    "duration": "5 años (10 semestres académicos)",
+    "tituloProfesional": "Ingeniero Civil de Minas o Ingeniera Civil de Minas",
+    "gradoAcademico": "Licenciado/a en Ciencias de la Ingeniería de Minas",
+    "duration": "10 semestres",
     "regimen": "Diurno",
     "modalidad": "Presencial",
     "area": "Ingeniería",
@@ -191,8 +196,9 @@
     "id": "ingenieria-civil-electrica",
     "name": "Ingeniería Civil Eléctrica",
     "description": "Entrega formación en generación, transmisión y uso eficiente de la energía eléctrica, preparando ingenieros para desarrollar sistemas eléctricos sustentables y automatizados.",
-    "perfil": "Ingeniero Civil Electricista o Ingeniera Civil Electricista",
-    "duration": "5 años (10 semestres académicos)",
+    "tituloProfesional": "Ingeniero Civil Electricista o Ingeniera Civil Electricista",
+    "gradoAcademico": "Licenciado/a en Ciencias de la Ingeniería Eléctrica",
+    "duration": "10 semestres",
     "regimen": "Diurno",
     "modalidad": "Presencial",
     "area": "Ingeniería",
@@ -231,8 +237,9 @@
     "id": "ingenieria-civil-electronica",
     "name": "Ingeniería Civil Electrónica",
     "description": "Forma profesionales en el diseño y desarrollo de sistemas electrónicos, comunicaciones y automatización, integrando hardware y software para aplicaciones industriales y tecnológicas.",
-    "perfil": "Ingeniero Civil Electrónico o Ingeniera Civil Electrónica",
-    "duration": "5 años (10 semestres académicos)",
+    "tituloProfesional": "Ingeniero Civil Electrónico o Ingeniera Civil Electrónica",
+    "gradoAcademico": "Licenciado/a en Ciencias de la Ingeniería Electrónica",
+    "duration": "10 semestres",
     "regimen": "Diurno",
     "modalidad": "Presencial",
     "area": "Ingeniería",
@@ -266,8 +273,9 @@
     "id": "ingenieria-civil-en-biotecnologia",
     "name": "Ingeniería Civil en Biotecnología",
     "description": "Combina ciencias biológicas e ingeniería para desarrollar soluciones innovadoras en salud, medio ambiente, alimentos y energía, aplicando bioprocesos y tecnologías sustentables.",
-    "perfil": "Ingeniero Civil en Biotecnología o Ingeniera Civil en Biotecnología",
-    "duration": "5 años (10 semestres académicos)",
+    "tituloProfesional": "Ingeniero Civil en Biotecnología o Ingeniera Civil en Biotecnología",
+    "gradoAcademico": "Licenciado/a en Ciencias de la Ingeniería en Biotecnología",
+    "duration": "10 semestres",
     "regimen": "Diurno",
     "modalidad": "Presencial",
     "area": "Ingeniería",
@@ -301,8 +309,9 @@
     "id": "ingenieria-civil-fisica",
     "name": "Ingeniería Civil Física",
     "description": "Integra física aplicada e ingeniería para resolver problemas complejos en energía, materiales, telecomunicaciones y sistemas computacionales avanzados.",
-    "perfil": "Ingeniero Civil Físico o Ingeniera Civil Física",
-    "duration": "5 años (10 semestres académicos)",
+    "tituloProfesional": "Ingeniero Civil Físico o Ingeniera Civil Física",
+    "gradoAcademico": "Licenciado/a en Ciencias de la Ingeniería Física",
+    "duration": "10 semestres",
     "regimen": "Diurno",
     "modalidad": "Presencial",
     "area": "Ingeniería",
@@ -341,8 +350,9 @@
     "id": "ingenieria-civil-industrial",
     "name": "Ingeniería Civil Industrial",
     "description": "Forma profesionales capaces de optimizar procesos organizacionales, liderar equipos multidisciplinarios y tomar decisiones estratégicas con enfoque en eficiencia, innovación y sostenibilidad.",
-    "perfil": "Ingeniero Civil Industrial o Ingeniera Civil Industrial",
-    "duration": "5 años (10 semestres académicos)",
+    "tituloProfesional": "Ingeniero Civil Industrial o Ingeniera Civil Industrial",
+    "gradoAcademico": "Licenciado/a en Ciencias de la Ingeniería Industrial",
+    "duration": "10 semestres",
     "regimen": "Diurno",
     "regimenes": [
       "Diurno",
@@ -388,8 +398,9 @@
     "id": "ingenieria-civil-informatica",
     "name": "Ingeniería Civil Informática",
     "description": "Prepara profesionales capaces de diseñar, desarrollar e implementar soluciones tecnológicas innovadoras mediante software, inteligencia artificial y sistemas de información seguros y eficientes.",
-    "perfil": "Ingeniero Civil Informático o Ingeniera Civil Informática",
-    "duration": "5 años (10 semestres académicos)",
+    "tituloProfesional": "Ingeniero Civil Informático o Ingeniera Civil Informática",
+    "gradoAcademico": "Licenciado/a en Ciencias de la Ingeniería Informática",
+    "duration": "10 semestres",
     "regimen": "Diurno",
     "modalidad": "Presencial",
     "area": "Ingeniería",
@@ -428,8 +439,9 @@
     "id": "ingenieria-civil-matematica",
     "name": "Ingeniería Civil Matemática",
     "description": "Combina matemáticas avanzadas e ingeniería para modelar, analizar y optimizar sistemas complejos en áreas como energía, transporte, economía y tecnología.",
-    "perfil": "Ingeniero Civil Matemático o Ingeniera Civil Matemática",
-    "duration": "5 años (10 semestres académicos)",
+    "tituloProfesional": "Ingeniero Civil Matemático o Ingeniera Civil Matemática",
+    "gradoAcademico": "Licenciado/a en Ciencias de la Ingeniería Matemática",
+    "duration": "10 semestres",
     "regimen": "Diurno",
     "modalidad": "Presencial",
     "area": "Ingeniería",
@@ -468,8 +480,9 @@
     "id": "ingenieria-civil-mecanica",
     "name": "Ingeniería Civil Mecánica",
     "description": "Prepara ingenieros especializados en el diseño, análisis y mantenimiento de sistemas mecánicos, energéticos e industriales, aplicando innovación y sostenibilidad tecnológica.",
-    "perfil": "Ingeniero Civil Mecánico o Ingeniera Civil Mecánica",
-    "duration": "5 años (10 semestres académicos)",
+    "tituloProfesional": "Ingeniero Civil Mecánico o Ingeniera Civil Mecánica",
+    "gradoAcademico": "Licenciado/a en Ciencias de la Ingeniería Mecánica",
+    "duration": "10 semestres",
     "regimen": "Diurno",
     "modalidad": "Presencial",
     "area": "Ingeniería",
@@ -508,8 +521,9 @@
     "id": "ingenieria-civil-metalurgica",
     "name": "Ingeniería Civil Metalúrgica",
     "description": "Entrega formación en procesamiento de minerales y desarrollo de materiales, preparando ingenieros para innovar en la industria metalúrgica y minera con enfoque sustentable.",
-    "perfil": "Ingeniero Civil Metalúrgico o Ingeniera Civil Metalúrgica",
-    "duration": "5 años (10 semestres académicos)",
+    "tituloProfesional": "Ingeniero Civil Metalúrgico o Ingeniera Civil Metalúrgica",
+    "gradoAcademico": "Licenciado/a en Ciencias de la Ingeniería Metalúrgica",
+    "duration": "10 semestres",
     "regimen": "Diurno",
     "modalidad": "Presencial",
     "area": "Ingeniería",
@@ -543,8 +557,9 @@
     "id": "ingenieria-civil-plan-comun",
     "name": "Ingeniería Civil Plan Común",
     "description": "Entrega una formación inicial común a las especialidades de ingeniería civil, centrada en ciencias básicas, programación y fundamentos de ingeniería, para elegir posteriormente una mención específica.",
-    "perfil": "",
-    "duration": "2 años (4 semestres académicos)",
+    "tituloProfesional": "",
+    "gradoAcademico": "Bachiller en Ciencias de la Ingeniería",
+    "duration": "4 semestres",
     "regimen": "Diurno",
     "modalidad": "Presencial",
     "area": "Ingeniería",
@@ -583,8 +598,9 @@
     "id": "ingenieria-civil-quimica",
     "name": "Ingeniería Civil Química",
     "description": "Forma ingenieros capaces de diseñar y optimizar procesos químicos e industriales, desarrollando tecnologías limpias y eficientes para la producción sostenible de bienes y energía.",
-    "perfil": "Ingeniero Civil Químico o Ingeniera Civil Química",
-    "duration": "5 años (10 semestres académicos)",
+    "tituloProfesional": "Ingeniero Civil Químico o Ingeniera Civil Química",
+    "gradoAcademico": "Licenciado/a en Ciencias de la Ingeniería Química",
+    "duration": "10 semestres",
     "regimen": "Diurno",
     "modalidad": "Presencial",
     "area": "Ingeniería",
@@ -623,8 +639,9 @@
     "id": "ingenieria-civil-telematica",
     "name": "Ingeniería Civil Telemática",
     "description": "Combina informática y telecomunicaciones para desarrollar soluciones en redes, ciberseguridad, IoT y sistemas inteligentes de comunicación.",
-    "perfil": "Ingeniero Civil Telemático o Ingeniera Civil Telemática",
-    "duration": "5 años (10 semestres académicos)",
+    "tituloProfesional": "Ingeniero Civil Telemático o Ingeniera Civil Telemática",
+    "gradoAcademico": "Licenciado/a en Ciencias de la Ingeniería Telemática",
+    "duration": "10 semestres",
     "regimen": "Diurno",
     "modalidad": "Presencial",
     "area": "Ingeniería",
@@ -649,7 +666,7 @@
       "Lectora": "10%",
       "Ciencias_o_Historia": "10%"
     },
-    "campoLaboral": "Empresas de telecomunicaciones, proveedores de internet, ciberseguridad, infraestructura de redes, centros de datos, automatización industrial, IoT y smart cities.",
+    "campoLaboral": "Empresas de telecomunicaciones, proveedores de internet, ciberseguridad, infraestructura de redes, centros de datos, automatización industrial, IoT y smart ciudades.",
     "requirements": [
       "Puntaje mínimo de postulación según admisión vigente",
       "Matemática M1 obligatoria",
@@ -663,9 +680,10 @@
     "id": "ingenieria-comercial",
     "name": "Ingeniería Comercial",
     "description": "Prepara profesionales con visión estratégica y analítica para liderar organizaciones, gestionar recursos y desarrollar proyectos en los ámbitos económico, financiero y de marketing.",
-    "perfil": "Ingeniero Comercial o Ingeniera Comercial",
-    "duration": "5 años (10 semestres académicos)",
-     "regimenes": [
+    "tituloProfesional": "Ingeniero Comercial o Ingeniera Comercial",
+    "gradoAcademico": "Licenciado/a en Ciencias de la Administración de Empresas",
+    "duration": "10 semestres",
+    "regimenes": [
       "Diurno",
       "Vespertino"
     ],
@@ -704,14 +722,14 @@
     ],
     "mallaImage": "ingenieria-comercial.png",
     "mallaPDF": "ingenieria-comercial.pdf"
-  }
-  ,
+  },
   "ingenieria-en-biotecnologia": {
     "id": "ingenieria-en-biotecnologia",
     "name": "Ingeniería en Biotecnología",
-   "description": "Forma profesionales con base en biología molecular, microbiología y procesos biotecnológicos.\nCapacita en análisis químico, gestión de procesos e implementación de sistemas de inocuidad y control de calidad.\nOrientada a industria, laboratorios, salud, alimentos e investigación aplicada.",
-    "perfil": "Ingeniero en Biotecnología o Ingeniera en Biotecnología",
-    "duration": "4 años (8 semestres académicos)",
+    "description": "Forma profesionales con base en biología molecular, microbiología y procesos biotecnológicos.\nCapacita en análisis químico, gestión de procesos e implementación de sistemas de inocuidad y control de calidad.\nOrientada a industria, laboratorios, salud, alimentos e investigación aplicada.",
+    "tituloProfesional": "Ingeniero en Biotecnología o Ingeniera en Biotecnología",
+    "gradoAcademico": "Licenciado/a en Ingeniería en Biotecnología",
+    "duration": "8 semestres",
     "regimen": "Diurno",
     "modalidad": "Presencial",
     "area": "Ingeniería",
@@ -748,8 +766,9 @@
     "id": "ingenieria-en-diseno-de-productos",
     "name": "Ingeniería en Diseño de Productos",
     "description": "Forma profesionales en métodos de diseño, innovación y estrategia de producto, con dominio de prototipado y tecnologías de fabricación.\nCombina creatividad, investigación de usuarios y gestión de producto para desarrollar soluciones comerciales viables.\nEnfocada en sostenibilidad y competitividad en mercados nacionales e internacionales.",
-    "perfil": "Ingeniero en Diseño de Productos o Ingeniera en Diseño de Productos\\nLicenciado en Ingeniería en Diseño de Productos o Licenciada en Ingeniería en Diseño de Productos",
-    "duration": "5 años (10 semestres académicos)",
+    "tituloProfesional": "Ingeniero en Diseño de Productos o Ingeniera en Diseño de Productos",
+    "gradoAcademico": "Licenciado/a en Ingeniería en Diseño de Productos",
+    "duration": "10 semestres",
     "regimen": "Diurno",
     "modalidad": "Presencial",
     "area": "Ingeniería y Diseño",
@@ -775,15 +794,19 @@
       "Ciencias_o_Historia": "10%"
     },
     "campoLaboral": "Diseño industrial, oficinas de diseño, empresas de manufactura, innovación de producto y emprendimiento.",
-    "requirements": ["Puntaje mínimo de postulación según admisión vigente","Portafolio o evaluación de antecedentes según convocatoria"],
+    "requirements": [
+      "Puntaje mínimo de postulación según admisión vigente",
+      "Portafolio o evaluación de antecedentes según convocatoria"
+    ],
     "mallaImage": "ingenieria-en-diseno-de-productos.png"
   },
   "ingenieria-aviacion-comercial": {
     "id": "ingenieria-aviacion-comercial",
     "name": "Ingeniería en Aviación Comercial",
     "description": "Forma profesionales en gestión del transporte aéreo y la aviación civil, con conocimientos técnicos y administrativos.\nIncluye operación de aerolíneas, planificación de vuelos, normativa de seguridad y gestión logística aeroportuaria.\nPreparación para desempeñarse en aerolíneas, operadores aeroportuarios y entidades regulatorias.",
-    "perfil": "Ingeniero en Aviación Comercial o Ingeniera en Aviación Comercial\\nLicenciado en Ingeniería en Aviación Comercial o Licenciada en Ingeniería en Aviación Comercial",
-    "duration": "5 años (10 semestres académicos)",
+    "tituloProfesional": "Ingeniero en Aviación Comercial o Ingeniera en Aviación Comercial",
+    "gradoAcademico": "Licenciado/a en Ingeniería en Aviación Comercial",
+    "duration": "10 semestres",
     "regimen": "Diurno",
     "modalidad": "Presencial",
     "area": "Ingeniería",
@@ -804,15 +827,19 @@
       "Ciencias_o_Historia": "10%"
     },
     "campoLaboral": "Aerolíneas, operadores aeroportuarios, planificación de operaciones y logística aérea.",
-    "requirements": ["Puntaje mínimo de postulación según admisión vigente","Condición física y normativa según programa"],
+    "requirements": [
+      "Puntaje mínimo de postulación según admisión vigente",
+      "Condición física y normativa según programa"
+    ],
     "mallaImage": "ingenieria-aviacion-comercial.png"
   },
   "ingenieria-fabricacion-diseno-industrial": {
     "id": "ingenieria-fabricacion-diseno-industrial",
     "name": "Ingeniería en Fabricación y Diseño Industrial",
     "description": "Forma profesionales que integran diseño, manufactura y gestión de procesos productivos para desarrollar productos industriales.\nEnfoca en mejora continua, optimización de procesos y transferencia tecnológica hacia la industria.\nCapacita para liderar proyectos de I+D, producción y diseño orientados a la competitividad.",
-    "perfil": "Ingeniero en Fabricación y Diseño Industrial o Ingeniera en Fabricación y Diseño Industrial\\nLicenciado en Ingeniería en Fabricación y Diseño Industrial o Licenciada en Ingeniería en Fabricación y Diseño Industrial",
-    "duration": "4 años (8 semestres académicos)",
+    "tituloProfesional": "Ingeniero en Fabricación y Diseño Industrial o Ingeniera en Fabricación y Diseño Industrial",
+    "gradoAcademico": "Licenciado/a en Ingeniería en Fabricación y Diseño Industrial",
+    "duration": "8 semestres",
     "regimen": "Diurno",
     "modalidad": "Presencial",
     "area": "Ingeniería",
@@ -833,16 +860,20 @@
       "Ciencias_o_Historia": "10%"
     },
     "campoLaboral": "Plantas industriales, gestión de producción, diseño de procesos y mejora continua.",
-    "requirements": ["Puntaje mínimo de postulación según admisión vigente","Competencias en matemática y lógica"],
+    "requirements": [
+      "Puntaje mínimo de postulación según admisión vigente",
+      "Competencias en matemática y lógica"
+    ],
     "mallaImage": "ingenieria-fabricacion-diseno-industrial.png"
   },
   "ingenieria-mantenimiento-industrial": {
     "id": "ingenieria-mantenimiento-industrial",
     "name": "Ingeniería en Mantenimiento Industrial",
-  "description": "Forma profesionales para planificar, administrar y optimizar programas de mantenimiento industrial, asegurando disponibilidad de activos.\nAplica metodologías basadas en riesgos, indicadores de gestión y técnicas de inspección predictiva y preventiva.\nOrientado a sectores minero, energético, manufactura y servicios.",
-    "perfil": "Ingeniero en Mantenimiento Industrial o Ingeniera en Mantenimiento Industrial\\nLicenciado en Ingeniería de Mantenimiento o Licenciada en Ingeniería de Mantenimiento",
-    "duration": "4 años (8 semestres)",
-     "regimenes": [
+    "description": "Forma profesionales para planificar, administrar y optimizar programas de mantenimiento industrial, asegurando disponibilidad de activos.\nAplica metodologías basadas en riesgos, indicadores de gestión y técnicas de inspección predictiva y preventiva.\nOrientado a sectores minero, energético, manufactura y servicios.",
+    "tituloProfesional": "Ingeniero en Mantenimiento Industrial o Ingeniera en Mantenimiento Industrial",
+    "gradoAcademico": "Licenciado/a en Ingeniería",
+    "duration": "8 semestres",
+    "regimenes": [
       "Diurno",
       "Vespertino"
     ],
@@ -873,16 +904,20 @@
       "Ciencias_o_Historia": "10%"
     },
     "campoLaboral": "Industrias, plantas de producción, mantenimiento y gestión de activos industriales.",
-    "requirements": ["Puntaje mínimo de postulación según admisión vigente","Conocimientos básicos en física y matemáticas"],
+    "requirements": [
+      "Puntaje mínimo de postulación según admisión vigente",
+      "Conocimientos básicos en física y matemáticas"
+    ],
     "mallaImage": "ingenieria-mantenimiento-industrial.png"
   },
   "ingenieria-prevencion-riesgos-ambientales": {
     "id": "ingenieria-prevencion-riesgos-ambientales",
     "name": "Ingeniería en Prevención de Riesgos Laborales y Ambientales",
     "description": "Forma profesionales capaces de diseñar, implementar y auditar sistemas integrados de prevención de riesgos laborales y ambientales.\nDesarrolla competencias en normativa, gestión de seguridad, evaluación de riesgos y mitigación de impactos ambientales.\nPreparación para roles en industrias, consultoría, fiscalización y gestión de seguridad institucional.",
-    "perfil": "Ingeniero en Prevención de Riesgos Laborales y Ambientales o Ingeniera en Prevención de Riesgos Laborales y Ambientales\\nLicenciado en Ingeniería en Prevención de Riesgos Laborales y Ambientales o Licenciada en Ingeniería en Prevención de Riesgos Laborales y Ambientales",
-    "duration": "4 años (8 semestres académicos)",
-     "regimenes": [
+    "tituloProfesional": "Ingeniero en Prevención de Riesgos Laborales y Ambientales o Ingeniera en Prevención de Riesgos Laborales y Ambientales",
+    "gradoAcademico": "Licenciado/a en Ingeniería",
+    "duration": "8 semestres",
+    "regimenes": [
       "Diurno",
       "Vespertino"
     ],
@@ -910,33 +945,34 @@
       "Ciencias_o_Historia": "10%"
     },
     "campoLaboral": "Gestión de prevención de riesgos en industrias, consultoría y fiscalización de normativa laboral y ambiental.",
-    "requirements": ["Puntaje mínimo de postulación según admisión vigente","Interés por seguridad industrial y gestión ambiental"],
+    "requirements": [
+      "Puntaje mínimo de postulación según admisión vigente",
+      "Interés por seguridad industrial y gestión ambiental"
+    ],
     "mallaImage": "ingenieria-prevencion-riesgos-ambientales.png"
   },
-  
 
-"ingenieria-construccion": {
-  "id": "ingenieria-construccion",
-  "name": "Ingeniería en Construcción",
-  "description": "Formación integral en construcción con competencias tecnológicas y administrativas. Capaz de planificar, programar, controlar y dirigir obras, y desempeñarse como Ingeniero Residente o Director de Obras.",
-  "perfil": "Ingeniero Constructor o Ingeniera Constructora",
-  "duration": "3 años (6 semestres)",
-  "regimen": "Vespertino",
-  "modalidad": "Presencial",
-  "area": "Ingeniería",
-  "tituloProfesional": "Ingeniero Constructor / Ingeniera Constructora",
-  "gradoAcademico": "Licenciado(a) en Ingeniería",
-  "campus": [
-    {
-      "campus": "Viña del Mar",
-      "arancelCLP": 4880000
-    },
-    {
-      "campus": "Concepción",
-      "arancelCLP": 4880000
-    }
-  ],
-  "ponderaciones": {
+  "ingenieria-construccion": {
+    "id": "ingenieria-construccion",
+    "name": "Ingeniería en Construcción",
+    "description": "Formación integral en construcción con competencias tecnológicas y administrativas. Capaz de planificar, programar, controlar y dirigir obras, y desempeñarse como Ingeniero Residente o Director de Obras.",
+    "tituloProfesional": "Ingeniero Constructor o Ingeniera Constructora",
+    "gradoAcademico": "Licenciado/a en Ingeniería",
+    "duration": "6 semestres",
+    "regimen": "Vespertino",
+    "modalidad": "Presencial",
+    "area": "Ingeniería",
+    "campus": [
+      {
+        "campus": "Viña del Mar",
+        "arancelCLP": 4880000
+      },
+      {
+        "campus": "Concepción",
+        "arancelCLP": 4880000
+      }
+    ],
+    "ponderaciones": {
       "NEM": "",
       "Ranking": "",
       "M1": "",
@@ -944,36 +980,37 @@
       "Lectora": "",
       "Ciencias_o_Historia": ""
     },
-  "campoLaboral": "Ingeniero Residente, Director de Obras, Director de Personal/Recursos Humanos, gestión y administración de proyectos de construcción.",
-  "requirements": [
-    "Certificado de título de la carrera precedente",
-    "Certificado de concentración de notas o resumen académico de la carrera precedente",
-    "Currículum Vitae",
-    "Cédula de identidad"
-  ],
-  "mallaImage": "ingenieria-construccion.png"
-},
+    "campoLaboral": "Ingeniero Residente, Director de Obras, Director de Personal/Recursos Humanos, gestión y administración de proyectos de construcción.",
+    "requirements": [
+      "Certificado de título de la carrera precedente",
+      "Certificado de concentración de notas o resumen académico de la carrera precedente",
+      "Currículum Vitae",
+      "Cédula de identidad"
+    ],
+    "mallaImage": "ingenieria-construccion.png"
+  },
 
-"ingenieria-control-instrumentacion": {
-  "id": "ingenieria-control-instrumentacion",
-  "name": "Ingeniería de Ejecución en Control e Instrumentación Industrial",
-  "description": "Programa de continuidad para técnicos y profesionales que forma en instrumentación y control automático aplicados a procesos industriales.",
-  "perfil": "Profesionales con sólidos conocimientos en procesos industriales en los cuales se utiliza instrumentación y control automático. Su formación tecnológica e integral les permite desempeñarse en mantención y operación de sistemas automáticos, asistencia técnica, asesoría y adquisición de tecnologías para la industria; pueden evaluar, seleccionar y adaptar tecnologías de control automático a procesos industriales.",
-  "duration": "",
-  "regimen": "Vespertino",
-  "modalidad": "Presencial",
-  "area": "Ingeniería",
-  "campus": [
-    {
-      "campus": "Concepción",
-      "arancelCLP": 3590000
-    },
-    {
-      "campus": "Viña del Mar",
-      "arancelCLP": 3590000
-    }
-  ],
-  "ponderaciones": {
+  "ingenieria-control-instrumentacion": {
+    "id": "ingenieria-control-instrumentacion",
+    "name": "Ingeniería de Ejecución en Control e Instrumentación Industrial",
+    "description": "Programa de continuidad para técnicos y profesionales que forma en instrumentación y control automático aplicados a procesos industriales.",
+    "tituloProfesional": "Ingeniero de Ejecución en Control e Instrumentación Industrial o Ingeniera de Ejecución en Control e Instrumentación Industrial",
+    "gradoAcademico": "Licenciado/a en Ingeniería",
+    "duration": "6 semestres",
+    "regimen": "Vespertino",
+    "modalidad": "Presencial",
+    "area": "Ingeniería",
+    "campus": [
+      {
+        "campus": "Concepción",
+        "arancelCLP": 3590000
+      },
+      {
+        "campus": "Viña del Mar",
+        "arancelCLP": 3590000
+      }
+    ],
+    "ponderaciones": {
       "NEM": "",
       "Ranking": "",
       "M1": "",
@@ -981,36 +1018,37 @@
       "Lectora": "",
       "Ciencias_o_Historia": ""
     },
-  "campoLaboral": "Mantención y operación de sistemas de control e instrumentación, asistencia técnica, puesta en marcha e integración de tecnologías de automatización.",
-  "requirements": [
-    "Certificado de título de la carrera precedente",
-    "Certificado de concentración de notas o resumen académico de la carrera precedente",
-    "Currículum Vitae",
-    "Cédula de identidad"
-  ],
-  "mallaImage": "ingenieria-control-instrumentacion.png"
-},
+    "campoLaboral": "Mantención y operación de sistemas de control e instrumentación, asistencia técnica, puesta en marcha e integración de tecnologías de automatización.",
+    "requirements": [
+      "Certificado de título de la carrera precedente",
+      "Certificado de concentración de notas o resumen académico de la carrera precedente",
+      "Currículum Vitae",
+      "Cédula de identidad"
+    ],
+    "mallaImage": "ingenieria-control-instrumentacion.png"
+  },
 
-"ingenieria-gestion-calidad": {
-  "id": "ingenieria-gestion-calidad",
-  "name": "Ingeniería de Ejecución en Gestión de la Calidad",
-  "description": "Forma profesionales capacitados para liderar y participar en procesos de control y gestión de calidad, implementando sistemas de mejora continua y aplicando normativas nacionales e internacionales.",
-  "perfil": "Profesionales que participan y lideran procesos de control y gestión de calidad en departamentos de producción y áreas de calidad. Diseñan e implementan sistemas orientados a la mejora continua, monitorean variables de desempeño de procesos y productos, y proponen mejoras para aportar valor a las empresas.",
-  "duration": "6 semestres",
-  "regimen": "Vespertino",
-  "modalidad": "Presencial",
-  "area": "Ingeniería",
-  "campus": [
-    {
-      "campus": "Viña del Mar",
-      "arancelCLP": 3590000
-    },
-    {
-      "campus": "San Joaquín",
-      "arancelCLP": 3590000
-    }
-  ],
-  "ponderaciones": {
+  "ingenieria-gestion-calidad": {
+    "id": "ingenieria-gestion-calidad",
+    "name": "Ingeniería de Ejecución en Gestión de la Calidad",
+    "description": "Forma profesionales capacitados para liderar y participar en procesos de control y gestión de calidad, implementando sistemas de mejora continua y aplicando normativas nacionales e internacionales.",
+    "tituloProfesional": "Ingeniero de Ejecución en Gestión de la Calidad o Ingeniera de Ejecución en Gestión de la Calidad",
+    "gradoAcademico": "Licenciado/a en Ingeniería",
+    "duration": "6 semestres",
+    "regimen": "Vespertino",
+    "modalidad": "Presencial",
+    "area": "Ingeniería",
+    "campus": [
+      {
+        "campus": "Viña del Mar",
+        "arancelCLP": 3590000
+      },
+      {
+        "campus": "San Joaquín",
+        "arancelCLP": 3590000
+      }
+    ],
+    "ponderaciones": {
       "NEM": "",
       "Ranking": "",
       "M1": "",
@@ -1018,40 +1056,41 @@
       "Lectora": "",
       "Ciencias_o_Historia": ""
     },
-  "campoLaboral": "Participación y liderazgo en gestión y control de calidad en producción y áreas de calidad, implementación de sistemas de mejora continua y monitoreo de procesos y productos.",
-  "requirements": [
-    "Certificado de título de la carrera precedente",
-    "Certificado de concentración de notas o resumen académico de la carrera precedente",
-    "Currículum Vitae",
-    "Cédula de identidad"
-  ],
- "mallaImage": "ingenieria-gestion-calidad.png"
-},
+    "campoLaboral": "Participación y liderazgo en gestión y control de calidad en producción y áreas de calidad, implementación de sistemas de mejora continua y monitoreo de procesos y productos.",
+    "requirements": [
+      "Certificado de título de la carrera precedente",
+      "Certificado de concentración de notas o resumen académico de la carrera precedente",
+      "Currículum Vitae",
+      "Cédula de identidad"
+    ],
+    "mallaImage": "ingenieria-gestion-calidad.png"
+  },
 
-"ingenieria-gestion-industrial": {
-  "id": "ingenieria-gestion-industrial",
-  "name": "Ingeniería de Ejecución en Gestión Industrial",
-  "description": "Forma profesionales con una formación tecnológica integral para desempeñarse en funciones administrativas e industriales, capaces de optimizar recursos humanos, materiales y financieros y de gestionar procesos productivos y administrativos.",
-  "perfil": "Profesionales con capacidad para asumir jefaturas administrativas o de departamentos, establecer procedimientos de gestión y optimizar el uso de recursos en empresas industriales y de servicios.",
-  "duration": "6 semestres",
-  "regimen": "Vespertino",
-  "modalidad": "Presencial",
-  "area": "Ingeniería",
-  "campus": [
-    {
-      "campus": "Concepción",
-      "arancelCLP": 3590000
-    },
-    {
-      "campus": "Viña del Mar",
-      "arancelCLP": 3590000
-    },
-    {
-      "campus": "San Joaquín",
-      "arancelCLP": 3590000
-    }
-  ],
-  "ponderaciones": {
+  "ingenieria-gestion-industrial": {
+    "id": "ingenieria-gestion-industrial",
+    "name": "Ingeniería de Ejecución en Gestión Industrial",
+    "description": "Forma profesionales con una formación tecnológica integral para desempeñarse en funciones administrativas e industriales, capaces de optimizar recursos humanos, materiales y financieros y de gestionar procesos productivos y administrativos.",
+    "tituloProfesional": "Ingeniero de Ejecución en Gestión Industrial o Ingeniera de Ejecución en Gestión Industrial",
+    "gradoAcademico": "Licenciado/a en Ingeniería",
+    "duration": "6 semestres",
+    "regimen": "Vespertino",
+    "modalidad": "Presencial",
+    "area": "Ingeniería",
+    "campus": [
+      {
+        "campus": "Concepción",
+        "arancelCLP": 3590000
+      },
+      {
+        "campus": "Viña del Mar",
+        "arancelCLP": 3590000
+      },
+      {
+        "campus": "San Joaquín",
+        "arancelCLP": 3590000
+      }
+    ],
+    "ponderaciones": {
       "NEM": "",
       "Ranking": "",
       "M1": "",
@@ -1059,32 +1098,33 @@
       "Lectora": "",
       "Ciencias_o_Historia": ""
     },
-  "campoLaboral": "Jefaturas y supervisión en áreas operativas y administrativas, gestión de operaciones, optimización de procesos, logística, control de producción y gestión de recursos humanos y materiales.",
-  "requirements": [
-    "Certificado de título de la carrera precedente",
-    "Certificado de concentración de notas o resumen académico de la carrera precedente",
-    "Currículum Vitae",
-    "Cédula de identidad"
-  ],
-  "mallaImage": "ingenieria-gestion-industrial.png"
-},
+    "campoLaboral": "Jefaturas y supervisión en áreas operativas y administrativas, gestión de operaciones, optimización de procesos, logística, control de producción y gestión de recursos humanos y materiales.",
+    "requirements": [
+      "Certificado de título de la carrera precedente",
+      "Certificado de concentración de notas o resumen académico de la carrera precedente",
+      "Currículum Vitae",
+      "Cédula de identidad"
+    ],
+    "mallaImage": "ingenieria-gestion-industrial.png"
+  },
 
-"ingenieria-gestion-control-ambiental": {
-  "id": "ingenieria-gestion-control-ambiental",
-  "name": "Ingeniería de Ejecución en Gestión y Control Ambiental",
-  "description": "Forma profesionales con base técnica y científica para evaluar, prevenir y controlar factores que afectan al medio ambiente, aplicando normativa y técnicas de gestión y control de la contaminación del agua, suelo y aire.",
-  "perfil": "Profesionales con conocimientos en medio ambiente, legislación y normativas ambientales, capaces de evaluar riesgos ambientales, diseñar medidas de prevención y aplicar técnicas de control de la contaminación.",
-  "duration": "6 semestres",
-  "regimen": "Vespertino",
-  "modalidad": "Presencial",
-  "area": "Ingeniería",
-  "campus": [
-    {
-      "campus": "Concepción",
-      "arancelCLP": 3590000
-    }
-  ],
-  "ponderaciones": {
+  "ingenieria-gestion-control-ambiental": {
+    "id": "ingenieria-gestion-control-ambiental",
+    "name": "Ingeniería de Ejecución en Gestión y Control Ambiental",
+    "description": "Forma profesionales con base técnica y científica para evaluar, prevenir y controlar factores que afectan al medio ambiente, aplicando normativa y técnicas de gestión y control de la contaminación del agua, suelo y aire.",
+    "tituloProfesional": "Ingeniero de Ejecución en Gestión y Control Ambiental o Ingeniera de Ejecución en Gestión y Control Ambiental",
+    "gradoAcademico": "Licenciado/a en Ingeniería",
+    "duration": "6 semestres",
+    "regimen": "Vespertino",
+    "modalidad": "Presencial",
+    "area": "Ingeniería",
+    "campus": [
+      {
+        "campus": "Concepción",
+        "arancelCLP": 3590000
+      }
+    ],
+    "ponderaciones": {
       "NEM": "",
       "Ranking": "",
       "M1": "",
@@ -1092,33 +1132,33 @@
       "Lectora": "",
       "Ciencias_o_Historia": ""
     },
-  "campoLaboral": "Prevención y control de la contaminación, gestión ambiental en empresas e instituciones, consultoría ambiental, fiscalización y manejo de recursos naturales.",
-  "requirements": [
-    "Certificado de título de la carrera precedente",
-    "Certificado de concentración de notas o resumen académico de la carrera precedente",
-    "Currículum Vitae",
-    "Cédula de identidad"
-  ],
- "mallaImage": "ingenieria-gestion-control-ambiental.png"
-},
+    "campoLaboral": "Prevención y control de la contaminación, gestión ambiental en empresas e instituciones, consultoría ambiental, fiscalización y manejo de recursos naturales.",
+    "requirements": [
+      "Certificado de título de la carrera precedente",
+      "Certificado de concentración de notas o resumen académico de la carrera precedente",
+      "Currículum Vitae",
+      "Cédula de identidad"
+    ],
+    "mallaImage": "ingenieria-gestion-control-ambiental.png"
+  },
 
-
-"ingenieria-proyectos": {
-  "id": "ingenieria-proyectos",
-  "name": "Ingeniería en Proyectos de Ingeniería",
-  "description": "Entrega competencias para la elaboración, gestión y dirección estratégica de proyectos de ingeniería desde la fase conceptual hasta la puesta en marcha, considerando criterios técnicos y financieros.",
-  "perfil": "Profesionales capaces de proponer soluciones estratégicas en ingeniería conceptual, básica y de detalle; gestionar recursos y coordinar equipos multidisciplinarios; elaborar y evaluar proyectos de inversión según estándares industriales.",
-  "duration": "6 semestres",
-  "regimen": "Vespertino",
-  "modalidad": "Presencial",
-  "area": "Ingeniería",
-  "campus": [
-    {
-      "campus": "San Joaquín",
-      "arancelCLP": 4880000
-    }
-  ],
-  "ponderaciones": {
+  "ingenieria-proyectos": {
+    "id": "ingenieria-proyectos",
+    "name": "Ingeniería en Proyectos de Ingeniería",
+    "description": "Entrega competencias para la elaboración, gestión y dirección estratégica de proyectos de ingeniería desde la fase conceptual hasta la puesta en marcha, considerando criterios técnicos y financieros.",
+    "tituloProfesional": "Ingeniero en Proyectos de Ingeniería o Ingeniera en Proyectos de Ingeniería",
+    "gradoAcademico": "Licenciado/a en Proyectos de Ingeniería",
+    "duration": "6 semestres",
+    "regimen": "Vespertino",
+    "modalidad": "Presencial",
+    "area": "Ingeniería",
+    "campus": [
+      {
+        "campus": "San Joaquín",
+        "arancelCLP": 4880000
+      }
+    ],
+    "ponderaciones": {
       "NEM": "",
       "Ranking": "",
       "M1": "",
@@ -1126,32 +1166,33 @@
       "Lectora": "",
       "Ciencias_o_Historia": ""
     },
-  "campoLaboral": "Gestión y dirección de proyectos de ingeniería, planificación y control, evaluación de inversiones, consultoría técnica y coordinación de equipos multidisciplinarios.",
-  "requirements": [
-    "Certificado de título de la carrera precedente",
-    "Certificado de concentración de notas o resumen académico de la carrera precedente",
-    "Currículum Vitae",
-    "Cédula de identidad"
-  ],
-   "mallaImage": "ingenieria-proyectos.png"
-},
+    "campoLaboral": "Gestión y dirección de proyectos de ingeniería, planificación y control, evaluación de inversiones, consultoría técnica y coordinación de equipos multidisciplinarios.",
+    "requirements": [
+      "Certificado de título de la carrera precedente",
+      "Certificado de concentración de notas o resumen académico de la carrera precedente",
+      "Currículum Vitae",
+      "Cédula de identidad"
+    ],
+    "mallaImage": "ingenieria-proyectos.png"
+  },
 
-"ingenieria-quimica-control": {
-  "id": "ingenieria-quimica-control",
-  "name": "Ingeniería de Ejecución en Química Mención Control",
-  "description": "Forma profesionales con preparación técnico-científica en control químico aplicado a procesos industriales, capaces de operar y supervisar sistemas de control de plantas productivas.",
-  "perfil": "Profesionales con sólida formación en ciencias básicas y técnicas de control químico, adaptables a cambios tecnológicos y capacitados para el control de procesos y operación de plantas industriales.",
-  "duration": "6 semestres",
-  "regimen": "Vespertino",
-  "modalidad": "Presencial",
-  "area": "Ingeniería",
-  "campus": [
-    {
-      "campus": "Concepción",
-      "arancelCLP": 3590000
-    }
-  ],
-  "ponderaciones": {
+  "ingenieria-quimica-control": {
+    "id": "ingenieria-quimica-control",
+    "name": "Ingeniería de Ejecución en Química Mención Control",
+    "description": "Forma profesionales con preparación técnico-científica en control químico aplicado a procesos industriales, capaces de operar y supervisar sistemas de control de plantas productivas.",
+    "tituloProfesional": "Ingeniero de Ejecución en Química mención Control o Ingeniera de Ejecución en Química mención Control",
+    "gradoAcademico": "Licenciado/a en Ingeniería",
+    "duration": "6 semestres",
+    "regimen": "Vespertino",
+    "modalidad": "Presencial",
+    "area": "Ingeniería",
+    "campus": [
+      {
+        "campus": "Concepción",
+        "arancelCLP": 3590000
+      }
+    ],
+    "ponderaciones": {
       "NEM": "",
       "Ranking": "",
       "M1": "",
@@ -1159,32 +1200,33 @@
       "Lectora": "",
       "Ciencias_o_Historia": ""
     },
-  "campoLaboral": "Control y supervisión de procesos químicos industriales, operación de plantas productivas, control de calidad y apoyo en puesta en marcha y optimización de procesos.",
-  "requirements": [
-    "Certificado de título de la carrera precedente",
-    "Certificado de concentración de notas o resumen académico de la carrera precedente",
-    "Currículum Vitae",
-    "Cédula de identidad"
-  ],
-  "mallaImage": "ingenieria-quimica-control.png"
-},
+    "campoLaboral": "Control y supervisión de procesos químicos industriales, operación de plantas productivas, control de calidad y apoyo en puesta en marcha y optimización de procesos.",
+    "requirements": [
+      "Certificado de título de la carrera precedente",
+      "Certificado de concentración de notas o resumen académico de la carrera precedente",
+      "Currículum Vitae",
+      "Cédula de identidad"
+    ],
+    "mallaImage": "ingenieria-quimica-control.png"
+  },
 
-"ingenieria-software": {
-  "id": "ingenieria-software",
-  "name": "Ingeniería de Ejecución en Software",
-  "description": "Formación práctica y profesional en desarrollo de software y gestión tecnológica, orientada a liderar equipos y entregar soluciones informáticas de calidad. Incluye análisis de procesos, diseño, implementación y mantenimiento de sistemas, aplicando métodos y herramientas de la Ingeniería de Software.",
-  "perfil": "Ingeniero de Ejecución en Software / Ingeniera de Ejecución en Software",
-  "duration": "6 semestres",
-  "regimen": "Vespertino",
-  "modalidad": "Presencial",
-  "area": "Ingeniería",
-  "campus": [
-    {
-      "campus": "San Joaquín",
-      "arancelCLP": 3590000
-    }
-  ],
-  "ponderaciones": {
+  "ingenieria-software": {
+    "id": "ingenieria-software",
+    "name": "Ingeniería de Ejecución en Software",
+    "description": "Formación práctica y profesional en desarrollo de software y gestión tecnológica, orientada a liderar equipos y entregar soluciones informáticas de calidad. Incluye análisis de procesos, diseño, implementación y mantenimiento de sistemas, aplicando métodos y herramientas de la Ingeniería de Software.",
+    "tituloProfesional": "Ingeniero de Ejecución en Software o Ingeniera de Ejecución en Software",
+    "gradoAcademico": "Licenciado/a en Ingeniería",
+    "duration": "6 semestres",
+    "regimen": "Vespertino",
+    "modalidad": "Presencial",
+    "area": "Ingeniería",
+    "campus": [
+      {
+        "campus": "San Joaquín",
+        "arancelCLP": 3590000
+      }
+    ],
+    "ponderaciones": {
       "NEM": "",
       "Ranking": "",
       "M1": "",
@@ -1192,14 +1234,13 @@
       "Lectora": "",
       "Ciencias_o_Historia": ""
     },
-  "campoLaboral": "Departamentos de informática y desarrollo de empresas de cualquier rubro; empresas de software y consultoría; equipos de desarrollo interno; y ejercicio independiente como consultor o emprendedor en tecnologías de la información.",
-  "requirements": [
-    "Certificado de título de la carrera precedente",
-    "Certificado de concentración de notas o resumen académico de la carrera precedente",
-    "Currículum Vitae",
-    "Cédula de identidad"
-  ],
-  "mallaImage": "ingenieria-software.png"
-}
-  
+    "campoLaboral": "Departamentos de informática y desarrollo de empresas de cualquier rubro; empresas de software y consultoría; equipos de desarrollo interno; y ejercicio independiente como consultor o emprendedor en tecnologías de la información.",
+    "requirements": [
+      "Certificado de título de la carrera precedente",
+      "Certificado de concentración de notas o resumen académico de la carrera precedente",
+      "Currículum Vitae",
+      "Cédula de identidad"
+    ],
+    "mallaImage": "ingenieria-software.png"
+  }
 }

@@ -1,11 +1,10 @@
-import { useState } from "react";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { GraduationCap, Building2, CreditCard, Users, FileText, CheckCircle2 } from "lucide-react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 interface Benefit {
   id: string;
@@ -19,303 +18,178 @@ interface Benefit {
   icon: typeof GraduationCap;
 }
 
+const benefits: Benefit[] = [
+  { id: "gratuidad", name: "Gratuidad", type: "gratuidad", institution: "MINEDUC",
+    coverage: "100% del arancel y matrícula",
+    requirements: [
+      "Pertenecer a los primeros 5 deciles de menores ingresos",
+      "Estar matriculado en institución adscrita a Gratuidad",
+      "No exceder la duración formal de la carrera",
+    ],
+    howToApply: "Postulación automática vía FUAS (Formulario Único de Acreditación Socioeconómica)",
+    deadline: "Enero - Febrero (según calendario FUAS)",
+    icon: GraduationCap,
+  },
+  { id: "bea", name: "Beca de Excelencia Académica (BEA)", type: "beca", institution: "MINEDUC",
+    coverage: "Hasta $1.150.000 anuales",
+    requirements: [
+      "Promedio mínimo de notas de enseñanza media: 6.0",
+      "Ranking de notas dentro del 7,5% mejor de tu establecimiento",
+      "Pertenecer a los primeros 7 deciles socioeconómicos",
+    ],
+    howToApply: "Postulación vía FUAS",
+    deadline: "Enero - Febrero (según calendario FUAS)",
+    icon: GraduationCap,
+  },
+  { id: "bvp", name: "Beca Vocación de Profesor", type: "beca", institution: "MINEDUC",
+    coverage: "100% del arancel anual por la duración formal de la carrera",
+    requirements: ["Cursar una pedagogía acreditada","Puntaje PSU/PAES mínimo: 600 puntos","Pertenecer a los primeros 7 deciles socioeconómicos"],
+    howToApply: "Postulación vía FUAS",
+    deadline: "Enero - Febrero (según calendario FUAS)",
+    icon: GraduationCap,
+  },
+  { id: "cae", name: "Crédito con Aval del Estado (CAE)", type: "credito", institution: "MINEDUC",
+    coverage: "Hasta el 100% del arancel de referencia",
+    requirements: ["Tener un aval (persona natural o jurídica)","No tener deudas morosas con el sistema educacional","Estar matriculado en institución acreditada"],
+    howToApply: "Postulación vía FUAS y posterior formalización con institución financiera",
+    deadline: "Enero - Febrero (según calendario FUAS)",
+    icon: CreditCard,
+  },
+  { id: "fscu", name: "Fondo Solidario de Crédito Universitario", type: "credito", institution: "MINEDUC",
+    coverage: "Hasta el 100% del arancel de referencia",
+    requirements: ["Pertenecer a los primeros 9 deciles socioeconómicos","Estar matriculado en universidad del Consejo de Rectores (CRUCH)","Mantener buen rendimiento académico"],
+    howToApply: "Postulación vía FUAS",
+    deadline: "Enero - Febrero (según calendario FUAS)",
+    icon: CreditCard,
+  },
+  { id: "junaeb-alimentacion", name: "Beca de Alimentación JUNAEB", type: "beca", institution: "JUNAEB",
+    coverage: "Alimentación gratuita en casino universitario durante el año académico",
+    requirements: ["Pertenecer a los primeros 6 deciles socioeconómicos","Estar matriculado en educación superior","Tener buen rendimiento académico"],
+    howToApply: "Postulación directa en portal JUNAEB o automática según FUAS",
+    deadline: "Marzo - Abril (consultar calendario JUNAEB)",
+    icon: Users,
+  },
+  { id: "bpye", name: "Beca de Apoyo a la Retención Escolar", type: "beca", institution: "JUNAEB",
+    coverage: "Monto variable según nivel socioeconómico",
+    requirements: ["Estar en riesgo de deserción","Pertenecer a los primeros 7 deciles","Mantener asistencia regular"],
+    howToApply: "Asignación automática según criterios JUNAEB",
+    deadline: "Asignación automática",
+    icon: Users,
+  },
+];
+
+const getBadgeVariant = (type: string) => {
+  switch (type) {
+    case "gratuidad": return "default";
+    case "beca": return "secondary";
+    case "credito": return "outline";
+    default: return "default";
+  }
+};
+
 const BecasBeneficiosEstatales = () => {
-  const [selectedType, setSelectedType] = useState<string>("todos");
-  const [selectedInstitution, setSelectedInstitution] = useState<string>("todos");
-
-  const benefits: Benefit[] = [
-    {
-      id: "gratuidad",
-      name: "Gratuidad",
-      type: "gratuidad",
-      institution: "MINEDUC",
-      coverage: "100% del arancel y matrícula",
-      requirements: [
-        "Pertenecer a los primeros 5 deciles de menores ingresos",
-        "Estar matriculado en institución adscrita a Gratuidad",
-        "No exceder la duración formal de la carrera"
-      ],
-      howToApply: "Postulación automática vía FUAS (Formulario Único de Acreditación Socioeconómica)",
-      deadline: "Enero - Febrero (según calendario FUAS)",
-      icon: GraduationCap
-    },
-    {
-      id: "bea",
-      name: "Beca de Excelencia Académica (BEA)",
-      type: "beca",
-      institution: "MINEDUC",
-      coverage: "Hasta $1.150.000 anuales",
-      requirements: [
-        "Promedio mínimo de notas de enseñanza media: 6.0",
-        "Ranking de notas dentro del 7,5% mejor de tu establecimiento",
-        "Pertenecer a los primeros 7 deciles socioeconómicos"
-      ],
-      howToApply: "Postulación vía FUAS",
-      deadline: "Enero - Febrero (según calendario FUAS)",
-      icon: GraduationCap
-    },
-    {
-      id: "bvp",
-      name: "Beca Vocación de Profesor",
-      type: "beca",
-      institution: "MINEDUC",
-      coverage: "100% del arancel anual por la duración formal de la carrera",
-      requirements: [
-        "Cursar una pedagogía acreditada",
-        "Puntaje PSU/PAES mínimo: 600 puntos",
-        "Pertenecer a los primeros 7 deciles socioeconómicos"
-      ],
-      howToApply: "Postulación vía FUAS",
-      deadline: "Enero - Febrero (según calendario FUAS)",
-      icon: GraduationCap
-    },
-    {
-      id: "cae",
-      name: "Crédito con Aval del Estado (CAE)",
-      type: "credito",
-      institution: "MINEDUC",
-      coverage: "Hasta el 100% del arancel de referencia",
-      requirements: [
-        "Tener un aval (persona natural o jurídica)",
-        "No tener deudas morosas con el sistema educacional",
-        "Estar matriculado en institución acreditada"
-      ],
-      howToApply: "Postulación vía FUAS y posterior formalización con institución financiera",
-      deadline: "Enero - Febrero (según calendario FUAS)",
-      icon: CreditCard
-    },
-    {
-      id: "fscu",
-      name: "Fondo Solidario de Crédito Universitario",
-      type: "credito",
-      institution: "MINEDUC",
-      coverage: "Hasta el 100% del arancel de referencia",
-      requirements: [
-        "Pertenecer a los primeros 9 deciles socioeconómicos",
-        "Estar matriculado en universidad del Consejo de Rectores (CRUCH)",
-        "Mantener buen rendimiento académico"
-      ],
-      howToApply: "Postulación vía FUAS",
-      deadline: "Enero - Febrero (según calendario FUAS)",
-      icon: CreditCard
-    },
-    {
-      id: "junaeb-alimentacion",
-      name: "Beca de Alimentación JUNAEB",
-      type: "beca",
-      institution: "JUNAEB",
-      coverage: "Alimentación gratuita en casino universitario durante el año académico",
-      requirements: [
-        "Pertenecer a los primeros 6 deciles socioeconómicos",
-        "Estar matriculado en educación superior",
-        "Tener buen rendimiento académico"
-      ],
-      howToApply: "Postulación directa en portal JUNAEB o automática según FUAS",
-      deadline: "Marzo - Abril (consultar calendario JUNAEB)",
-      icon: Users
-    },
-    {
-      id: "bpye",
-      name: "Beca de Apoyo a la Retención Escolar",
-      type: "beca",
-      institution: "JUNAEB",
-      coverage: "Monto variable según nivel socioeconómico",
-      requirements: [
-        "Estar en riesgo de deserción",
-        "Pertenecer a los primeros 7 deciles",
-        "Mantener asistencia regular"
-      ],
-      howToApply: "Asignación automática según criterios JUNAEB",
-      deadline: "Asignación automática",
-      icon: Users
-    }
-  ];
-
-  const filteredBenefits = benefits.filter((benefit) => {
-    const matchesType = selectedType === "todos" || benefit.type === selectedType;
-    const matchesInstitution = selectedInstitution === "todos" || benefit.institution === selectedInstitution;
-    return matchesType && matchesInstitution;
-  });
-
-  const getBadgeVariant = (type: string) => {
-    switch (type) {
-      case "gratuidad":
-        return "default";
-      case "beca":
-        return "secondary";
-      case "credito":
-        return "outline";
-      default:
-        return "default";
-    }
-  };
-
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      
+
       <main className="flex-1">
-        {/* Hero Section */}
-        <section className="bg-gradient-hero pt-24 md:pt-28 pb-16 md:pb-20">
-          <div className="container mx-auto max-w-7xl">
-            <h1 className="text-[clamp(2rem,5vw,3.5rem)] leading-[1.15] text-white font-bold mb-4 animate-fade-in text-center">
-              Becas y Beneficios Estatales
-            </h1>
-            <p className="text-[clamp(1rem,2.2vw,1.25rem)] opacity-90 max-w-3xl text-white animate-slide-up text-center mx-auto">
-              Conoce cobertura, requisitos y postulación vía FUAS, JUNAEB y créditos.
-            </p>
+        {/* HERO – título abajo a la izquierda con línea amarilla y sin descripción */}
+        <section className="relative h-[320px] md:h-[360px] lg:h-[380px] overflow-hidden">
+         <img
+            src="/src/assets/heroimg/admision2.jpeg"
+            alt="Fondo Carreras USM"
+            className="absolute inset-0 w-full h-full object-cover object-[center_70%]"
+          />
+          <div className="absolute inset-0 bg-black/60" />
+
+          <div className="relative z-10 container mx-auto px-6 h-full flex items-end max-w-6xl">
+            <div className="mb-10 animate-fade-in">
+              <div className="flex items-center gap-3">
+                {/* Línea amarilla */}
+                <span className="inline-block h-8 md:h-9 w-1.5 rounded-full bg-accent" />
+                <h1 className="text-white font-bold text-[clamp(2rem,5vw,3.5rem)] leading-[1.1] drop-shadow-[0_3px_10px_rgba(0,0,0,0.55)]">
+                  Becas y beneficios estatales
+                </h1>
+              </div>
+            </div>
           </div>
         </section>
 
-        <div className="container mx-auto max-w-7xl px-4 py-8 md:py-12">
-          <div className="flex flex-col lg:flex-row gap-8">
-            {/* Filters Sidebar - Desktop sticky, Mobile accordion */}
-            <aside className="lg:w-80 lg:sticky lg:top-24 lg:self-start">
-              <div className="lg:hidden mb-6">
-                <Accordion type="single" collapsible className="bg-card rounded-lg border">
-                  <AccordionItem value="filters" className="border-none">
-                    <AccordionTrigger className="px-4 hover:no-underline">
-                      <div className="flex items-center gap-2">
-                        <FileText className="w-5 h-5" />
-                        <span className="font-semibold">Filtros de búsqueda</span>
+        <Breadcrumbs />
+
+        {/* Lista: una card por fila, distribución interna mejorada */}
+        <div className="container mx-auto max-w-6xl px-4 py-8 md:py-6">
+          <div className="space-y-6">
+            {benefits.map((benefit) => (
+              <Card key={benefit.id} className="hover:shadow-usm-md transition-shadow border-l-4 border-l-primary">
+                <CardHeader className="pb-4">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <benefit.icon className="w-6 h-6 text-primary" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex flex-wrap items-start gap-2 mb-2">
+                        <CardTitle className="text-xl">{benefit.name}</CardTitle>
+                        <Badge variant={getBadgeVariant(benefit.type)} className="font-medium">
+                          {benefit.type === "gratuidad" ? "Gratuidad" : benefit.type === "beca" ? "Beca" : "Crédito"}
+                        </Badge>
                       </div>
-                    </AccordionTrigger>
-                    <AccordionContent className="px-4 pb-4">
-                      <FiltersContent 
-                        selectedType={selectedType}
-                        setSelectedType={setSelectedType}
-                        selectedInstitution={selectedInstitution}
-                        setSelectedInstitution={setSelectedInstitution}
-                      />
-                    </AccordionContent>
-                  </AccordionItem>
-                </Accordion>
-              </div>
+                      <CardDescription className="flex items-center gap-2 text-base">
+                        <Building2 className="w-4 h-4" />
+                        {benefit.institution}
+                      </CardDescription>
+                    </div>
+                  </div>
+                </CardHeader>
 
-              {/* Desktop Filters */}
-              <div className="hidden lg:block bg-card rounded-lg border p-6 shadow-usm-sm">
-                <div className="flex items-center gap-2 mb-6">
-                  <FileText className="w-5 h-5 text-primary" />
-                  <h2 className="text-xl font-semibold">Filtros</h2>
-                </div>
-                <FiltersContent 
-                  selectedType={selectedType}
-                  setSelectedType={setSelectedType}
-                  selectedInstitution={selectedInstitution}
-                  setSelectedInstitution={setSelectedInstitution}
-                />
-              </div>
-            </aside>
+                <CardContent className="pt-0">
+                  <div className="bg-muted/40 rounded-lg p-4 mb-5">
+                    <h4 className="font-semibold mb-2 text-sm text-muted-foreground uppercase tracking-wide">Cobertura</h4>
+                    <p className="text-base font-medium text-primary">{benefit.coverage}</p>
+                  </div>
 
-            {/* Main Content */}
-            <div className="flex-1 min-w-0">
-              {/* Results Count */}
-              <div className="mb-5">
-                <p className="text-lg font-semibold text-foreground">
-                  {filteredBenefits.length} beneficio{filteredBenefits.length !== 1 ? 's' : ''} disponible{filteredBenefits.length !== 1 ? 's' : ''}
-                </p>
-                <p className="text-sm text-muted-foreground mt-1">
-                  Usa los filtros para encontrar el beneficio que mejor se adapte a tu situación
-                </p>
-              </div>
+                  <div className="grid gap-6 md:grid-cols-12">
+                    <div className="md:col-span-8">
+                      <h4 className="font-semibold mb-3 text-sm text-muted-foreground uppercase tracking-wide">Requisitos principales</h4>
+                      <ul className="grid gap-2 lg:grid-cols-2">
+                        {benefit.requirements.map((req, idx) => (
+                          <li key={idx} className="flex gap-3 text-sm">
+                            <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                            <span className="leading-relaxed">{req}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
 
-              {/* Benefits List */}
-              <div className="space-y-5">
-                {filteredBenefits.map((benefit) => (
-                  <Card key={benefit.id} className="hover:shadow-usm-md transition-shadow border-l-4 border-l-primary">
-                    <CardHeader className="pb-4">
-                      <div className="flex items-start gap-4">
-                        <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                          <benefit.icon className="w-6 h-6 text-primary" />
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <div className="flex flex-wrap items-start gap-2 mb-2">
-                            <CardTitle className="text-xl">{benefit.name}</CardTitle>
-                            <Badge variant={getBadgeVariant(benefit.type)} className="font-medium">
-                              {benefit.type === "gratuidad" ? "Gratuidad" : benefit.type === "beca" ? "Beca" : "Crédito"}
-                            </Badge>
-                          </div>
-                          <CardDescription className="flex items-center gap-2 text-base">
-                            <Building2 className="w-4 h-4" />
-                            {benefit.institution}
-                          </CardDescription>
-                        </div>
+                    <div className="md:col-span-4 md:border-l md:pl-6 space-y-4">
+                      <div>
+                        <h4 className="font-semibold mb-2 text-sm text-muted-foreground uppercase tracking-wide">Cómo postular</h4>
+                        <p className="text-sm leading-relaxed">{benefit.howToApply}</p>
                       </div>
-                    </CardHeader>
-                    <CardContent className="pt-0">
-                      <div className="space-y-4">
-                        <div className="bg-muted/40 rounded-lg p-4">
-                          <h4 className="font-semibold mb-2 text-sm text-muted-foreground uppercase tracking-wide">Cobertura</h4>
-                          <p className="text-base font-medium text-primary">{benefit.coverage}</p>
-                        </div>
-
-                        <div>
-                          <h4 className="font-semibold mb-3 text-sm text-muted-foreground uppercase tracking-wide">Requisitos principales</h4>
-                          <ul className="space-y-2">
-                            {benefit.requirements.map((req, idx) => (
-                              <li key={idx} className="flex gap-3 text-sm">
-                                <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                                <span className="leading-relaxed">{req}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-
-                        <div className="grid md:grid-cols-2 gap-4 pt-4 border-t">
-                          <div>
-                            <h4 className="font-semibold mb-2 text-sm text-muted-foreground uppercase tracking-wide">Cómo postular</h4>
-                            <p className="text-sm leading-relaxed">{benefit.howToApply}</p>
-                          </div>
-                          <div>
-                            <h4 className="font-semibold mb-2 text-sm text-muted-foreground uppercase tracking-wide">Plazo</h4>
-                            <p className="text-sm font-medium text-secondary">{benefit.deadline}</p>
-                          </div>
-                        </div>
+                      <div className="bg-primary/5 rounded-lg p-3">
+                        <h4 className="font-semibold mb-1 text-xs text-muted-foreground uppercase tracking-wide">Plazo</h4>
+                        <p className="text-sm font-medium text-secondary">{benefit.deadline}</p>
                       </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-
-              {filteredBenefits.length === 0 && (
-                <Card className="p-12 text-center border-2 border-dashed">
-                  <FileText className="w-16 h-16 mx-auto mb-4 text-muted-foreground opacity-50" />
-                  <h3 className="text-xl font-semibold mb-2">No se encontraron beneficios</h3>
-                  <p className="text-muted-foreground mb-4">
-                    Intenta ajustar los filtros para ver más opciones
-                  </p>
-                  <Button 
-                    variant="outline"
-                    onClick={() => {
-                      setSelectedType("todos");
-                      setSelectedInstitution("todos");
-                    }}
-                  >
-                    Limpiar filtros
-                  </Button>
-                </Card>
-              )}
-            </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
 
-        {/* CTA Section */}
+        {/* CTA final */}
         <section className="py-12 md:py-16 px-4 bg-muted/30">
-          <div className="container mx-auto max-w-4xl text-center">
+          <div className="container mx-auto max-w-5xl text-center">
             <div className="bg-gradient-primary rounded-2xl p-8 md:p-12 text-primary-foreground shadow-usm-lg">
               <FileText className="w-16 h-16 mx-auto mb-4 opacity-90" />
-              <h2 className="text-2xl md:text-3xl font-bold mb-4">
-                Más información sobre beneficios
-              </h2>
+              <h2 className="text-2xl md:text-3xl font-bold mb-4">Más información sobre beneficios</h2>
               <p className="text-lg opacity-90 mb-6 max-w-2xl mx-auto">
-                Para conocer más detalles sobre cada beneficio, plazos de postulación y montos actualizados, 
-                visita los portales oficiales.
+                Para conocer más detalles sobre cada beneficio, plazos de postulación y montos actualizados, visita los portales oficiales.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="https://fuas.cl/" target="_blank" rel="noopener noreferrer">
-                  <Button size="lg" variant="secondary" className="text-base w-full">
-                    Portal FUAS
-                  </Button>
+                  <Button size="lg" variant="secondary" className="text-base w-full">Portal FUAS</Button>
                 </a>
                 <a href="https://www.junaeb.cl/" target="_blank" rel="noopener noreferrer">
                   <Button size="lg" variant="outline" className="text-base bg-white/10 border-white/20 hover:bg-white/20 text-primary-foreground w-full">
@@ -329,87 +203,6 @@ const BecasBeneficiosEstatales = () => {
       </main>
 
       <Footer />
-    </div>
-  );
-};
-
-// Filters Component (reused for desktop and mobile)
-const FiltersContent = ({ 
-  selectedType, 
-  setSelectedType, 
-  selectedInstitution, 
-  setSelectedInstitution 
-}: {
-  selectedType: string;
-  setSelectedType: (type: string) => void;
-  selectedInstitution: string;
-  setSelectedInstitution: (institution: string) => void;
-}) => {
-  const types = [
-    { value: "todos", label: "Todos" },
-    { value: "gratuidad", label: "Gratuidad" },
-    { value: "beca", label: "Becas" },
-    { value: "credito", label: "Créditos" },
-  ];
-
-  const institutions = [
-    { value: "todos", label: "Todas" },
-    { value: "MINEDUC", label: "MINEDUC" },
-    { value: "JUNAEB", label: "JUNAEB" },
-  ];
-
-  return (
-    <div className="space-y-5">
-      <div>
-        <h3 className="font-semibold mb-3 text-xs text-muted-foreground uppercase tracking-wide">Tipo de beneficio</h3>
-        <div className="space-y-1.5">
-          {types.map((type) => (
-            <button
-              key={type.value}
-              onClick={() => setSelectedType(type.value)}
-              className={`w-full text-left px-3 py-2.5 rounded-md transition-all text-sm ${
-                selectedType === type.value
-                  ? "bg-primary text-primary-foreground font-semibold shadow-sm"
-                  : "hover:bg-muted/70 font-medium"
-              }`}
-            >
-              {type.label}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      <div>
-        <h3 className="font-semibold mb-3 text-xs text-muted-foreground uppercase tracking-wide">Institución</h3>
-        <div className="space-y-1.5">
-          {institutions.map((institution) => (
-            <button
-              key={institution.value}
-              onClick={() => setSelectedInstitution(institution.value)}
-              className={`w-full text-left px-3 py-2.5 rounded-md transition-all text-sm ${
-                selectedInstitution === institution.value
-                  ? "bg-primary text-primary-foreground font-semibold shadow-sm"
-                  : "hover:bg-muted/70 font-medium"
-              }`}
-            >
-              {institution.label}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {(selectedType !== "todos" || selectedInstitution !== "todos") && (
-        <Button 
-          variant="outline" 
-          className="w-full mt-2"
-          onClick={() => {
-            setSelectedType("todos");
-            setSelectedInstitution("todos");
-          }}
-        >
-          Limpiar filtros
-        </Button>
-      )}
     </div>
   );
 };
