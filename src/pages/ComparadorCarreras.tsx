@@ -63,7 +63,7 @@ const ComparadorCarreras = () => {
       {/* Hero Section */}
       <section className="relative h-[320px] md:h-[360px] lg:h-[380px] overflow-hidden">
          <img
-            src="@/assets/heroimg/admision3.jpeg"
+            src="@/assets/fotos/admision3.jpeg"
             alt="Fondo Carreras USM"
             className="absolute inset-0 w-full h-full object-cover object-[center_40%]"
           />
