@@ -96,7 +96,7 @@ const BecasBeneficiosEstatales = () => {
         {/* HERO – título abajo a la izquierda con línea amarilla y sin descripción */}
         <section className="relative h-[320px] md:h-[360px] lg:h-[380px] overflow-hidden">
          <img
-            src="/src/assets/heroimg/admision2.jpeg"
+            src="@/assets/heroimg/admision2.jpeg"
             alt="Fondo Carreras USM"
             className="absolute inset-0 w-full h-full object-cover object-[center_70%]"
           />

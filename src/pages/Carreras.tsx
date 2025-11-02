@@ -76,7 +76,7 @@ const Carreras = () => {
       {/* Hero Section */}
       <section className="relative h-[320px] md:h-[360px] lg:h-[380px] overflow-hidden">
          <img
-            src="/src/assets/heroimg/admision1.webp"
+            src="@/assets/heroimg/admision1.webp"
             alt="Fondo Carreras USM"
             className="absolute inset-0 w-full h-full object-cover object-[center_70%]"
           />
