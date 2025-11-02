@@ -2,10 +2,12 @@ import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import CareerCard from "@/components/CareerCard";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Search } from "lucide-react";
+import { Search, MapPin, TrendingUp } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import carrerasRaw from "@/assets/carreras_usm.json";
 
 const careers = Object.values(carrerasRaw).map((c: any) => ({
@@ -119,20 +121,66 @@ const Carreras = () => {
         </div>
       </section>
 
-      {/* Career Cards Grid */}
+      {/* Career List */}
       <section className="flex-grow py-16 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredCareers.map(career => (
-              <CareerCard key={career.id} {...career} />
-            ))}
-          </div>
-          
-          {filteredCareers.length === 0 && (
+          {filteredCareers.length === 0 ? (
             <div className="text-center py-12">
               <p className="text-muted-foreground text-lg">
                 No se encontraron carreras con los filtros seleccionados.
               </p>
+            </div>
+          ) : (
+            <div className="bg-card rounded-lg border shadow-sm overflow-hidden">
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead className="bg-muted/50">
+                    <tr className="border-b">
+                      <th className="text-left p-4 font-semibold">Carrera</th>
+                      <th className="text-left p-4 font-semibold hidden md:table-cell">Área</th>
+                      <th className="text-left p-4 font-semibold hidden lg:table-cell">Sede</th>
+                      <th className="text-center p-4 font-semibold hidden sm:table-cell">Puntaje</th>
+                      <th className="text-right p-4 font-semibold">Acción</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {filteredCareers.map(career => (
+                      <tr key={career.id} className="border-b hover:bg-muted/30 transition-colors">
+                        <td className="p-4">
+                          <div className="font-semibold text-foreground">{career.name}</div>
+                          <p className="text-sm text-muted-foreground line-clamp-2 mt-1">{career.description}</p>
+                        </td>
+                        <td className="p-4 hidden md:table-cell">
+                          <Badge className="bg-primary/10 text-primary border-primary/20">{career.area}</Badge>
+                        </td>
+                        <td className="p-4 hidden lg:table-cell">
+                          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                            <MapPin className="h-4 w-4 flex-shrink-0" />
+                            <span className="line-clamp-2">{career.campus}</span>
+                          </div>
+                        </td>
+                        <td className="p-4 text-center hidden sm:table-cell">
+                          {career.minScore ? (
+                            <div className="flex items-center justify-center gap-1 text-sm font-semibold text-primary">
+                              <TrendingUp className="h-4 w-4" />
+                              <span>{career.minScore}</span>
+                            </div>
+                          ) : (
+                            <span className="text-sm text-muted-foreground">-</span>
+                          )}
+                        </td>
+                        <td className="p-4 text-right">
+                          <Link to={`/carreras/${career.id}`}>
+                            <Button size="sm" className="bg-primary hover:bg-primary/90">
+                              Ver detalles
+                            </Button>
+                          </Link>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
           )}
         </div>
