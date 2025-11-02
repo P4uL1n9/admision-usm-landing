@@ -8,8 +8,8 @@ import { ArrowRight, MapPin, Clock, TrendingUp, DollarSign } from "lucide-react"
 import { Link } from "react-router-dom";
 import carrerasRaw from "@/assets/carreras_usm.json";
 
-const careers = Object.values(carrerasRaw).map(c => {
-  const campusList = c.campus.map(sede => sede.campus).join(" / ");
+const careers = Object.values(carrerasRaw).map((c: any) => {
+  const campusList = c.campus.map((sede: any) => sede.campus).join(" / ");
 
   const firstArancel = c.campus[0]?.arancelCLP ?? 0;
   const arancelCLP = firstArancel.toLocaleString("es-CL", {
@@ -20,12 +20,12 @@ const careers = Object.values(carrerasRaw).map(c => {
   });
 
   const ponderacionesStr = [
-    c.ponderaciones.NEM ? `NEM ${c.ponderaciones.NEM}` : null,
-    c.ponderaciones.Ranking ? `Ranking ${c.ponderaciones.Ranking}` : null,
-    c.ponderaciones.M1 ? `M1 ${c.ponderaciones.M1}` : null,
-    c.ponderaciones.M2 ? `M2 ${c.ponderaciones.M2}` : null,
-    c.ponderaciones.Lectora ? `Lectora ${c.ponderaciones.Lectora}` : null,
-    (c.ponderaciones.Ciencias_o_Historia ? `Ciencias/Historia ${c.ponderaciones.Ciencias_o_Historia}` : null),
+    c.ponderaciones?.NEM ? `NEM ${c.ponderaciones.NEM}` : null,
+    c.ponderaciones?.Ranking ? `Ranking ${c.ponderaciones.Ranking}` : null,
+    c.ponderaciones?.M1 ? `M1 ${c.ponderaciones.M1}` : null,
+    c.ponderaciones?.M2 ? `M2 ${c.ponderaciones.M2}` : null,
+    c.ponderaciones?.Lectora ? `Lectora ${c.ponderaciones.Lectora}` : null,
+    (c.ponderaciones?.Ciencias_o_Historia ? `Ciencias/Historia ${c.ponderaciones.Ciencias_o_Historia}` : null),
   ]
     .filter(Boolean)
     .join("; ");
@@ -35,9 +35,9 @@ const careers = Object.values(carrerasRaw).map(c => {
     name: c.name,
     campus: campusList,
     duration: c.duration,
-    minScore: c.minScore,
+    minScore: c.minScore ?? "Consultar",
     arancel: arancelCLP,
-    ponderaciones: ponderacionesStr,
+    ponderaciones: ponderacionesStr || "Consultar en admisión",
   };
 });
 
@@ -60,23 +60,23 @@ const ComparadorCarreras = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="bg-gradient-hero pt-24 md:pt-28 pb-16 md:pb-20">
+      <section className="bg-gradient-hero pt-24 md:pt-28 pb-12 md:pb-16">
         <div className="container mx-auto px-4 max-w-4xl">
           <h1 className="text-[clamp(2rem,5vw,3.5rem)] leading-[1.15] font-bold text-white mb-4 text-center">
             Compara carreras
           </h1>
           <p className="text-[clamp(1rem,2.2vw,1.25rem)] text-white/90 max-w-2xl text-center mx-auto">
-            Encuentra la mejor opción comparando características, puntajes y costos de las carreras que te interesan
+            Compara lado a lado características, puntajes y aranceles
           </p>
         </div>
       </section>
 
       {/* Comparison Controls */}
-      <section className="py-12 bg-background">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <div className="bg-card rounded-xl shadow-usm-md p-6 md:p-8">
-            <h2 className="text-2xl font-bold mb-6 text-foreground">
-              Selecciona dos carreras para comparar
+      <section className="py-10 bg-background">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="bg-card rounded-xl shadow-usm-md p-5 md:p-7 border">
+            <h2 className="text-xl font-bold mb-5 text-foreground">
+              Selecciona dos carreras
             </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -127,17 +127,11 @@ const ComparadorCarreras = () => {
               onClick={handleCompare}
               disabled={!career1Id || !career2Id}
               size="lg"
-              className="w-full bg-accent text-accent-foreground hover:bg-accent/90 font-bold"
+              className="w-full bg-accent text-accent-foreground hover:bg-accent/90 font-bold h-12"
             >
-              Comparar carreras
+              Comparar
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-
-            {!career1Id || !career2Id ? (
-              <p className="text-sm text-muted-foreground text-center mt-4" role="status" aria-live="polite">
-                Selecciona dos carreras para comenzar la comparación
-              </p>
-            ) : null}
           </div>
         </div>
       </section>

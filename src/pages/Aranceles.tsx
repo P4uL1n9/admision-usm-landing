@@ -130,67 +130,70 @@ const Aranceles = () => {
         </section>
 
         {/* Filters Section */}
-        <section className="py-8 bg-muted/30">
-          <div className="container mx-auto px-4">
-            <div className="flex flex-col md:flex-row gap-4 items-end">
-              <div className="flex-1 w-full">
-                <label className="text-sm font-medium mb-2 block">Buscar carrera</label>
+        <section className="py-6 bg-muted/30 border-b">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <div className="flex flex-col md:flex-row gap-4">
+              <div className="flex-1">
+                <label className="text-sm font-semibold mb-2 block">Buscar carrera</label>
                 <div className="relative">
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
                   <Input
                     placeholder="Ej: Ingeniería Civil Informática"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="pl-10"
+                    className="pl-10 h-11"
                   />
                 </div>
               </div>
-              <div className="w-full md:w-64">
-                <label className="text-sm font-medium mb-2 block">Ordenar por</label>
+              <div className="w-full md:w-56">
+                <label className="text-sm font-semibold mb-2 block">Ordenar por</label>
                 <Select value={sortBy} onValueChange={(value: any) => setSortBy(value)}>
-                  <SelectTrigger>
+                  <SelectTrigger className="h-11">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="name">Nombre (A-Z)</SelectItem>
-                    <SelectItem value="arancel-asc">Arancel (menor a mayor)</SelectItem>
-                    <SelectItem value="arancel-desc">Arancel (mayor a menor)</SelectItem>
+                    <SelectItem value="arancel-asc">Menor arancel</SelectItem>
+                    <SelectItem value="arancel-desc">Mayor arancel</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
             </div>
+            <p className="text-sm text-muted-foreground mt-4">
+              {filteredAndSortedCareers.length} {filteredAndSortedCareers.length === 1 ? 'carrera' : 'carreras'} {filteredAndSortedCareers.length === 1 ? 'encontrada' : 'encontradas'}
+            </p>
           </div>
         </section>
 
         {/* Desktop Table View */}
         <section className="py-12 hidden md:block">
-          <div className="container mx-auto px-4">
-            <div className="rounded-lg border overflow-hidden">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <div className="rounded-lg border overflow-hidden shadow-usm-sm bg-card">
               <Table>
                 <TableHeader>
-                  <TableRow className="bg-primary/10 hover:bg-primary/10">
-                    <TableHead className="font-semibold text-foreground">Carrera</TableHead>
-                    <TableHead className="font-semibold text-foreground text-right">Arancel Anual</TableHead>
-                    <TableHead className="font-semibold text-foreground text-right">Campus</TableHead>
-                    <TableHead className="font-semibold text-foreground text-center">Acciones</TableHead>
+                  <TableRow className="bg-primary/5 hover:bg-primary/5">
+                    <TableHead className="font-bold text-foreground">Carrera</TableHead>
+                    <TableHead className="font-bold text-foreground">Campus</TableHead>
+                    <TableHead className="font-bold text-foreground text-right">Arancel Anual</TableHead>
+                    <TableHead className="font-bold text-foreground text-center w-32">Acciones</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
                   {filteredAndSortedCareers.map((career) => (
                     <TableRow 
                       key={career.id}
-                      className="hover:bg-muted/50 transition-colors"
+                      className="hover:bg-muted/40 transition-colors"
                     >
                       <TableCell className="font-medium">{career.name}</TableCell>
-                      <TableCell className="text-right">{career.arancel}</TableCell>
-                      <TableCell className="text-right">{career.campus}</TableCell>
+                      <TableCell className="text-sm text-muted-foreground">{career.campus}</TableCell>
+                      <TableCell className="text-right font-semibold text-primary">{career.arancel}</TableCell>
                       <TableCell className="text-center">
                         <Button
                           variant="outline"
                           size="sm"
                           onClick={() => navigate(`/carreras/${career.id}`)}
                         >
-                          Ver detalles
+                          Ver más
                         </Button>
                       </TableCell>
                     </TableRow>
@@ -199,10 +202,10 @@ const Aranceles = () => {
               </Table>
             </div>
             
-            <div className="mt-6 p-4 bg-muted/30 rounded-lg">
-              <p className="text-sm text-muted-foreground">
-                <strong>Nota:</strong> Aranceles de referencia. Valores sujetos a cambios según políticas institucionales. 
-                Consulta con la oficina de admisión para información actualizada.
+            <div className="mt-6 p-5 bg-muted/30 rounded-lg border">
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                <strong className="text-foreground">Nota:</strong> Los aranceles son referenciales y corresponden al año académico vigente. 
+                Los valores están sujetos a cambios según políticas institucionales. Te recomendamos consultar con la oficina de admisión para información actualizada.
               </p>
             </div>
           </div>
@@ -215,38 +218,37 @@ const Aranceles = () => {
               {filteredAndSortedCareers.map((career) => (
                 <Card 
                   key={career.id} 
-                  className="hover:shadow-md transition-shadow"
+                  className="hover:shadow-usm-md transition-shadow border-l-4 border-l-primary"
                 >
-                  <CardHeader>
-                    <CardTitle className="text-lg">{career.name}</CardTitle>
+                  <CardHeader className="pb-3">
+                    <CardTitle className="text-base leading-tight">{career.name}</CardTitle>
                   </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div className="space-y-4">
+                  <CardContent className="space-y-3 pt-0">
+                    <div className="grid grid-cols-2 gap-3 pb-3 border-b">
                       <div>
-                        <p className="text-sm text-muted-foreground mb-1">Arancel Anual</p>
-                        <p className="font-semibold text-primary">{career.arancel}</p>
+                        <p className="text-xs text-muted-foreground mb-1 uppercase tracking-wide">Arancel Anual</p>
+                        <p className="font-bold text-primary text-base">{career.arancel}</p>
                       </div>
                       <div>
-                        <p className="text-sm text-muted-foreground mb-1">Campus</p>
-                        <p className="font-semibold text-primary">{career.campus}</p>
+                        <p className="text-xs text-muted-foreground mb-1 uppercase tracking-wide">Campus</p>
+                        <p className="font-medium text-sm">{career.campus}</p>
                       </div>
                     </div>
                     <Button
                       variant="outline"
                       className="w-full"
+                      size="sm"
                       onClick={() => navigate(`/carreras/${career.id}`)}
                     >
-                      Ver detalles
+                      Ver detalles completos
                     </Button>
                   </CardContent>
                 </Card>
               ))}
             </div>
             
-            <div className="mt-6 p-4 bg-muted/30 rounded-lg">
-              <p className="text-sm text-muted-foreground">
-                <strong>Nota:</strong> Aranceles de referencia. Valores sujetos a cambios según políticas institucionales.
-              </p>
+            <div className="mt-6 p-4 bg-muted/30 rounded-lg border text-sm text-muted-foreground">
+              <strong className="text-foreground">Nota:</strong> Aranceles referenciales. Consulta con admisión para valores actualizados.
             </div>
           </div>
         </section>

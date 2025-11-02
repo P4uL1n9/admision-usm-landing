@@ -11,9 +11,9 @@ const CareerComparator = () => {
   const [career1, setCareer1] = useState("");
   const [career2, setCareer2] = useState("");
 
-  const careers = Object.values(carrerasRaw).map(c => {
+  const careers = Object.values(carrerasRaw).map((c: any) => {
     // tomar todos los campus (Casa Central Valparaíso / San Joaquín / Vitacura...)
-    const campusList = c.campus.map(sede => sede.campus).join(" / ");
+    const campusList = c.campus.map((sede: any) => sede.campus).join(" / ");
 
     // tomar el arancel anual (si hay varios campus con distinto arancel, por ahora usamos el primero)
     const firstArancel = c.campus[0]?.arancelCLP ?? 0;
@@ -30,7 +30,7 @@ const CareerComparator = () => {
       name: c.name,
       duration: c.duration,
       campus: campusList,
-      score: c.minScore,
+      score: c.minScore ?? "Consultar",
       tuition: tuitionCLP
     };
   });

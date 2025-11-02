@@ -8,14 +8,14 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Search } from "lucide-react";
 import carrerasRaw from "@/assets/carreras_usm.json";
 
-const careers = Object.values(carrerasRaw).map(c => ({
+const careers = Object.values(carrerasRaw).map((c: any) => ({
   id: c.id,
   name: c.name,
   description: c.description,
-  minScore: c.minScore,
-  campus: c.campus.map(s => s.campus).join(" / "),
+  minScore: c.minScore ?? null,
+  campus: c.campus.map((s: any) => s.campus).join(" / "),
   area: c.area,
-  tipo: c.regimen
+  tipo: c.regimen || (c.regimenes ? c.regimenes.join(", ") : "")
 }));
 
 const Carreras = () => {

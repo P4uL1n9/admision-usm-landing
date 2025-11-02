@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Search, GraduationCap, Building2, CreditCard, Users, FileText, CheckCircle2 } from "lucide-react";
+import { GraduationCap, Building2, CreditCard, Users, FileText, CheckCircle2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -21,7 +20,6 @@ interface Benefit {
 }
 
 const BecasBeneficiosEstatales = () => {
-  const [searchTerm, setSearchTerm] = useState("");
   const [selectedType, setSelectedType] = useState<string>("todos");
   const [selectedInstitution, setSelectedInstitution] = useState<string>("todos");
 
@@ -134,11 +132,9 @@ const BecasBeneficiosEstatales = () => {
   ];
 
   const filteredBenefits = benefits.filter((benefit) => {
-    const matchesSearch = benefit.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         benefit.institution.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesType = selectedType === "todos" || benefit.type === selectedType;
     const matchesInstitution = selectedInstitution === "todos" || benefit.institution === selectedInstitution;
-    return matchesSearch && matchesType && matchesInstitution;
+    return matchesType && matchesInstitution;
   });
 
   const getBadgeVariant = (type: string) => {
@@ -212,33 +208,22 @@ const BecasBeneficiosEstatales = () => {
             </aside>
 
             {/* Main Content */}
-            <div className="flex-1">
-              {/* Search Bar */}
-              <div className="mb-6">
-                <div className="relative">
-                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-                  <Input
-                    type="text"
-                    placeholder="Buscar por nombre o institución..."
-                    className="pl-10 h-12 text-base"
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                  />
-                </div>
-              </div>
-
+            <div className="flex-1 min-w-0">
               {/* Results Count */}
-              <div className="mb-4">
-                <p className="text-muted-foreground">
-                  {filteredBenefits.length} beneficio{filteredBenefits.length !== 1 ? 's' : ''} encontrado{filteredBenefits.length !== 1 ? 's' : ''}
+              <div className="mb-5">
+                <p className="text-lg font-semibold text-foreground">
+                  {filteredBenefits.length} beneficio{filteredBenefits.length !== 1 ? 's' : ''} disponible{filteredBenefits.length !== 1 ? 's' : ''}
+                </p>
+                <p className="text-sm text-muted-foreground mt-1">
+                  Usa los filtros para encontrar el beneficio que mejor se adapte a tu situación
                 </p>
               </div>
 
               {/* Benefits List */}
-              <div className="space-y-4">
+              <div className="space-y-5">
                 {filteredBenefits.map((benefit) => (
-                  <Card key={benefit.id} className="hover:shadow-usm-md transition-shadow">
-                    <CardHeader>
+                  <Card key={benefit.id} className="hover:shadow-usm-md transition-shadow border-l-4 border-l-primary">
+                    <CardHeader className="pb-4">
                       <div className="flex items-start gap-4">
                         <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                           <benefit.icon className="w-6 h-6 text-primary" />
@@ -246,44 +231,44 @@ const BecasBeneficiosEstatales = () => {
                         <div className="flex-1 min-w-0">
                           <div className="flex flex-wrap items-start gap-2 mb-2">
                             <CardTitle className="text-xl">{benefit.name}</CardTitle>
-                            <Badge variant={getBadgeVariant(benefit.type)}>
+                            <Badge variant={getBadgeVariant(benefit.type)} className="font-medium">
                               {benefit.type === "gratuidad" ? "Gratuidad" : benefit.type === "beca" ? "Beca" : "Crédito"}
                             </Badge>
                           </div>
-                          <CardDescription className="flex items-center gap-2">
+                          <CardDescription className="flex items-center gap-2 text-base">
                             <Building2 className="w-4 h-4" />
                             {benefit.institution}
                           </CardDescription>
                         </div>
                       </div>
                     </CardHeader>
-                    <CardContent>
+                    <CardContent className="pt-0">
                       <div className="space-y-4">
-                        <div>
-                          <h4 className="font-semibold mb-1 text-sm text-muted-foreground">Cobertura</h4>
-                          <p className="text-base">{benefit.coverage}</p>
+                        <div className="bg-muted/40 rounded-lg p-4">
+                          <h4 className="font-semibold mb-2 text-sm text-muted-foreground uppercase tracking-wide">Cobertura</h4>
+                          <p className="text-base font-medium text-primary">{benefit.coverage}</p>
                         </div>
 
                         <div>
-                          <h4 className="font-semibold mb-2 text-sm text-muted-foreground">Requisitos principales</h4>
-                          <ul className="space-y-1">
+                          <h4 className="font-semibold mb-3 text-sm text-muted-foreground uppercase tracking-wide">Requisitos principales</h4>
+                          <ul className="space-y-2">
                             {benefit.requirements.map((req, idx) => (
-                              <li key={idx} className="flex gap-2 text-sm">
-                                <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                                <span>{req}</span>
+                              <li key={idx} className="flex gap-3 text-sm">
+                                <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                                <span className="leading-relaxed">{req}</span>
                               </li>
                             ))}
                           </ul>
                         </div>
 
-                        <div className="grid md:grid-cols-2 gap-4 pt-2 border-t">
+                        <div className="grid md:grid-cols-2 gap-4 pt-4 border-t">
                           <div>
-                            <h4 className="font-semibold mb-1 text-sm text-muted-foreground">Cómo postular</h4>
-                            <p className="text-sm">{benefit.howToApply}</p>
+                            <h4 className="font-semibold mb-2 text-sm text-muted-foreground uppercase tracking-wide">Cómo postular</h4>
+                            <p className="text-sm leading-relaxed">{benefit.howToApply}</p>
                           </div>
                           <div>
-                            <h4 className="font-semibold mb-1 text-sm text-muted-foreground">Plazo</h4>
-                            <p className="text-sm">{benefit.deadline}</p>
+                            <h4 className="font-semibold mb-2 text-sm text-muted-foreground uppercase tracking-wide">Plazo</h4>
+                            <p className="text-sm font-medium text-secondary">{benefit.deadline}</p>
                           </div>
                         </div>
                       </div>
@@ -293,12 +278,21 @@ const BecasBeneficiosEstatales = () => {
               </div>
 
               {filteredBenefits.length === 0 && (
-                <Card className="p-12 text-center">
-                  <Search className="w-16 h-16 mx-auto mb-4 text-muted-foreground" />
+                <Card className="p-12 text-center border-2 border-dashed">
+                  <FileText className="w-16 h-16 mx-auto mb-4 text-muted-foreground opacity-50" />
                   <h3 className="text-xl font-semibold mb-2">No se encontraron beneficios</h3>
-                  <p className="text-muted-foreground">
-                    Intenta ajustar los filtros o términos de búsqueda
+                  <p className="text-muted-foreground mb-4">
+                    Intenta ajustar los filtros para ver más opciones
                   </p>
+                  <Button 
+                    variant="outline"
+                    onClick={() => {
+                      setSelectedType("todos");
+                      setSelectedInstitution("todos");
+                    }}
+                  >
+                    Limpiar filtros
+                  </Button>
                 </Card>
               )}
             </div>
@@ -365,18 +359,18 @@ const FiltersContent = ({
   ];
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-5">
       <div>
-        <h3 className="font-semibold mb-3 text-sm text-muted-foreground">Tipo de beneficio</h3>
-        <div className="space-y-2">
+        <h3 className="font-semibold mb-3 text-xs text-muted-foreground uppercase tracking-wide">Tipo de beneficio</h3>
+        <div className="space-y-1.5">
           {types.map((type) => (
             <button
               key={type.value}
               onClick={() => setSelectedType(type.value)}
-              className={`w-full text-left px-3 py-2 rounded-md transition-colors ${
+              className={`w-full text-left px-3 py-2.5 rounded-md transition-all text-sm ${
                 selectedType === type.value
-                  ? "bg-primary text-primary-foreground font-medium"
-                  : "hover:bg-muted"
+                  ? "bg-primary text-primary-foreground font-semibold shadow-sm"
+                  : "hover:bg-muted/70 font-medium"
               }`}
             >
               {type.label}
@@ -386,16 +380,16 @@ const FiltersContent = ({
       </div>
 
       <div>
-        <h3 className="font-semibold mb-3 text-sm text-muted-foreground">Institución</h3>
-        <div className="space-y-2">
+        <h3 className="font-semibold mb-3 text-xs text-muted-foreground uppercase tracking-wide">Institución</h3>
+        <div className="space-y-1.5">
           {institutions.map((institution) => (
             <button
               key={institution.value}
               onClick={() => setSelectedInstitution(institution.value)}
-              className={`w-full text-left px-3 py-2 rounded-md transition-colors ${
+              className={`w-full text-left px-3 py-2.5 rounded-md transition-all text-sm ${
                 selectedInstitution === institution.value
-                  ? "bg-primary text-primary-foreground font-medium"
-                  : "hover:bg-muted"
+                  ? "bg-primary text-primary-foreground font-semibold shadow-sm"
+                  : "hover:bg-muted/70 font-medium"
               }`}
             >
               {institution.label}
@@ -404,16 +398,18 @@ const FiltersContent = ({
         </div>
       </div>
 
-      <Button 
-        variant="outline" 
-        className="w-full"
-        onClick={() => {
-          setSelectedType("todos");
-          setSelectedInstitution("todos");
-        }}
-      >
-        Limpiar filtros
-      </Button>
+      {(selectedType !== "todos" || selectedInstitution !== "todos") && (
+        <Button 
+          variant="outline" 
+          className="w-full mt-2"
+          onClick={() => {
+            setSelectedType("todos");
+            setSelectedInstitution("todos");
+          }}
+        >
+          Limpiar filtros
+        </Button>
+      )}
     </div>
   );
 };

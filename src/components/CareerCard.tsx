@@ -8,35 +8,39 @@ interface CareerCardProps {
   id: string;
   name: string;
   description: string;
-  minScore: number;
+  minScore: number | null;
   campus: string;
   area: string;
 }
 
 const CareerCard = ({ id, name, description, minScore, campus, area }: CareerCardProps) => {
   return (
-    <Card className="hover:shadow-usm-lg transition-shadow duration-300">
-      <CardHeader>
-        <div className="flex justify-between items-start mb-2">
-          <Badge className="bg-accent text-accent-foreground">{area}</Badge>
-          <div className="flex items-center gap-1 text-sm text-muted-foreground">
-            <TrendingUp className="h-4 w-4" />
-            <span>{minScore} pts</span>
-          </div>
+    <Card className="hover:shadow-usm-lg transition-shadow duration-300 h-full flex flex-col">
+      <CardHeader className="pb-3">
+        <div className="flex justify-between items-start gap-2 mb-3">
+          <Badge className="bg-primary/10 text-primary border-primary/20">{area}</Badge>
+          {minScore && (
+            <div className="flex items-center gap-1 text-sm font-semibold text-primary">
+              <TrendingUp className="h-4 w-4" />
+              <span>{minScore} pts</span>
+            </div>
+          )}
         </div>
-        <CardTitle className="text-xl">{name}</CardTitle>
+        <CardTitle className="text-lg leading-tight">{name}</CardTitle>
       </CardHeader>
-      <CardContent>
-        <CardDescription className="mb-4 line-clamp-2">{description}</CardDescription>
-        <div className="flex items-center gap-2 mb-4 text-sm text-muted-foreground">
-          <MapPin className="h-4 w-4" />
-          <span>{campus}</span>
+      <CardContent className="flex-1 flex flex-col pt-0">
+        <CardDescription className="mb-4 line-clamp-3 text-sm flex-1">{description}</CardDescription>
+        <div className="space-y-3">
+          <div className="flex items-start gap-2 text-sm text-muted-foreground">
+            <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
+            <span className="line-clamp-2">{campus}</span>
+          </div>
+          <Link to={`/carreras/${id}`} className="block">
+            <Button className="w-full bg-primary hover:bg-primary/90" size="sm">
+              Ver detalles
+            </Button>
+          </Link>
         </div>
-        <Link to={`/carreras/${id}`}>
-          <Button className="w-full bg-primary hover:bg-primary/90">
-            Ver más detalles
-          </Button>
-        </Link>
       </CardContent>
     </Card>
   );
