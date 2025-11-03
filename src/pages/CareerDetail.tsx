@@ -1,11 +1,10 @@
 import { useParams, Link } from "react-router-dom";
-import { useSearchParams } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, MapPin, TrendingUp, Clock, BookOpen, FileText, DollarSign, Hash, GraduationCap, Calendar } from "lucide-react";
+import { ArrowLeft, MapPin, Clock, BookOpen, FileText, DollarSign, Hash, GraduationCap, Calendar } from "lucide-react";
 import carrerasRaw from "@/assets/carreras_usm.json";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
@@ -284,7 +283,7 @@ const CareerDetail = () => {
                     </div>
                   </div>
                   <div className="pt-4">
-                    <Link to="/becas-beneficios-estatales">
+                    <Link to="/financiamiento/becas-beneficios-estatales">
                       <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90 font-bold">
                         Ver becas disponibles
                       </Button>

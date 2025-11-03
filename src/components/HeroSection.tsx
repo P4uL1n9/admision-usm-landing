@@ -66,10 +66,10 @@ const HeroSection = () => {
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="all">Todas las sedes</SelectItem>
-                    <SelectItem value="Valparaíso">Casa Central Valparaíso</SelectItem>
-                    <SelectItem value="Santiago">Campus Santiago San Joaquín</SelectItem>
-                    <SelectItem value="Vitacura">Campus Santiago Vitacura</SelectItem>
-                    <SelectItem value="Viña">Campus Viña del Mar</SelectItem>
+                    <SelectItem value="Casa Central Valparaíso">Casa Central Valparaíso</SelectItem>
+                    <SelectItem value="Santiago San Joaquín">Campus Santiago San Joaquín</SelectItem>
+                    <SelectItem value="Santiago Vitacura">Campus Santiago Vitacura</SelectItem>
+                    <SelectItem value="Viña del Mar">Campus Viña del Mar</SelectItem>
                     <SelectItem value="Concepción">Campus Concepción</SelectItem>
                   </SelectContent>
                 </Select>

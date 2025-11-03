@@ -11,6 +11,8 @@ const LABELS: Record<string, string> = {
   "vias-de-admision": "Vías de admisión",
   "postgrados": "Postgrados",
   "universidad": "Universidad",
+  "financiamiento": "Financiamiento",
+  "aranceles": "Aranceles y matrícula de pregrado",
 };
 
 // Fallback: de "ing-civil-informatica" -> "Ing Civil Informatica"
@@ -25,14 +27,12 @@ const Breadcrumbs = () => {
   const { pathname } = useLocation();
   const parts = pathname.split("/").filter(Boolean);
 
-  // Construye items con ruta acumulada
   const items = parts.map((seg, idx) => {
     const route = "/" + parts.slice(0, idx + 1).join("/");
     const label = LABELS[seg] ?? prettifySlug(decodeURIComponent(seg));
     return { route, label, isLast: idx === parts.length - 1 };
   });
 
-  // Raíz “Admisión pregrado”
   const root = { route: "/", label: LABELS[""] ?? "Inicio" };
 
   return (

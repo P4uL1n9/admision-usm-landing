@@ -14,13 +14,13 @@ const QuickAccessCards = () => {
       icon: Award,
       title: "Becas y beneficios",
       description: "Descubre las ayudas económicas disponibles",
-      link: "becas-beneficios-estatales",
+      link: "/financiamiento/becas-beneficios-estatales",
     },
     {
       icon: DollarSign,
       title: "Costos y aranceles",
       description: "Descubre los costos y aranceles de nuestras carreras",
-      link: "aranceles",
+      link: "/financiamiento/aranceles",
     },
   ];
 

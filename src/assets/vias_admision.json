@@ -1,0 +1,77 @@
+[
+  {
+    "id": "admision-centralizada-paes",
+    "via": "Admisión Centralizada – PAES",
+    "descripcion": "Ingreso vía Proceso Nacional de Admisión utilizando la prueba PAES a la Universidad Técnica Federico Santa María (USM).",
+    "requisitos": {
+      "puntajePromedio": "Igual o superior a 485 puntos en escala 100-1000 entre Competencia Lectora y Matemática 1 para algunas carreras.",
+      "pruebaM2": "Obligatoria para todas las Ingenierías y Licenciaturas, excluyendo Ingeniería Comercial.",
+      "pruebasOptativas": "Se permite rendir optativas de Ciencias o Historia/Ciencias Sociales, se considera la de mayor puntaje para el ponderado."
+    },
+    "detalleAdicional": {
+      "vacantesYPuntajes": "Se muestran vacantes y puntajes de corte por carrera para procesos anteriores."
+    }
+  },
+  {
+    "id": "admision-ingreso-directo",
+    "via": "Admisión Ingreso Directo a Carreras Técnicas Universitarias",
+    "descripcion": "Vía de ingreso para carreras técnicas universitarias de la USM, sin exigencia de PAES obligatorio.",
+    "requisitos": {
+      "egresadoEnsenanzaMedia": "Debe ser egresado de Enseñanza Media.",
+      "NEM": "NEM igual o mayor a 5,0 (escala 1-7).",
+      "CIoPasaporte": "Cédula de Identidad o Pasaporte vigente.",
+      "PAESOptativa": "La PAES no es exigida pero se recomienda rendirla para optar a beneficios ministeriales."
+    },
+    "detalleAdicional": null
+  },
+  {
+    "id": "admision-especial",
+    "via": "Admisión Especial",
+    "descripcion": "Ingreso especial para quienes tengan méritos destacados (académicos, deportistas, internacionales, etc.) o acceso a nivel intermedio en la USM.",
+    "requisitos": {
+      "tipos": ["Postulantes Destacados", "NEM", "Deportistas", "Titulados Técnico Universitario"],
+      "egresoMedia": "Egreso de Enseñanza Media reciente (2024 o 2025, en algunos casos) para ciertos tipos de ingreso.",
+      "documentacion": ["Copia Cédula de Identidad por ambos lados", "Licencia de Educación Media", "Certificado de concentración de notas de enseñanza media"]
+    },
+    "detalleAdicional": {
+      "nivelIntermedio": "Permite ingreso al primer año y también a nivel intermedio para titulados de carreras Técnico Universitario."
+    }
+  },
+  {
+    "id": "mujeres-stem",
+    "via": "Mujeres STEM",
+    "descripcion": "Programa que ofrece cupos supernumerarios en carreras STEM para mujeres, con el fin de disminuir brechas de género en la USM.",
+    "requisitos": {
+      "egresoMediaMismoAno": "Alumnas con egreso de Enseñanza Media en el mismo año de postulación.",
+      "postulacion": "La postulación se efectúa mediante el proceso centralizado de admisión a las universidades."
+    },
+    "detalleAdicional": {
+      "asignacionVacantes": "Asignación de vacantes basada en el puntaje ponderado de candidatas mujeres en lista de espera."
+    }
+  },
+  {
+    "id": "programas-de-apoyo",
+    "via": "Programas de Apoyo",
+    "descripcion": "Programas de apoyo al ingreso y permanencia universitaria en la USM, incluyendo inclusión para personas con necesidades educativas especiales.",
+    "requisitos": null,
+    "detalleAdicional": {
+      "programaInclusion": "Acompaña y apoya a quienes presentan alguna necesidad educativa especial (discapacidad visual, auditiva, física, trastorno del espectro autista)."
+    }
+  },
+  {
+    "id": "becas",
+    "via": "Becas",
+    "descripcion": "Información sobre becas para nuevos estudiantes de la USM por rendimiento académico, mérito, deportistas, entre otros.",
+    "requisitos": {
+      "egresadoMedia": "Ser egresado de enseñanza media en 2024.",
+      "primerAñoMerito": "Para algunas becas al mérito académico se exige obtener el mayor puntaje ponderado o puntaje máximo PAES."
+    },
+    "detalleAdicional": {
+      "tiposBecas": [
+        "Beca de primer año al mérito académico (vía Adm. Especial Centralizada Deportista Destacado)",
+        "Beca de primer año al mérito académico (vía Adm. Especial Centralizada Deportista en Formación Élite)",
+        "Beca de primer año al mérito académico (vía Adm. Especial Centralizada Deportista Élite)"
+      ]
+    }
+  }
+]
