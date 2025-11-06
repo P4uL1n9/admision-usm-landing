@@ -1242,5 +1242,126 @@
       "Cédula de identidad"
     ],
     "mallaImage": "ingenieria-software.png"
+  },
+  "licenciatura-en-fisica": {
+    "id": "licenciatura-en-fisica",
+    "name": "Licenciatura en Física",
+    "description": "Forma profesionales con una sólida base en Física, desarrollando las destrezas y herramientas que les permitirán integrarse a equipos de investigación y continuar estudios de postgrado, en áreas como Física de Altas Energías y Física de Materia Condensada.",
+    "tituloProfesional": "",
+    "gradoAcademico": "Licenciado en Física o Licenciada en Física",
+    "duration": "4 años (8 semestres académicos)",
+    "regimen": "Diurno",
+    "regimenes": [
+      "Diurno"
+    ],
+    "modalidad": "Presencial",
+    "area": "Ciencias Básicas",
+    "minScore": 600,
+    "campus": [
+      {
+        "campus": "Casa Central Valparaíso",
+        "codigoDemre": "15102",
+        "arancelCLP": 4740000
+      },
+      {
+        "campus": "Santiago San Joaquín",
+        "codigoDemre": "15302",
+        "arancelCLP": 4740000
+      }
+    ],
+    "ponderaciones": {
+      "NEM": "15%",
+      "Ranking": "20%",
+      "M1": "35%",
+      "M2": "10%",
+      "Lectora": "10%",
+      "Ciencias_o_Historia": "10%"
+    },
+    "campoLaboral": "Integración en equipos de investigación, continuación de estudios de postgrado en física o áreas afines, docencia universitaria y análisis de datos en sectores tecnológicos.",
+    "requirements": [
+      "Puntaje mínimo de postulación según admisión vigente",
+      "Matemática M1 obligatoria",
+      "Prueba de Ciencias obligatoria (Física recomendada)"
+    ],
+    "mallaImage": "licenciatura-en-fisica.png",
+    "mallaPDF": "licenciatura-en-fisica.pdf"
+  },
+  "licenciatura-en-astrofisica": {
+    "id": "licenciatura-en-astrofisica",
+    "name": "Licenciatura en Astrofísica",
+    "description": "Provee una sólida formación en física contemporánea, matemáticas y astronomía, permitiendo analizar grandes cantidades de datos (Big Data) provenientes de observaciones astronómicas y comprender el funcionamiento de instrumentación de vanguardia.",
+    "tituloProfesional": "",
+    "gradoAcademico": "Licenciado en Astrofísica o Licenciada en Astrofísica",
+    "duration": "4 años (8 semestres académicos)",
+    "regimen": "Diurno",
+    "regimenes": [
+      "Diurno"
+    ],
+    "modalidad": "Presencial",
+    "area": "Ciencias Básicas",
+    "minScore": 600,
+    "campus": [
+      {
+        "campus": "Casa Central Valparaíso",
+        "codigoDemre": "15103",
+        "arancelCLP": 4740000
+      },
+      {
+        "campus": "Santiago San Joaquín",
+        "codigoDemre": "15303",
+        "arancelCLP": 4740000
+      }
+    ],
+    "ponderaciones": {
+      "NEM": "15%",
+      "Ranking": "20%",
+      "M1": "35%",
+      "M2": "10%",
+      "Lectora": "10%",
+      "Ciencias_o_Historia": "10%"
+    },
+    "campoLaboral": "Instituciones de investigación nacionales e internacionales, continuación de estudios de postgrado en Astrofísica o Astronomía, análisis de datos y observatorios.",
+    "requirements": [
+      "Puntaje mínimo de postulación según admisión vigente",
+      "Matemática M1 obligatoria",
+      "Prueba de Ciencias obligatoria (Física recomendada)"
+    ],
+    "mallaImage": "licenciatura-en-astrofisica.png",
+    "mallaPDF": "licenciatura-en-astrofisica.pdf"
+  },
+  "licenciatura-en-ciencias-mencion-quimica": {
+    "id": "licenciatura-en-ciencias-mencion-quimica",
+    "name": "Licenciatura en Ciencias, mención Química",
+    "description": "Ofrece una formación de nivel avanzado para liderar investigaciones básicas y aplicadas, tanto en análisis químico como en la obtención de nuevos productos, con una sólida preparación científica y el sello tecnológico y de innovación de la USM.",
+    "tituloProfesional": "",
+    "gradoAcademico": "Licenciado en Ciencias, mención Química o Licenciada en Ciencias, mención Química",
+    "duration": "4,5 años (9 semestres académicos)",
+    "regimen": "Diurno",
+    "regimenes": [
+      "Diurno"
+    ],
+    "modalidad": "Presencial",
+    "area": "Ciencias Básicas",
+    "minScore": null,
+    "campus": [
+      {
+        "campus": "Casa Central Valparaíso",
+        "codigoDemre": null,
+        "arancelCLP": 4740000
+      },
+      {
+        "campus": "Santiago San Joaquín",
+        "codigoDemre": null,
+        "arancelCLP": 4740000
+      }
+    ],
+    "ponderaciones": null,
+    "campoLaboral": "Investigación básica y aplicada en análisis químico, desarrollo de nuevos productos, continuación de estudios de postgrado y docencia.",
+    "requirements": [
+      "Esta carrera no tiene admisión directa vía PAES.",
+      "El ingreso es a través de Ingeniería Civil Plan Común o a través de la carrera Ingeniería Civil Química."
+    ],
+    "mallaImage": "licenciatura-en-ciencias-mencion-quimica.png",
+    "mallaPDF": "licenciatura-en-ciencias-mencion-quimica.pdf"
   }
 }
