@@ -198,5 +198,238 @@
         "campus": ["Casa Central Valparaíso"],
         "requirements": ["Estar en posesión del grado de Licenciado en Ciencias de la Ingeniería Civil o un título profesional universitario en disciplinas afines al Programa, de nivel, contenido y duración equivalentes a los necesarios para obtener el grado de Licenciado en Ciencias de la Ingeniería Civil. El proceso de postulación se desarrolla en forma semestral. El Comité de Programa establece un número máximo de cupos de acuerdo a la disponibilidad de académicos tutores."],
         "mallaImage": "magister-en-ciencias-de-la-ingenieria-civil.png"
+    },
+    "magister-en-ciencias-de-la-ingenieria-electrica": {
+        "id": "magister-en-ciencias-de-la-ingenieria-electrica",
+        "name": "Magíster en Ciencias de la Ingeniería Eléctrica",
+        "description": "El Magíster en Ciencias de la Ingeniería Eléctrica de la Universidad Técnica Federico Santa María forma profesionales con aptitud para la investigación y la resolución de problemas de ingeniería. Busca profundizar conocimientos científicos y tecnológicos en electrotecnia, fomentando la creación y aplicación de conocimiento. El programa prepara graduados capaces de comprender el estado del arte en su área de especialización y de contribuir al desarrollo científico, tecnológico e innovador de la disciplina.",
+        "areasEspecializacion": [
+            "Alta Tensión",
+            "Máquinas y Accionamientos Eléctricos",
+            "Sistemas de Energía y Potencia"
+        ],
+        "gradoAcademico": "Magíster",
+        "duration": "El Programa se impartirá en jornada diurna a tiempo completo, con sistema presencial de 4 semestres de duración (dos años). En cualquier caso, la permanencia en el Programa no podrá exceder los 6 semestres.",
+        "regimen": "Diurno",
+        "regimenes": ["Diurno"],
+        "modalidad": "Presencial",
+        "tipoPostgrado": "Magíster",
+        "campus": ["Casa Central Valparaíso"],
+        "requirements": [
+            "Haber obtenido un grado académico cuyo contenido y duración de estudios sean equivalentes a los necesarios para obtener el grado de Licenciado en Ciencias de la Ingeniería Eléctrica o Licenciado en Ingeniería Eléctrica de la UTFSM.",
+            "Declarar, a través de una carta de intención, su interés por desarrollarse en una o más de las áreas ofrecidas por el Programa.",
+            "Haber aprobado asignaturas o tener experiencia comprobable en el (las) área(s) de especialidad en la que desea proseguir estudios.",
+            "Estar dentro del rango del 30% de los estudiantes con mejor rendimiento de su generación."
+        ],
+        "mallaImage": "magister-en-ciencias-de-la-ingenieria-electrica.png"
+    },
+    "magister-en-ciencias-de-la-ingenieria-electronica": {
+        "id": "magister-en-ciencias-de-la-ingenieria-electronica",
+        "name": "Magíster en Ciencias de la Ingeniería Electrónica",
+        "description": "El Magíster en Ciencias de la Ingeniería Electrónica forma graduados capaces de contribuir al desarrollo científico y tecnológico del país. El programa busca que los estudiantes comprendan el proceso de creación y aplicación del conocimiento en nuevas tecnologías, con dominio del estado del arte en su área de especialización. Promueve la investigación y la innovación tecnológica mediante la aplicación de conocimientos avanzados en ingeniería electrónica.",
+        "areasEspecializacion": [
+            "Computadores",
+            "Control Automático",
+            "Electrónica de Potencia y Conversión de Energía",
+            "Telecomunicaciones y Procesamiento de Señales",
+            "Telemática"
+        ],
+        "gradoAcademico": "Magíster",
+        "duration": "El programa se imparte con sistema presencial de 4 semestres de duración (2 años), no pudiendo extenderse más allá de los 6 semestres.",
+        "regimen": "Diurno",
+        "regimenes": ["Diurno"],
+        "modalidad": "Presencial",
+        "tipoPostgrado": "Magíster",
+        "campus": ["Casa Central Valparaíso"],
+        "requirements": [
+            "Estar en posesión del grado de Licenciado en Ciencias de la Ingeniería Electrónica o de un título profesional cuyo nivel, contenido y duración de estudios sean equivalentes a los necesarios para obtener el grado de Licenciado correspondiente. Los antecedentes académicos del postulante serán estudiados por el Comité de Programa, el que decidirá la postulación en función de los antecedentes académicos presentados."
+        ],
+        "mallaImage": "magister-en-ciencias-de-la-ingenieria-electronica.png"
+    },
+    "magister-en-ciencias-de-la-ingenieria-industrial": {
+        "id": "magister-en-ciencias-de-la-ingenieria-industrial",
+        "name": "Magíster en Ciencias de la Ingeniería Industrial",
+        "description": "El Magíster en Ciencias de la Ingeniería Industrial está orientado a formar graduados con una sólida base teórica y aplicada en su área. El programa busca fortalecer la capacidad de resolución de problemas complejos y el dominio de conocimientos avanzados en Ingeniería Industrial. Prepara a los estudiantes para enfrentar desafíos científicos y profesionales, promoviendo el desarrollo de competencias que impulsen la innovación y la excelencia en la disciplina.",
+        "areasEspecializacion": [
+            "Gestión de Operaciones", 
+            "Conversión de Energía", 
+            "Finanzas Cuantitativas",
+            "Ingeniería de Mercados y Emprendimiento"
+        ],
+        "gradoAcademico": "Magíster",
+        "duration": " El programa se imparte con sistema presencial de 4 semestres de duración (2 años), no pudiendo extenderse más allá de los 6 semestres.",
+        "regimen": "Diurno",
+        "regimenes": ["Diurno"],
+        "modalidad": "Presencial",
+        "tipoPostgrado": "Magíster",
+        "campus": ["Casa Central Valparaíso"],
+        "requirements": ["Estar en posesión de grado de Licenciado en Ciencias de la Ingeniería Industrial o de un título profesional cuyo nivel, contenido y duración de estudios sean equivalentes a los contenidos necesarios para obtener el grado de Licenciado correspondiente. Los antecedentes académicos del postulante serán estudiados por el Comité de Programa, el que decidirá la postulación en función de los antecedentes académicos y de las cartas de recomendación."],
+        "mallaImage": "magister-en-ciencias-de-la-ingenieria-industrial.png"
+    },
+    "magister-en-ciencias-de-la-ingenieria-informatica": {
+        "id": "magister-en-ciencias-de-la-ingenieria-informatica",
+        "name": "Magíster en Ciencias de la Ingeniería Informática",
+        "description": "El Magíster en Ciencias de la Ingeniería Informática forma especialistas capaces de contribuir al desarrollo científico y tecnológico del área. El programa promueve la investigación aplicada y teórica en distintas áreas de especialización, fomentando la generación de nuevo conocimiento y el avance de la Ingeniería Informática a nivel académico y profesional.",
+        "areasEspecializacion": [
+            "Inteligencia Artificial y Ciencia de Datos", 
+            "Software y Ciberseguridad", 
+            "Computación Aplicada"
+        ],
+        "gradoAcademico": "Magíster",
+        "duration": " El Programa se impartire en jornada diurna a tiempo completo, con sistema presencial de 4 semestres de duración [2 años]. En cualquier caso, la permanencia en el Programa no podrá exceder los 6 semestres.",
+        "regimen": "Diurno",
+        "regimenes": ["Diurno"],
+        "modalidad": "Presencial",
+        "tipoPostgrado": "Magíster",
+        "campus": ["Casa Central Valparaíso"],
+        "requirements": ["Haber obtenido el grado de licenciado en Ciencias de la Ingeniería Informática o disciplinas afines, o un título profesional cuyo nivel, contenido y duración (al menos 10 semestres nominales) sean equivalentes a los necesarios para obtener el grado de licenciado correspondiente. Evidencia: certificados de títulos y grado.",
+            "Demostrar un rendimiento académico destacado, esto es, tener promedio de notas preferentemente sobre 70%. Evidencia: Concentración de notas de pregrado.",
+            "Declarar, a través de una carta de intención, su interés por desarrollarse en una de las áreas de especialización ofrecidas por el programa. Evidencia: Carta de postulación al programa."
+        ],
+        "mallaImage": "magister-en-ciencias-de-la-ingenieria-informatica.png"
+    },
+    "magister-en-ciencias-de-la-ingenieria-mecanica": {
+        "id": "magister-en-ciencias-de-la-ingenieria-mecanica",
+        "name": "Magíster en Ciencias de la Ingeniería Mecánica",
+        "description": "El Magíster en Ciencias de la Ingeniería Mecánica de la Universidad Técnica Federico Santa María forma profesionales con una base sólida en ciencias de la ingeniería. El programa está orientado al desarrollo de competencias para resolver problemas técnicos complejos y profundizar en áreas de especialización propias de la ingeniería mecánica, promoviendo el avance científico y tecnológico en la disciplina.",
+        "areasEspecializacion": [
+            "Mecánica de Sólidos", 
+            "Mecánica de Fluidos", 
+            "Sistemas Energéticos e Industriales"
+        ],
+        "gradoAcademico": "Magíster",
+        "duration": "El Programa se imparte en jornada diurna a tiempo completo, con sistema presencial de 4 semestres de duración [2 años]. En cualquier caso, la permanencia en el Programa no podrá exceder los 6 semestres.",
+        "regimen": "Diurno",
+        "regimenes": ["Diurno"],
+        "modalidad": "Presencial",
+        "tipoPostgrado": "Magíster",
+        "campus": ["Casa Central Valparaíso"],
+        "requirements": ["El requisito básico de postulación al programa es estar en posesión del grado de Licenciado en Ciencias de la Ingeniería Mecánica o un título profesional cuyo nivel, contenido y duración de estudios sean equivalentes a los necesarios para obtener el grado de Licenciado correspondiente."],
+        "mallaImage": "magister-en-ciencias-de-la-ingenieria-mecanica.png"
+    },
+    "magister-en-ciencias-de-la-ingenieria-metalurgica-y-de-minas": {
+        "id": "magister-en-ciencias-de-la-ingenieria-metalurgica-y-de-minas",
+        "name": "Magíster en Ciencias de la Ingeniería Metalúrgica y de Minas",
+        "description": "El Magíster en Ciencias de la Ingeniería Metalúrgica y de Minas forma investigadores con competencias avanzadas en ingeniería, capaces de contribuir al desarrollo científico y tecnológico en las áreas de minas, metalurgia y materiales. El programa promueve la inserción en la industria o la continuación de estudios de postgrado, fomentando el avance, la innovación y el fortalecimiento de la disciplina a través de la investigación aplicada.",
+        "areasEspecializacion": [
+            "Minería", 
+            "Materiales", 
+            "Metalurgia"
+        ],
+        "gradoAcademico": "Magíster",
+        "duration": "El programa se imparte con sistema presencial de 4 semestres de duración (2 años), no pudiendo extenderse más allá de los 6 semestres.",
+        "regimen": "Diurno",
+        "regimenes": ["Diurno"],
+        "modalidad": "Presencial",
+        "tipoPostgrado": "Magíster",
+        "campus": ["Casa Central Valparaíso"],
+        "requirements": ["Haber obtenido el grado de licenciado en ciencias de la ingeniería o un título profesional cuyo nivel, contenido y duración de estudios sean equivalentes a los necesarios para obtener el grado de licenciado correspondiente.",
+            "Rendimiento académico destacado equivalente a un promedio superior a 70% de la escala de notas respectiva.",
+            "Demostrar interés por hacer investigación en una de las áreas declaradas en el Departamento de Ingeniería Metalúrgica y Materiales.",
+            "Estar en posesión de un nivel intermedio (Nivel B|) del idioma de inglés, siendo un requisito deseable, no excluyente, para ingresar al Programa."
+        ],
+        "mallaImage": "magister-en-ciencias-de-la-ingenieria-metalurgica-y-de-minas.png"
+    },
+    "magister-en-ciencias-de-la-ingenieria-quimica": {
+        "id": "magister-en-ciencias-de-la-ingenieria-quimica",
+        "name": "Magíster en Ciencias de la Ingeniería Química",
+        "description": "El Magíster en Ciencias de la Ingeniería Química forma graduados con un profundo conocimiento del estado del arte en su área de especialización. El programa busca desarrollar competencias para contribuir al avance científico y tecnológico de la ingeniería de procesos, promoviendo la aplicación del conocimiento en investigación e innovación tecnológica.",
+        "areasEspecializacion": [
+            "Ciencias de la Ingeniería Química",
+            "Ingeniería de Procesos",
+            "Ingeniería Ambiental"
+        ],
+        "gradoAcademico": "Magíster",
+        "duration": "El programa se imparte con sistema presencial de 4 semestres de duración (2 años), no pudiendo extenderse más allá de los 6 semestres.",
+        "regimen": "Diurno",
+        "regimenes": ["Diurno"],
+        "modalidad": "Presencial",
+        "tipoPostgrado": "Magíster",
+        "campus": ["Casa Central Valparaíso"],
+        "requirements": [""],
+        "mallaImage": "magister-en-ciencias-de-la-ingenieria-quimica.png"
+    },
+    "magister-en-ciencias-mecion-fisica": {
+        "id": "magister-en-ciencias-mecion-fisica",
+        "name": "Magíster en Ciencias , Mención Física",
+        "description": "El Magíster en Ciencias, mención Física, ofrece una formación avanzada en física general, tanto clásica como cuántica. El programa permite a los estudiantes especializarse en áreas específicas de investigación, desarrollando conocimientos profundos y habilidades para realizar investigación científica mediante cursos avanzados y la elaboración de una tesis.",
+        "areasEspecializacion": [
+            "Materia condensada", 
+            "Partículas y Campos"
+        ],
+        "gradoAcademico": "Magíster",
+        "duration": "El programa se imparte con sistema presencial de 4 semestres de duración (2 años), no pudiendo extenderse más allá de los 6 semestres.",
+        "regimen": "Diurno",
+        "regimenes": ["Diurno"],
+        "modalidad": "Presencial",
+        "tipoPostgrado": "Magíster",
+        "campus": ["Casa Central Valparaíso"],
+        "requirements": ["Estar en posesión del grado de Licenciado en Física o disciplinas afines, o de un título o grado cuyo nivel, contenido y duración de estudios, sean equivalentes a los necesarios para obtener el grado de Licenciado correspondiente. El comité de Programa podrá aceptar estudiantes condicionales en un plan especial de nivelación."],
+        "mallaImage": "magister-en-ciencias-mecion-fisica.png"
+    },
+    "magister-en-ciencias-mencion-matematica": {
+        "id": "magister-en-ciencias-mencion-matematica",
+        "name": "Magíster en Ciencias, Mención Matemática",
+        "description": "El Magíster en Ciencias, mención Matemática, de la Universidad Técnica Federico Santa María forma graduados con dominio en áreas avanzadas de la matemática desarrolladas en el departamento. El programa prepara a los estudiantes para continuar estudios de doctorado e integrarse en equipos de investigación científica, fomentando el desarrollo del conocimiento matemático.",
+        "areasEspecializacion": [
+            "Análisis No-Lineal y de Ecuaciones Diferenciales Parciales", 
+            "Análisis Numérico", 
+            "Control de Ecuaciones Diferenciales Parciales y Problemas Inversos",
+            "Optimización",
+            "Sistemas Dinámicos",
+            "Probabilidad y Estadística"
+        ],
+        "gradoAcademico": "Magíster",
+        "duration": "El programa se imparte con sistema presencial de 4 semestres de duración (2 años), no pudiendo extenderse más allá de los 6 semestres.",
+        "regimen": "Diurno",
+        "regimenes": ["Diurno"],
+        "modalidad": "Presencial",
+        "tipoPostgrado": "Magíster",
+        "campus": ["Casa Central Valparaíso"],
+        "requirements": ["Estar en posesión de grado de Licenciado en Matemáticas o disciplinas afines, o de un título o grado cuyo nivel, contenido y duración de estudios, sean equivalentes a los necesarios para obtener el grado de Licenciado correspondiente. El Comité de Programa podrá aceptar estudiantes condicionales en un plan especial de nivelación."],
+        "mallaImage": "magister-en-ciencias-mencion-matematica.png"
+    },
+    "magister-en-ciencias-mencion-quimica": {
+        "id": "magister-en-ciencias-mencion-quimica",
+        "name": "Magíster en Ciencias, Mención Química",
+        "description": "El Magíster en Ciencias, mención Química, de la Universidad Técnica Federico Santa María forma investigadores con sólidos conocimientos en ciencias químicas y pensamiento analítico avanzado. El programa ofrece una formación profunda y especializada, superior a la de pregrado, entregando herramientas científicas para contribuir al desarrollo regional y nacional a través de la investigación y la innovación.",
+        "areasEspecializacion": [
+            "Bioquímica",
+            "Fisicoquímica",
+            "Química Analítica y Ambiental",
+            "Química Orgánica",
+            "Química Inorgánica"
+        ],
+        "gradoAcademico": "Magíster",
+        "duration": "El programa se imparte con sistema presencial de 4 semestres de duración (2 años), no pudiendo extenderse más allá de los 6 semestres.",
+        "regimen": "Diurno",
+        "regimenes": ["Diurno"],
+        "modalidad": "Presencial",
+        "tipoPostgrado": "Magíster",
+        "campus": ["Casa Central Valparaíso"],
+        "requirements": ["Estar en posesión del grado de Licenciado en Ciencias Químicas o disciplinas afines, o de un título o grado cuyo nivel, contenido y duración de estudios sea equivalente a los necesarios para obtener el grado de Licenciado correspondiente. Tener promedio de notas de pregrado igual o superior a 70 (en escala de 0 a 100) o 5,0 (en escala de 1 a 7). Las postulaciones recepcionadas en la Dirección de Postgrado USM serán evaluadas por el Comité del Programa de acuerdo a: antecedentes académicos, examen de conocimientos y entrevista personal."],
+        "mallaImage": "magister-en-ciencias-mencion-quimica.png"
+    },
+    "magister-en-rehabilitacion-arquitectonica-sostenible": {
+        "id": "magister-en-rehabilitacion-arquitectonica-sostenible",
+        "name": "Magíster en Rehabilitación Arquitectónica Sostenible",
+        "description": "El Magíster en Rehabilitación Arquitectónica Sostenible forma graduados con conocimientos científicos y técnicos avanzados en rehabilitación de edificaciones. El programa promueve la preservación del patrimonio construido a través de la investigación y el desarrollo de proyectos de intervención sostenibles, fomentando un pensamiento crítico, reflexivo y respetuoso con el medio ambiente y la herencia cultural.",
+        "areasEspecializacion": [
+            "Patrimonio Arquitectónico", 
+            "Sostenibilidad"
+        ],
+        "gradoAcademico": "Magíster",
+        "duration": "El programa se imparte con sistema presencial de 4 semestres de duración (2 años), no pudiendo extenderse más allá de los 6 semestres.",
+        "regimen": "Diurno",
+        "regimenes": ["Diurno"],
+        "modalidad": "Presencial",
+        "tipoPostgrado": "Magíster",
+        "campus": ["Casa Central Valparaíso"],
+        "requirements": ["Estar en posesión del grado académico de licenciado/a en Arquitectura o disciplinas afines tales como: ingeniería, construcción, geografía, y otras que acrediten estudios de pregrado universitarios aprobados equivalentes a 8 semestres o 240 créditos SCT. ",
+            "Expresar y demostrar interés por la investigación, y un nivel de conocimiento adecuado en alguna de las áreas que el Programa ofrece, mediante cartas de recomendación de especialistas, una entrevista oral, y un documento escrito aludiendo a los temas específicos de interés. ",
+            "Rendimiento académico destacado en el programa asociado al grado o título con el cual postula. Como referencia, el Comité del Programa considera como criterio tener un promedio de notas igual o superior al 65% de la calificación máxima.",
+            "Estar en posesión de un nivel intermedio del idioma inglés (Nivel B1), que le permita comprender textos científicos propios de su especialidad, siendo este un requisito deseable pero no excluyente."
+        ],
+        "mallaImage": "magister-en-rehabilitacion-arquitectonica-sostenible.png"
     }
 }
