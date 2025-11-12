@@ -13,8 +13,10 @@ const utilityLink =
 
 // Subitems: FINANCIAMIENTO
 const financiamientoItems = [
-  { label: "Becas y beneficios estatales", href: "/financiamiento/becas-beneficios-estatales" },
+  { label: "Becas y beneficios pregrado", href: "/financiamiento/becas-beneficios-estatales" },
+  { label: "Becas postgrado", href: "/financiamiento/becas-postgrado" },
   { label: "Aranceles y Matrícula de pregrado", href: "/financiamiento/aranceles" },
+  { label: "Aranceles postgrado", href: "/financiamiento/aranceles-postgrado" },
 ];
 
 // Subitems: VÍAS (rutas correctas)
@@ -80,7 +82,7 @@ const Navbar = () => {
     { label: "Inicio", href: "/" },
     { label: "Carreras de pregrado", href: "/carreras" },
     { label: "Postgrados", href: "/postgrados" },
-    { label: "Vías de admisión", href: "/vias-admision", isVias: true },
+    { label: "Vías de admisión", href: "/vias-admision"},
     { label: "Financiamiento", href: "/financiamiento", isFin: true },
     { label: "Informaciones", href: "/informaciones", isInfo: true },
   ];

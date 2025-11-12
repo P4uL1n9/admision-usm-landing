@@ -40,20 +40,14 @@ const Carreras = () => {
     const area = searchParams.get("area");
     const sede = searchParams.get("sede");
     const regimen = searchParams.get("regimen");
+    const q = searchParams.get("q"); // ⬅️ texto de búsqueda
 
-    if (area) {
-      setSelectedArea(area);
-      setTempArea(area);
-    }
-    if (sede) {
-      setSelectedSede(sede);
-      setTempSede(sede);
-    }
-    if (regimen) {
-      setSelectedRegimen(regimen);
-      setTempRegimen(regimen);
-    }
+    if (area) { setSelectedArea(area); setTempArea(area); }
+    if (sede) { setSelectedSede(sede); setTempSede(sede); }
+    if (regimen) { setSelectedRegimen(regimen); setTempRegimen(regimen); }
+    if (q !== null) { setSearchTerm(q); setCurrentSearchTerm(q); } // instantáneo
   }, [searchParams]);
+
 
   const handleSearch = () => {
     setCurrentSearchTerm(searchTerm);
@@ -63,24 +57,23 @@ const Carreras = () => {
   };
 
   const normalize = (text: string) =>
-  text
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "");
+    text
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "");
 
   const filteredCareers = careers.filter(career => {
     const matchesSearch = normalize(career.name).includes(normalize(currentSearchTerm));
     const matchesArea = selectedArea === "todas" || career.area === selectedArea;
     const matchesSede = selectedSede === "todas" || career.campus.some(campus => campus === selectedSede);
     const matchesRegimen = selectedRegimen === "todas" || career.tipo === selectedRegimen;
-    
     return matchesSearch && matchesArea && matchesSede && matchesRegimen;
   });
 
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      
+
       {/* Hero Section */}
       <GeneralHero titulo="Carreras de pregrado" imagen={imagenHero} />
 
@@ -96,13 +89,17 @@ const Carreras = () => {
                   type="text"
                   placeholder="Buscar carrera..."
                   value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
+                  // ⬇️ Cambio: al escribir, también actualiza currentSearchTerm para filtrar al instante
+                  onChange={(e) => {
+                    setSearchTerm(e.target.value);
+                    setCurrentSearchTerm(e.target.value);
+                  }}
                   onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
                   className="pl-10"
                 />
               </div>
-              <Button 
-                variant="default" 
+              <Button
+                variant="default"
                 className="bg-primary hover:bg-primary/90 text-white"
                 onClick={handleSearch}
               >
@@ -117,7 +114,14 @@ const Carreras = () => {
               </CollapsibleTrigger>
               <CollapsibleContent className="pt-4">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-3 w-full">
-                  <Select value={tempArea} onValueChange={setTempArea}>
+                  {/* ⬇️ Cambio: Select Area actualiza temp + selected para aplicar al instante */}
+                  <Select
+                    value={tempArea}
+                    onValueChange={(value) => {
+                      setTempArea(value);
+                      setSelectedArea(value);
+                    }}
+                  >
                     <SelectTrigger className="w-full text-primary">
                       <SelectValue placeholder="Área" />
                     </SelectTrigger>
@@ -130,7 +134,14 @@ const Carreras = () => {
                     </SelectContent>
                   </Select>
 
-                  <Select value={tempSede} onValueChange={setTempSede}>
+                  {/* ⬇️ Cambio: Select Sede actualiza temp + selected al instante */}
+                  <Select
+                    value={tempSede}
+                    onValueChange={(value) => {
+                      setTempSede(value);
+                      setSelectedSede(value);
+                    }}
+                  >
                     <SelectTrigger className="w-full text-primary">
                       <SelectValue placeholder="Sede" />
                     </SelectTrigger>
@@ -144,7 +155,14 @@ const Carreras = () => {
                     </SelectContent>
                   </Select>
 
-                  <Select value={tempRegimen} onValueChange={setTempRegimen}>
+                  {/* ⬇️ Cambio: Select Régimen actualiza temp + selected al instante */}
+                  <Select
+                    value={tempRegimen}
+                    onValueChange={(value) => {
+                      setTempRegimen(value);
+                      setSelectedRegimen(value);
+                    }}
+                  >
                     <SelectTrigger className="w-full text-primary">
                       <SelectValue placeholder="Regimen" />
                     </SelectTrigger>
@@ -202,10 +220,17 @@ const Carreras = () => {
                           </div>
                         </td>
                         <td className="p-4 text-right">
-                          <Link to={`/carreras/${career.id}`}>
-                            <Button size="sm" className="bg-primary hover:bg-primary/90">
-                              Ver detalles
-                            </Button>
+                          <Link
+                            to={`/carreras/${career.id}`}
+                            state={{
+                              from: "/carreras",
+                              q: currentSearchTerm,
+                              area: selectedArea,
+                              sede: selectedSede,
+                              regimen: selectedRegimen,
+                            }}
+                          >
+                            <Button size="sm" className="bg-primary hover:bg-primary/90">Ver detalles</Button>
                           </Link>
                         </td>
                       </tr>

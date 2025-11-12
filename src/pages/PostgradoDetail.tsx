@@ -1,9 +1,10 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate, useLocation } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { MapPin, BookOpen, GraduationCap, Calendar, Layers } from "lucide-react";
+import { Button } from "@/components/ui/button"; 
+import { MapPin, BookOpen, GraduationCap, Calendar, Layers, ArrowLeft, DollarSign } from "lucide-react";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 import postgradosRaw from "@/assets/carreras_postgrado.json";
@@ -13,7 +14,6 @@ const mallasImportadas = import.meta.glob("@/assets/mallasPostgrado/*", {
   query: "?url",
   import: "default",
 });
-
 
 type Postgrado = {
   id: string;
@@ -26,9 +26,9 @@ type Postgrado = {
   regimenes?: string[];
   modalidad?: string;
   tipoPostgrado?: string;
-  campus?: string[];          // array de sedes
-  requirements?: string[];    // requisitos
-  mallaImage?: string;        // nombre de archivo (png/jpg/etc)
+  campus?: string[];
+  requirements?: string[];
+  mallaImage?: string;
 };
 
 const findMallaImageUrl = (fileName?: string): string | undefined => {
@@ -41,8 +41,15 @@ const findMallaImageUrl = (fileName?: string): string | undefined => {
 
 const PostgradoDetail = () => {
   const { id } = useParams<{ id: string }>();
+  const navigate = useNavigate();                     
+  const location = useLocation();                     
+  const backState = (location.state || {}) as {       
+    from?: string;
+    q?: string;
+    sede?: string;
+    tipo?: string;
+  };
 
-  // 1) Buscar el programa en el JSON de postgrados
   const raw: Postgrado | undefined = id
     ? (Object.values(postgradosRaw) as Postgrado[]).find((c) => c.id === id)
     : undefined;
@@ -64,11 +71,8 @@ const PostgradoDetail = () => {
     );
   }
 
-  // 2) Campos derivados/cotejados
   const regimenDisplay =
-    raw.regimenes && raw.regimenes.length > 0
-      ? raw.regimenes.join(" / ")
-      : raw.regimen || "—";
+    raw.regimenes && raw.regimenes.length > 0 ? raw.regimenes.join(" / ") : raw.regimen || "—";
 
   const campusArray = Array.isArray(raw.campus) ? raw.campus : [];
   const areas = Array.isArray(raw.areasEspecializacion) ? raw.areasEspecializacion : [];
@@ -76,13 +80,62 @@ const PostgradoDetail = () => {
 
   const mallaUrl = findMallaImageUrl(raw.mallaImage) ?? "/fallback-malla.png";
 
+  const DEFAULT_ARANCEL_CLP = 4_500_000;
+
+  const arancelCLP = DEFAULT_ARANCEL_CLP;
+
+  const arancelFormatted = arancelCLP.toLocaleString("es-CL", {
+    style: "currency",
+    currency: "CLP",
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+  });
+
+  // Construye href de retorno con filtros si venías del listado
+  const buildBackHref = () => {
+    if (backState?.from === "/postgrados") {
+      const params = new URLSearchParams();
+      if (backState.q) params.set("q", backState.q);
+      if (backState.sede) params.set("sede", backState.sede);
+      if (backState.tipo) params.set("tipo", backState.tipo);
+      const qs = params.toString();
+      return `/postgrados${qs ? `?${qs}` : ""}`;
+    }
+    return null;
+  };
+  const backHref = buildBackHref();
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
 
-      {/* HERO con línea amarilla a la izquierda, esquina inferior izquierda */}
+      {/* HERO */}
       <section className="relative bg-gradient-hero pt-24 md:pt-24 pb-16 md:pb-20">
         <div className="container mx-auto px-4 max-w-6xl">
+          {/* ⬇️ Botón Volver (bonito, con blur y borde) */}
+          <div className="mb-6">
+            <Button
+              variant="outline"
+              className="group inline-flex items-center gap-2 rounded-full border-white/30 bg-white/10
+                         text-white px-4 py-2 backdrop-blur-sm shadow-sm hover:bg-white/20 hover:text-white
+                         focus-visible:ring-2 focus-visible:ring-white/40 transition-all"
+              onClick={() => {
+                if (backHref) {
+                  navigate(backHref);
+                } else if (window.history.length > 1) {
+                  navigate(-1);
+                } else {
+                  navigate("/postgrados");
+                }
+              }}
+              aria-label="Volver"
+              title="Volver"
+            >
+              <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-0.5" />
+              <span className="font-semibold">Volver</span>
+            </Button>
+          </div>
+
           <div className="flex flex-wrap gap-3 mb-4">
             {raw.tipoPostgrado && (
               <Badge className="bg-accent text-accent-foreground">
@@ -90,7 +143,6 @@ const PostgradoDetail = () => {
               </Badge>
             )}
 
-            {/* Campus como chips */}
             {campusArray.length > 0 && (
               <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-3 py-1 rounded-md text-white">
                 <MapPin className="h-4 w-4" />
@@ -123,14 +175,11 @@ const PostgradoDetail = () => {
       <section className="flex-grow py-6 bg-muted/30">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="flex flex-col lg:flex-row gap-8">
-            {/* COLUMNA IZQUIERDA */}
+            {/* IZQUIERDA */}
             <div className="w-full lg:flex-1 space-y-6">
-              {/* Descripción */}
               <Card>
                 <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    Descripción
-                  </CardTitle>
+                  <CardTitle className="flex items-center gap-2">Descripción</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="font-medium text-base text-justify whitespace-pre-line">
@@ -139,34 +188,28 @@ const PostgradoDetail = () => {
                 </CardContent>
               </Card>
 
-              {/* Áreas de especialización (si existen) */}
               {areas.length > 0 && (
                 <Card>
                   <CardHeader>
-                    <CardTitle className="flex items-center gap-2">
-                      Áreas de especialización
-                    </CardTitle>
+                    <CardTitle className="flex items-center gap-2">Áreas de especialización</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <ul className="flex flex-col gap-2">
-                        {areas.map((a, i) => (
-                            <li key={i} className="flex items-start gap-2">
-                            <span className="mt-1 inline-block h-2 w-2 rounded-full bg-primary" />
-                            <span className="text-sm leading-relaxed">{a}</span>
-                            </li>
-                        ))}
+                      {areas.map((a, i) => (
+                        <li key={i} className="flex items-start gap-2">
+                          <span className="mt-1 inline-block h-2 w-2 rounded-full bg-primary" />
+                          <span className="text-sm leading-relaxed">{a}</span>
+                        </li>
+                      ))}
                     </ul>
                   </CardContent>
                 </Card>
               )}
 
-              {/* Requisitos (si existen) */}
               {requisitos.length > 0 && (
                 <Card>
                   <CardHeader>
-                    <CardTitle className="flex items-center gap-2">
-                      Requisitos de postulación
-                    </CardTitle>
+                    <CardTitle className="flex items-center gap-2">Requisitos de postulación</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <ul className="space-y-2">
@@ -183,27 +226,22 @@ const PostgradoDetail = () => {
                 </Card>
               )}
 
-              {/* Malla Curricular */}
-                <Card className="mt-6">
-                    <CardHeader>
-                    <CardTitle className="flex items-center gap-2">
-                        Plan de estudios
-                    </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                    <p className="text-muted-foreground mb-4">
-                        Revisa el plan de estudios del programa:
-                    </p>
-                    <img
-                        src={mallaUrl}
-                        alt="Malla curricular"
-                        className="w-full rounded-lg border shadow-sm mb-2 object-contain"
-                    />
-                    </CardContent>
-                </Card>
+              <Card className="mt-6">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">Plan de estudios</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground mb-4">Revisa el plan de estudios del programa:</p>
+                  <img
+                    src={mallaUrl}
+                    alt="Malla curricular"
+                    className="w-full rounded-lg border shadow-sm mb-2 object-contain"
+                  />
+                </CardContent>
+              </Card>
             </div>
 
-            {/* COLUMNA DERECHA - Detalles */}
+            {/* DERECHA */}
             <div className="w-full lg:w-[360px] space-y-6">
               <Card>
                 <CardHeader>
@@ -242,11 +280,19 @@ const PostgradoDetail = () => {
                     </div>
                   </div>
 
+                  <div className="flex items-start gap-3">
+                    <DollarSign className="h-5 w-5 text-primary mt-1" />
+                    <div>
+                      <p className="text-sm text-muted-foreground">Arancel (referencial)</p>
+                      <p className="font-medium">{arancelFormatted}</p>
+                    </div>
+                  </div>
+
                   <div className="flex items-center gap-3">
                     <Calendar className="h-5 w-5 text-primary flex-shrink-0 self-start mt-[2px]" />
                     <div className="flex-1">
-                        <p className="text-sm text-muted-foreground leading-tight">Duración</p>
-                        <p className="font-medium leading-snug">{raw.duration || "—"}</p>
+                      <p className="text-sm text-muted-foreground leading-tight">Duración</p>
+                      <p className="font-medium leading-snug">{raw.duration || "—"}</p>
                     </div>
                   </div>
 
@@ -266,7 +312,6 @@ const PostgradoDetail = () => {
               </Card>
             </div>
           </div>
-
         </div>
       </section>
 

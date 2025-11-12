@@ -17,7 +17,7 @@ const careers = Object.values(carrerasRaw).map((c: any) => ({
   id: c.id,
   name: c.name,
   description: c.description,
-  tipo: c.tipoPostgrado,                        
+  tipo: c.tipoPostgrado,
   campus: Array.isArray(c.campus) ? c.campus : [],
 }));
 
@@ -34,8 +34,10 @@ const Postgrados = () => {
   useEffect(() => {
     const sede = searchParams.get("sede");
     const tipo = searchParams.get("tipo");
+    const q = searchParams.get("q");
     if (sede) { setSelectedSede(sede); setTempSede(sede); }
     if (tipo) { setSelectedTipo(tipo); setTempTipo(tipo); }
+    if (q !== null) { setSearchTerm(q); setCurrentSearchTerm(q); }
   }, [searchParams]);
 
   const handleSearch = () => {
@@ -45,10 +47,10 @@ const Postgrados = () => {
   };
 
   const normalize = (text: string) =>
-  text
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "");
+    (text || "")
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "");
 
   const filteredCareers = careers.filter((career) => {
     const matchesSearch = normalize(career.name).includes(normalize(currentSearchTerm));
@@ -77,7 +79,11 @@ const Postgrados = () => {
                   type="text"
                   placeholder="Buscar postgrado..."
                   value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
+                  // ⬇️ Filtra al escribir
+                  onChange={(e) => {
+                    setSearchTerm(e.target.value);
+                    setCurrentSearchTerm(e.target.value);
+                  }}
                   onKeyDown={(e) => e.key === "Enter" && handleSearch()}
                   className="pl-10"
                 />
@@ -94,7 +100,14 @@ const Postgrados = () => {
               </CollapsibleTrigger>
               <CollapsibleContent className="pt-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3 w-full">
-                  <Select value={tempSede} onValueChange={setTempSede}>
+                  {/* ⬇️ Cambios: actualiza temp + selected para aplicar al instante */}
+                  <Select
+                    value={tempSede}
+                    onValueChange={(value) => {
+                      setTempSede(value);
+                      setSelectedSede(value);
+                    }}
+                  >
                     <SelectTrigger className="w-full text-primary">
                       <SelectValue placeholder="Sede" />
                     </SelectTrigger>
@@ -108,7 +121,13 @@ const Postgrados = () => {
                     </SelectContent>
                   </Select>
 
-                  <Select value={tempTipo} onValueChange={setTempTipo}>
+                  <Select
+                    value={tempTipo}
+                    onValueChange={(value) => {
+                      setTempTipo(value);
+                      setSelectedTipo(value);
+                    }}
+                  >
                     <SelectTrigger className="w-full text-primary">
                       <SelectValue placeholder="Tipo" />
                     </SelectTrigger>
@@ -179,10 +198,16 @@ const Postgrados = () => {
 
                         {/* Acción */}
                         <td className="p-4 text-right">
-                          <Link to={`/postgrados/${career.id}`}>
-                            <Button size="sm" className="bg-primary hover:bg-primary/90">
-                              Ver detalles
-                            </Button>
+                          <Link
+                            to={`/postgrados/${career.id}`}
+                            state={{
+                              from: "/postgrados",
+                              q: currentSearchTerm,
+                              sede: selectedSede,
+                              tipo: selectedTipo,
+                            }}
+                          >
+                            <Button size="sm" className="bg-primary hover:bg-primary/90">Ver detalles</Button>
                           </Link>
                         </td>
                       </tr>

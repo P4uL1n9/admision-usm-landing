@@ -16,6 +16,8 @@ import Financiamiento from "./pages/Financiamiento";
 import ViasAdmision from "./pages/ViasAdmision";
 import Informaciones from "./pages/Informaciones";
 import ViasAdmisionDetail from "./pages/ViasAdmisionDetail";
+import BecasPostgrado from "./pages/BecasPostgrado";
+import ArancelesPostgrado from "./pages/ArancelesPostgrado";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -40,6 +42,8 @@ const App = () => (
           <Route path="/vias-admision" element={<ViasAdmision />} />
           <Route path="/vias-admision/:id" element={<ViasAdmisionDetail />} />
           <Route path="/informaciones" element={<Informaciones />} />
+          <Route path="/financiamiento/becas-postgrado" element={<BecasPostgrado />} />
+          <Route path="/financiamiento/aranceles-postgrado" element={<ArancelesPostgrado />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -6,9 +6,9 @@ function Pathways() {
     { title: "Admisión Centralizada PAES", desc: "Postulación por DEMRE para pregrado.", to: "/vias-admision/admision-centralizada-paes" },
     { title: "Ingreso Directo", desc: "Vías alternativas según perfil.", to: "/vias-admision/admision-ingreso-directo" },
     { title: "Admisión Especial", desc: "Cupos y requisitos especiales.", to: "/vias-admision/admision-especial" },
-    { title: "Traslados y convalidaciones", desc: "Para estudiantes de otras instituciones.", to: "/vias-admision/traslados" },
-    { title: "Estudiantes extranjeros", desc: "Requisitos y documentación.", to: "/vias-admision/extranjeros" },
+    { title: "Programas de Apoyo", desc: "Para estudiantes de otras instituciones.", to: "/vias-admision/programas-de-apoyo" },
     { title: "Mujeres STEM", desc: "Programas de apoyo y orientación.", to: "/vias-admision/mujeres-stem" },
+    { title: "Becas", desc: "Requisitos y documentación.", to: "/vias-admision/becas" },
   ];
   return (
     <section className="py-10 md:py-6">
